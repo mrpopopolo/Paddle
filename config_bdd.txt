@@ -1,0 +1,16 @@
+A ajouter dans le fichier de configuration de wildfly
+<WILDFLY_HOME>/standalone/configuration/standalone.xml
+---------------------------------------------------------------
+
+
+Dans la section <datasources>, ajoutez les lignes suivantes : 
+
+<datasource jndi-name="java:jboss/datasources/Paddle_DS" pool-name="Paddle_Pool" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
+	<connection-url>jdbc:mysql://localhost:3306/paddle_db?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;serverTimezone=Europe/Paris</connection-url>
+	<driver>mysql</driver>
+	<security>
+		<user-name>root</user-name>
+		<password></password>
+	</security>
+</datasource>
+
