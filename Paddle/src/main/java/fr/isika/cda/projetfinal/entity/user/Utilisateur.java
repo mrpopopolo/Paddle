@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Utilisateur {
@@ -12,9 +13,16 @@ public class Utilisateur {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@OneToOne
 	private Compte compte;
+	
+	@OneToOne
 	private InfosLogement infosLogement;
+	
+	@OneToOne
 	private InfosPerso infosPerso;
+	
+	@OneToOne
 	private Contact contact;
 
 	public Utilisateur() {
