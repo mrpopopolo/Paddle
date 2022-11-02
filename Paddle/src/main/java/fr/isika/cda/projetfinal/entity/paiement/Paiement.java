@@ -1,7 +1,9 @@
 package fr.isika.cda.projetfinal.entity.paiement;
 
 import java.sql.Date;
+
 import java.time.LocalDate;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +17,7 @@ public class Paiement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+
 	private Double montant;
 
 	private LocalDate datePaiement;
@@ -22,6 +25,7 @@ public class Paiement {
 	private int idPayeur;
 
 	private int idBeneficiaire;
+
 
 	private String montantPaiement;
 
@@ -41,6 +45,7 @@ public class Paiement {
 		this.montant = montant;
 	}
 
+
 	
 
 	public LocalDate getDatePaiement() {
@@ -49,6 +54,7 @@ public class Paiement {
 
 	public void setDatePaiement(LocalDate datePaiement) {
 		this.datePaiement = datePaiement;
+
 	}
 
 	public int getIdPayeur() {
@@ -56,11 +62,13 @@ public class Paiement {
 	}
 
 	public int getIdBeneficiare() {
+
 		return idBeneficiaire;
 	}
 
 	public void setIdBeneficiare(int idBeneficiare) {
 		this.idBeneficiaire = idBeneficiare;
+
 	}
 
 	public String getMontantPaiement() {
