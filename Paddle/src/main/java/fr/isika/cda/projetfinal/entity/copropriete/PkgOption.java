@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Option {
+public class PkgOption {
 
 	// ***** Variables *****
 
@@ -18,7 +18,7 @@ public class Option {
 
 	// ***** Constructeur *****
 
-	public Option() {
+	public PkgOption() {
 
 	}
 
