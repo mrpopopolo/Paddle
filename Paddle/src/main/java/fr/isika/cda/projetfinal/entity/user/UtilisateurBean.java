@@ -6,7 +6,6 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
 
-import fr.isika.cda.projetfinal.entity.copropriete.TestCoproRepository;
 
 @ManagedBean
 @Singleton

@@ -6,7 +6,7 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
 
-import fr.isika.cda.projetfinal.entity.user.UtilisateurRepository;
+
 	@ManagedBean
 	@Singleton
 	@Startup
