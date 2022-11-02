@@ -1,49 +1,50 @@
 package fr.isika.cda.projetfinal.entity.copropriete;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Option {
-
+public class PackageCopro {
+	
 	// ***** Variables *****
-
-	@Id
+	
+	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-	private String nom;
 	
-	private Double cout;
-
+	@OneToMany
+	private List<OptionCopro> options;
+	
 	// ***** Constructeur *****
-
-	public Option() {
-
+	
+	public PackageCopro() {
+		
 	}
 
 	// ***** Getters / Setters *****
-
-	public String getNom() {
-		return nom;
+	
+	public List<OptionCopro> getOptions() {
+		return options;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public Double getCout() {
-		return cout;
-	}
-
-	public void setCout(Double cout) {
-		this.cout = cout;
+	public void setOptions(List<OptionCopro> options) {
+		this.options = options;
 	}
 
 	public Long getId() {
 		return id;
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }

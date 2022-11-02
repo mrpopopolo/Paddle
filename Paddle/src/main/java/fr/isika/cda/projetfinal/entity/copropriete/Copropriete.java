@@ -34,7 +34,7 @@ public class Copropriete {
 	private Residence residence;
 
 	@OneToOne
-	private Package packageChoisi;
+	private PackageCopro packageChoisi;
 
 	// ***** Constructeur *****
 
@@ -84,11 +84,11 @@ public class Copropriete {
 		this.residence = residence;
 	}
 
-	public Package getPackageChoisi() {
+	public PackageCopro getPackageChoisi() {
 		return packageChoisi;
 	}
 
-	public void setPackageChoisi(Package packageChoisi) {
+	public void setPackageChoisi(PackageCopro packageChoisi) {
 		this.packageChoisi = packageChoisi;
 	}
 
