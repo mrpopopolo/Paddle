@@ -1,6 +1,7 @@
 package fr.isika.cda.projetfinal.entity.service;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -22,9 +23,8 @@ public class Service {
 	private Integer demandeurId;
 	private LocalDate dateDebut;
 	private LocalDate dateFin;
-	private String horaire;
 	private Boolean proposeParLaCopro;
-	
+
 	@Enumerated(EnumType.STRING)
 	private TypeService typeService;
 
@@ -94,14 +94,6 @@ public class Service {
 
 	public void setDateFin(LocalDate dateFin) {
 		this.dateFin = dateFin;
-	}
-
-	public String getHoraire() {
-		return horaire;
-	}
-
-	public void setHoraire(String horaire) {
-		this.horaire = horaire;
 	}
 
 	public Boolean getProposeParLaCopro() {
