@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Package {
@@ -16,7 +17,7 @@ public class Package {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	// @OneToOne ? 
+	@OneToMany
 	private List<Option> options;
 	
 	// ***** Constructeur *****

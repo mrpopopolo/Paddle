@@ -15,6 +15,8 @@ public class Option {
 	private Long id;
 
 	private String nom;
+	
+	private Double cout;
 
 	// ***** Constructeur *****
 
@@ -30,6 +32,14 @@ public class Option {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public Double getCout() {
+		return cout;
+	}
+
+	public void setCout(Double cout) {
+		this.cout = cout;
 	}
 
 	public Long getId() {
