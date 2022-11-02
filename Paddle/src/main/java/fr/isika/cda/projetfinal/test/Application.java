@@ -7,7 +7,7 @@ import javax.persistence.Id;
 /**
  * Entité de test, peut être supprimée plus tard ...
  */
-@Entity
+
 public class Application {
 
 	@Id
