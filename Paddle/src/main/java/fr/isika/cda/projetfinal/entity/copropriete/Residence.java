@@ -18,7 +18,7 @@ public class Residence {
 
 	private String adresse;
 
-	private int nombreLogements;
+	private Integer nombreLogements;
 
 	// ***** Constructeur *****
 
@@ -44,11 +44,11 @@ public class Residence {
 		this.adresse = adresse;
 	}
 
-	public int getNombreLogements() {
+	public Integer getNombreLogements() {
 		return nombreLogements;
 	}
 
-	public void setNombreLogements(int nombreLogements) {
+	public void setNombreLogements(Integer nombreLogements) {
 		this.nombreLogements = nombreLogements;
 	}
 
