@@ -24,7 +24,7 @@ public class TestCoproRepository {
 			//entityManager.persist(residence);
 			
 			Copropriete copropriete= new Copropriete();
-			copropriete.setMembreSyndic(membreSyndic);
+			//copropriete.setMembreSyndic(membreSyndic);
 			copropriete.setResidence(residence);
 			entityManager.persist(copropriete);
 			

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class PaiementLoyer {
@@ -12,7 +14,8 @@ public class PaiementLoyer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private int quittanceId;
+	@OneToOne
+	private Quittance quittance;
 
 	public PaiementLoyer() {
 
@@ -22,12 +25,14 @@ public class PaiementLoyer {
 		return id;
 	}
 
-	public int getQuittanceId() {
-		return quittanceId;
+	public Quittance getQuittance() {
+		return quittance;
 	}
 
-	public void setQuittanceId(int quittanceId) {
-		this.quittanceId = quittanceId;
+	public void setQuittance(Quittance quittance) {
+		this.quittance = quittance;
 	}
+
+
 
 }

@@ -12,7 +12,7 @@ public class PaiementAbonnement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private int dureeAbo;
+	private Integer dureeAbo;
 
 	public PaiementAbonnement() {
 
@@ -22,12 +22,13 @@ public class PaiementAbonnement {
 		return id;
 	}
 
-	public int getDureeAbo() {
+	public Integer getDureeAbo() {
 		return dureeAbo;
 	}
 
-	public void setDureeAbo(int dureeAbo) {
+	public void setDureeAbo(Integer dureeAbo) {
 		this.dureeAbo = dureeAbo;
 	}
+
 
 }

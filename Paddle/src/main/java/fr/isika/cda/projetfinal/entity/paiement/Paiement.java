@@ -22,12 +22,12 @@ public class Paiement {
 
 	private LocalDate datePaiement;
 
-	private int idPayeur;
+	private Integer idPayeur;
 
-	private int idBeneficiaire;
+	private Integer idBeneficiaire;
 
 
-	private String montantPaiement;
+	private String motifPaiement;
 
 	private String formePaiement;
 
@@ -71,14 +71,6 @@ public class Paiement {
 
 	}
 
-	public String getMontantPaiement() {
-		return montantPaiement;
-	}
-
-	public void setMontantPaiement(String montantPaiement) {
-		this.montantPaiement = montantPaiement;
-	}
-
 	public String getFormePaiement() {
 		return formePaiement;
 	}
@@ -93,6 +85,14 @@ public class Paiement {
 
 	public void setStatut(Statut statut) {
 		this.statut = statut;
+	}
+
+	public String getMotifPaiement() {
+		return motifPaiement;
+	}
+
+	public void setMotifPaiement(String motifPaiement) {
+		this.motifPaiement = motifPaiement;
 	}
 
 }

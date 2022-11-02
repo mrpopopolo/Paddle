@@ -21,9 +21,7 @@ public class Compte {
 	private String motDePasse;
 	
 	@Enumerated(EnumType.STRING)
-	@ElementCollection
-	@CollectionTable
-	private List<Role> roles;
+	private Role role;
 
 	public Compte() {
 
@@ -45,12 +43,12 @@ public class Compte {
 		this.motDePasse = motDePasse;
 	}
 
-	public List<Role> getRoles() {
-		return roles;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 	public Long getId() {
