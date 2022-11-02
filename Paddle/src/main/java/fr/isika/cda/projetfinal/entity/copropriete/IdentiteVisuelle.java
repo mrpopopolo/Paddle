@@ -16,7 +16,7 @@ public class IdentiteVisuelle {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private File logo;
+	private File logo; // A Changer en tableau de byte 
 
 	// voir avec Mohammed pour creer une classe template
 
