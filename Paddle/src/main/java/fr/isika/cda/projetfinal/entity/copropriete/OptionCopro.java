@@ -19,7 +19,7 @@ public class OptionCopro {
 	private Double cout;
 
 	// ***** Constructeur *****
-
+	
 	public OptionCopro() {
 
 	}

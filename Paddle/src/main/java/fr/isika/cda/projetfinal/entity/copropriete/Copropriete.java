@@ -3,6 +3,7 @@ package fr.isika.cda.projetfinal.entity.copropriete;
 import java.io.File;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,7 @@ public class Copropriete {
 	@OneToOne
 	private ActualitesCopro actualitesCopro;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Residence residence;
 
 	@OneToOne

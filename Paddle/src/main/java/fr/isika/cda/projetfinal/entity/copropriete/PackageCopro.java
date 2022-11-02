@@ -27,7 +27,7 @@ public class PackageCopro {
 	}
 
 	// ***** Getters / Setters *****
-	
+
 	public List<OptionCopro> getOptions() {
 		return options;
 	}
