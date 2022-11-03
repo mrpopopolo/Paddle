@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
 import fr.isika.cda.projetfinal.entity.copropriete.MembreSyndic;
 import fr.isika.cda.projetfinal.entity.copropriete.Residence;
+import fr.isika.cda.projetfinal.viewmodel.FormCopro;
 
 @Stateless
 public class CoproRepository {
@@ -14,6 +15,22 @@ public class CoproRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
+public Copropriete create(FormCopro formCopro) {
+		
+		Copropriete copropriete = new Copropriete();
+		
+		Residence residence =  new Residence();
+		residence.setAdresse(formCopro.getAdresse());
+		residence.setNom(formCopro.getNom());
+		residence.setNombreLogements(formCopro.getNombreLogements());
+		
+		copropriete.setResidence(residence);
+		
+		entityManager.persist(copropriete);
+		
+		return copropriete;
+	}
+	
 	public void initData() {
 		MembreSyndic membreSyndic = new MembreSyndic();
 		membreSyndic.setNom("MBA");
@@ -30,4 +47,6 @@ public class CoproRepository {
 		entityManager.persist(copropriete);
 
 	}
+
+	
 }

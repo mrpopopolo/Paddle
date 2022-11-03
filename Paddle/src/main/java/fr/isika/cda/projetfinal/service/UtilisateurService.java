@@ -1,5 +1,8 @@
 package fr.isika.cda.projetfinal.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -25,4 +28,13 @@ public class UtilisateurService {
 		return utilisateurRepository.create(formCompte);
 	}
 
+	// Methodes afficher la liste des utilisateurs 
+	
+	public Optional<Utilisateur> findByEmail(String email) {
+		return utilisateurRepository.findByEmail(email);
+	}
+
+	public List<Utilisateur> findAll() {
+		return utilisateurRepository.findAll();
+	}
 }

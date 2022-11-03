@@ -9,6 +9,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 
 @Entity
 public class Service {
@@ -19,11 +22,13 @@ public class Service {
 	private String titre;
 	private String description;
 	private BigDecimal prix;
-	private Integer fournisseurId;
-	private Integer demandeurId;
+
 	private LocalDate dateDebut;
 	private LocalDate dateFin;
-	private Boolean proposeParLaCopro;
+	private Boolean proposeParLaCopro;// discuter avec les autres pour son implémentation dans creerService
+
+	@ManyToOne
+	private Utilisateur createurService;
 
 	@Enumerated(EnumType.STRING)
 	private TypeService typeService;
@@ -59,24 +64,9 @@ public class Service {
 	public BigDecimal getPrix() {
 		return prix;
 	}
+
 	public void setPrix(BigDecimal prix) {
 		this.prix = prix;
-	}
-
-	public Integer getFournisseurId() {
-		return fournisseurId;
-	}
-
-	public void setFournisseurId(Integer fournisseurId) {
-		this.fournisseurId = fournisseurId;
-	}
-
-	public Integer getDemandeurId() {
-		return demandeurId;
-	}
-
-	public void setDemandeurId(Integer demandeurId) {
-		this.demandeurId = demandeurId;
 	}
 
 	public LocalDate getDateDebut() {
@@ -105,6 +95,14 @@ public class Service {
 
 	public Long getId() {
 		return id;
+	}
+
+	public Utilisateur getCreateurService() {
+		return createurService;
+	}
+
+	public void setCreateurService(Utilisateur createurService) {
+		this.createurService = createurService;
 	}
 
 }
