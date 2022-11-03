@@ -1,5 +1,7 @@
 package fr.isika.cda.projetfinal.entity.user;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +17,8 @@ public class InfosLogement {
 	private Integer tailleLogement;
 	private Integer nbrePlaceParking;
 	private Integer nbreHabitants;
-	private Double montantLoyer;
-	private Double montantCharges;
+	private BigDecimal montantLoyer;
+	private BigDecimal montantCharges;
 	
 	public InfosLogement() {
 		
@@ -54,20 +56,17 @@ public class InfosLogement {
 		this.nbreHabitants = nbreHabitants;
 	}
 
-	public Double getMontantLoyer() {
-		return montantLoyer;
-	}
-
-	public void setMontantLoyer(Double montantLoyer) {
-		this.montantLoyer = montantLoyer;
-	}
-
-	public Double getMontantCharges() {
+	public BigDecimal getMontantCharges() {
 		return montantCharges;
 	}
-
-	public void setMontantCharges(Double montantCharges) {
+	public void setMontantCharges(BigDecimal montantCharges) {
 		this.montantCharges = montantCharges;
+	}
+	public BigDecimal getMontantLoyer() {
+		return montantLoyer;
+	}
+	public void setMontantLoyer(BigDecimal montantLoyer) {
+		this.montantLoyer = montantLoyer;
 	}
 
 	public Long getId() {

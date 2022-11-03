@@ -1,11 +1,10 @@
 package fr.isika.cda.projetfinal.entity.paiement;
 
-import java.sql.Date;
-
 import java.time.LocalDate;
 
-
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +16,6 @@ public class Paiement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-
 	private Double montant;
 
 	private LocalDate datePaiement;
@@ -26,11 +24,11 @@ public class Paiement {
 
 	private Integer idBeneficiaire;
 
-
 	private String motifPaiement;
 
 	private String formePaiement;
 
+	@Enumerated(EnumType.STRING)
 	private Statut statut;
 
 	public Paiement() {
@@ -44,9 +42,6 @@ public class Paiement {
 	public void setMontant(double montant) {
 		this.montant = montant;
 	}
-
-
-	
 
 	public LocalDate getDatePaiement() {
 		return datePaiement;

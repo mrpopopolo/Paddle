@@ -1,6 +1,5 @@
 package fr.isika.cda.projetfinal.entity.copropriete;
 
-import java.io.File;
 import java.util.List;
 
 import javax.persistence.CascadeType;

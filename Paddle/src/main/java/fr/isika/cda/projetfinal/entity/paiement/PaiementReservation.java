@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import fr.isika.cda.projetfinal.entity.service.Reservation;
 
 @Entity
 public class PaiementReservation {
@@ -12,7 +15,10 @@ public class PaiementReservation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private int reservationId;
+//	private int reservationId;
+	
+	@OneToOne
+	private Reservation reservation;
 
 	public PaiementReservation() {
 
@@ -22,12 +28,11 @@ public class PaiementReservation {
 		return id;
 	}
 
-	public int getReservationId() {
-		return reservationId;
+	public Reservation getReservation() {
+		return reservation;
 	}
-
-	public void setReservationId(int reservationId) {
-		this.reservationId = reservationId;
+	
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
 	}
-
 }

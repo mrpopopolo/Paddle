@@ -1,10 +1,12 @@
-package fr.isika.cda.projetfinal.entity.copropriete;
+package fr.isika.cda.projetfinal.controllers.copropriete;
 
 import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
+
+import fr.isika.cda.projetfinal.repositories.copropriete.CoproRepository;
 
 @ManagedBean
 @Singleton

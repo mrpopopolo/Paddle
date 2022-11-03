@@ -10,9 +10,6 @@ public class Quittance {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id; 
-	
-	
-	
-	
+	private Long id;
+
 }

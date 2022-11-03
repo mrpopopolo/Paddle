@@ -12,6 +12,7 @@ public class PaiementAbonnement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	// TODO : nommer la variable avec les unités de mesure
 	private Integer dureeAbo;
 
 	public PaiementAbonnement() {

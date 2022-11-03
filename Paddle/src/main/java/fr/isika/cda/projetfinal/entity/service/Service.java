@@ -1,7 +1,7 @@
 package fr.isika.cda.projetfinal.entity.service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -18,7 +18,7 @@ public class Service {
 	private Long id;
 	private String titre;
 	private String description;
-	private Double prix;
+	private BigDecimal prix;
 	private Integer fournisseurId;
 	private Integer demandeurId;
 	private LocalDate dateDebut;
@@ -56,11 +56,10 @@ public class Service {
 		this.description = description;
 	}
 
-	public Double getPrix() {
+	public BigDecimal getPrix() {
 		return prix;
 	}
-
-	public void setPrix(Double prix) {
+	public void setPrix(BigDecimal prix) {
 		this.prix = prix;
 	}
 
