@@ -3,9 +3,12 @@ package fr.isika.cda.projetfinal.repositories.user;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import fr.isika.cda.projetfinal.entity.service.Reservation;
@@ -84,6 +87,27 @@ public class UtilisateurRepository {
 
 		entityManager.persist(utilisateur);
 
+	}
+	
+	// Methodes afficher liste 
+	
+	public Optional<Utilisateur> findByEmail(final String email) {
+		try {
+			Utilisateur utilisateur = this.entityManager.createNamedQuery("Utilisateur.findByEmail", Utilisateur.class) // Email dans info perso 
+					.setParameter("email_param", email)
+					.getSingleResult();
+			
+			return Optional.ofNullable(utilisateur);
+		} catch (NoResultException ex) {
+			System.out.println("AccountRepository.findByEmail() - not found : " + email);
+		}
+		return Optional.empty();
+	}
+
+	public List<Utilisateur> findAll() {
+		return this.entityManager
+				.createQuery("SELECT acc FROM Utilisateur acc", Utilisateur.class)
+				.getResultList();
 	}
 
 }
