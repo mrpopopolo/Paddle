@@ -1,9 +1,6 @@
 package fr.isika.cda.projetfinal.entity.user;
 
-import java.util.List;
-
-import javax.persistence.CollectionTable;
-import javax.persistence.ElementCollection;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,13 +14,14 @@ public class Compte {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(length = 150, unique = true)
 	private String email;
+	
 	private String motDePasse;
 	
 	@Enumerated(EnumType.STRING)
-	@ElementCollection
-	@CollectionTable
-	private List<Role> roles;
+	private Role role;
 
 	public Compte() {
 
@@ -45,12 +43,12 @@ public class Compte {
 		this.motDePasse = motDePasse;
 	}
 
-	public List<Role> getRoles() {
-		return roles;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 	public Long getId() {

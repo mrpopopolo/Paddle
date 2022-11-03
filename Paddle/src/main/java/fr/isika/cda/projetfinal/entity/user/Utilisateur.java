@@ -1,29 +1,42 @@
 package fr.isika.cda.projetfinal.entity.user;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import fr.isika.cda.projetfinal.entity.service.Reservation;
+import fr.isika.cda.projetfinal.entity.service.Service;
 
 @Entity
 public class Utilisateur {
 
-	@Id 
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.ALL)
 	private Compte compte;
-	
-	@OneToOne
+
+	@OneToOne (cascade = CascadeType.ALL)
 	private InfosLogement infosLogement;
-	
-	@OneToOne
+
+	@OneToOne (cascade = CascadeType.ALL)
 	private InfosPerso infosPerso;
-	
-	@OneToOne
+
+	@OneToOne (cascade = CascadeType.ALL)
 	private Contact contact;
+
+	@OneToMany
+	private List<Service> services;
+
+	@OneToMany
+	private List<Reservation> reservations;
 
 	public Utilisateur() {
 
