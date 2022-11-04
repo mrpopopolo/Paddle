@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -14,6 +15,7 @@ import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
 
 @Entity
+@NamedQuery(name = "Utilisateur.findByEmail", query = "SELECT ua FROM Utilisateur ua WHERE ua.compte.email = :email_param")
 public class Utilisateur {
 
 	@Id

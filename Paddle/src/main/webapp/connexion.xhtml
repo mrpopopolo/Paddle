@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>connexion</title>
+</h:head>
+<body>
+	<h1>Se Connecter</h1>
+	<hr />
+	<h:form id="loginForm">
+		<h:panelGrid columns="3">
+
+			<h:outputLabel value="Nom d'utilisateur : " />
+			<h:inputText id="emailInput" size="10" value="#{loginBean.email}" />
+			<h:messages for="emailInput" />
+			
+			<h:outputLabel value="Mot de passe : " />
+			<h:inputSecret id="passwordInput" size="10" value="#{loginBean.motDePasse}"/>
+			<h:messages for="passwordInput" />
+			
+			<span></span>
+			<h:commandButton value="Se connecter" action="#{loginBean.doLogin()}"/>
+		</h:panelGrid>
+	</h:form>
+
+	<hr />
+	<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+</body>
+</html>
