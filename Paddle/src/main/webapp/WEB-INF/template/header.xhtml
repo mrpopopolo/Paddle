@@ -3,15 +3,19 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
-
+   
+<head>
+	<h:outputStylesheet library ="css" name="template.css"/>
+</head>
 	<ui:composition>
-		<h1>Copro les tilleuls</h1>
+		<h1 classe="titre" >Copro les tilleuls</h1>
 		 <div class="container d-flex align-items-center justify-content-between">
 
       
 
       <nav id="navbar" class="navbar">
         <ul>
+        <li>allez l'om</li>
           <li><h:link outcome="creerUtilisateur.xhtml">Ma page</h:link></li>
           <li><h:link outcome="creerUtilisateur.xhtml">Annonces</h:link></li>
           <li><h:link outcome="creerUtilisateur.xhtml">Evénements</h:link></li>
