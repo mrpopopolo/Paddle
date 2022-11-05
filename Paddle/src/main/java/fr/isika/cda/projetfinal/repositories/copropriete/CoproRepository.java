@@ -25,7 +25,9 @@ public class CoproRepository {
 		Copropriete copropriete = new Copropriete();
 
 		Residence residence = new Residence();
-		residence.setAdresse(formCopro.getAdresse());
+		residence.setRue(formCopro.getRue());
+		residence.setCodePostal(formCopro.getCodePostal());
+		residence.setVille(formCopro.getVille());
 		residence.setNom(formCopro.getNom());
 		residence.setNombreLogements(formCopro.getNombreLogements());
 
@@ -44,7 +46,9 @@ public class CoproRepository {
 		membreSyndic.setFonction("Admin");
 
 		Residence residence = new Residence();
-		residence.setAdresse("rue general Lizé");
+		residence.setRue("rue general Lizé");
+		residence.setCodePostal(75000);
+		residence.setVille("Paris");
 		residence.setNom("Puy Garnier");
 		residence.setNombreLogements(1);
 
