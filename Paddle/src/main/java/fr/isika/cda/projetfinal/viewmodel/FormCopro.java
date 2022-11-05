@@ -23,6 +23,8 @@ public class FormCopro {
 
 	@Digits(fraction = 0, integer = 4)
 	private Integer nombreLogements;
+	
+	private String pathToBlason;
 
 	public FormCopro() {}
 
@@ -51,6 +53,15 @@ public class FormCopro {
 
 	public void setNombreLogements(Integer nombreLogements) {
 		this.nombreLogements = nombreLogements;
+	}
+
+	public String getPathToBlason() {
+		return pathToBlason;
+	}
+
+
+	public void setPathToBlason(String pathToBlason) {
+		this.pathToBlason = pathToBlason;
 	}
 	
 	

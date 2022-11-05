@@ -13,9 +13,9 @@
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
 			<h3>Créer une copropriété</h3>
-			<hr />
-			<h:form id="createAccountForm">
-				<h:panelGrid columns="3">
+	    <hr />
+	    <h:form id="createAccountForm" enctype="multipart/form-data">
+		  <h:panelGrid columns="3">
 
 					<h:outputLabel value="Nom : " />
 					<h:inputText size="10" id="firstNameInput"
@@ -32,7 +32,9 @@
 						value="#{creationCoproBean.formCopro.nombreLogements}" />
 					<h:messages for="nbLogementsInput" />
 
-
+			<h:outputLabel value="Blason : " />
+			<h:inputFile value="#{creationCoproBean.uploadedFile}">
+    		</h:inputFile>
 
 					<span></span>
 					<h:commandButton value="Créer ma copropriété"

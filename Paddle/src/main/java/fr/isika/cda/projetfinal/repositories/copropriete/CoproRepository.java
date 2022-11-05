@@ -30,7 +30,8 @@ public class CoproRepository {
 		residence.setNombreLogements(formCopro.getNombreLogements());
 
 		copropriete.setResidence(residence);
-
+		copropriete.setPathToBlason(formCopro.getPathToBlason());
+		
 		entityManager.persist(copropriete);
 
 		return copropriete;
