@@ -9,31 +9,39 @@
 	<title>Accueil</title>
 </h:head>
 <body>
-	<h1>
-		<h:outputLabel value="#{welcomeBean.status}" />
-	</h1>
-	<hr />
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+			<h1>
+				<h:outputLabel value="#{welcomeBean.status}" />
+			</h1>
+			<hr />
 
-	<h3>Menu</h3>
-	<hr width="150" align="left" />
+
+			<h3>Menu</h3>
+			<hr width="150" align="left" />
+			<br />
+			<h:link outcome="creerUtilisateur.xhtml">New User</h:link>
+			<br />
+			<h:link outcome="creerCopro.xhtml">New Copro</h:link>
+			<br />
+			<h:link outcome="listeUtilisateurs.xhtml">Liste Users</h:link>
+			<br />
+			<h:link outcome="creerService.xhtml">New Service</h:link>
+			<br />
+			<h:link outcome="listeServices.xhtml">Liste Services</h:link>
+			<br />
+      <br />
+	<h:link outcome="listeCopro.xhtml">Liste Copros</h:link>
 	<br />
-	<h:link outcome="creerUtilisateur.xhtml">New User</h:link>
-	<br />
-	<h:link outcome="creerCopro.xhtml">New Copro</h:link>
-	<br />
-	<h:link outcome="listeUtilisateurs.xhtml">Liste Users</h:link>
-	<br />
-	<h:link outcome="creerService.xhtml">New Service</h:link>
-	<br />
-	<h:link outcome="listeServices.xhtml">Liste Services</h:link>
-	<br />
-	
-	
-	
-	<h:link outcome="about.xhtml">A propos</h:link>
-	
-	<br />
-	<br />
-	<hr />
+
+
+			<h:link outcome="about.xhtml">A propos</h:link>
+
+			<br />
+			<br />
+			<hr />
+		</ui:define>
+	</ui:composition>
+
 </body>
 </html>

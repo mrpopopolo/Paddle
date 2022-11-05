@@ -8,37 +8,47 @@
 	<title>Création d'un compte utilisateur</title>
 </h:head>
 <body>
-	<h3>Créer un compte utilisateur</h3>
-	<hr />
-	<h:form id="createAccountForm">
-		<h:panelGrid columns="3">
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+			<h3>Créer un compte utilisateur</h3>
+			<hr />
+			<h:form id="createAccountForm">
+				<h:panelGrid columns="3">
 
-			<h:outputLabel value="Nom : " />
-			<h:inputText size="10" id="firstNameInput" value="#{}" />
-			<h:messages for="firstNameInput" />
+					<h:outputLabel value="Nom : " />
+					<h:inputText size="10" id="firstNameInput"
+						value="#{creationUtilisateurBean.formCompte.nom}" />
+					<h:messages for="firstNameInput" />
 
-			<h:outputLabel value="Prénom : " />
-			<h:inputText size="12" id="lastNameInput" value="#{creationUtilisateurBean.formCompte.prenom}" />
-			<h:messages for="lastNameInput" />
+					<h:outputLabel value="Prénom : " />
+					<h:inputText size="12" id="lastNameInput"
+						value="#{creationUtilisateurBean.formCompte.prenom}" />
+					<h:messages for="lastNameInput" />
 
-			<h:outputLabel value="Email : " />
-			<h:inputText size="15" id="emailInput" value="#{creationUtilisateurBean.formCompte.email}" />
-			<h:messages for="emailInput" />
+					<h:outputLabel value="Email : " />
+					<h:inputText size="15" id="emailInput"
+						value="#{creationUtilisateurBean.formCompte.email}" />
+					<h:messages for="emailInput" />
 
-			<h:outputLabel value="Mot de passe : " />
-			<h:inputSecret size="8" id="passwordInput" value="#{creationUtilisateurBean.formCompte.motDePasse}" />
-			<h:messages for="passwordInput" />
+					<h:outputLabel value="Mot de passe : " />
+					<h:inputSecret size="8" id="passwordInput"
+						value="#{creationUtilisateurBean.formCompte.motDePasse}" />
+					<h:messages for="passwordInput" />
 
-			<h:outputLabel value="Confirmer le mot de passe : " />
-			<h:inputSecret size="8" id="confirmPasswordInput" value="#{creationUtilisateurBean.formCompte.confirmerMdp}" />
-			<h:messages for="confirmPasswordInput" />
+					<h:outputLabel value="Confirmer le mot de passe : " />
+					<h:inputSecret size="8" id="confirmPasswordInput"
+						value="#{creationUtilisateurBean.formCompte.confirmerMdp}" />
+					<h:messages for="confirmPasswordInput" />
 
-			<span></span>
-			<h:commandButton value="Créer mon compte" action="#{creationUtilisateurBean.create()}" />
-		</h:panelGrid>
+					<span></span>
+					<h:commandButton value="Créer mon compte"
+						action="#{creationUtilisateurBean.create()}" />
+				</h:panelGrid>
 
-	</h:form>
-	<hr />
-	<h:link outcome="index">Revenir à l'accueil</h:link>
+			</h:form>
+			<hr />
+			<h:link outcome="index">Revenir à l'accueil</h:link>
+		</ui:define>
+	</ui:composition>
 </body>
 </html>

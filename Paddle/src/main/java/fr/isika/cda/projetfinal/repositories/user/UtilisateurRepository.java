@@ -86,6 +86,8 @@ public class UtilisateurRepository {
 		entityManager.persist(compte);
 
 		entityManager.persist(utilisateur);
+		
+	
 
 	}
 	
@@ -110,4 +112,5 @@ public class UtilisateurRepository {
 				.getResultList();
 	}
 
+	
 }
