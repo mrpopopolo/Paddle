@@ -25,6 +25,7 @@ public Copropriete create(FormCopro formCopro) {
 		residence.setNombreLogements(formCopro.getNombreLogements());
 		
 		copropriete.setResidence(residence);
+		copropriete.setPathToBlason(formCopro.getPathToBlason());
 		
 		entityManager.persist(copropriete);
 		

@@ -10,7 +10,7 @@
 <body>
 	<h3>Créer une copropriété</h3>
 	<hr />
-	<h:form id="createAccountForm">
+	<h:form id="createAccountForm" enctype="multipart/form-data">
 		<h:panelGrid columns="3">
 
 			<h:outputLabel value="Nom : " />
@@ -25,7 +25,9 @@
 			<h:inputText size="15" id="nbLogementsInput" value="#{creationCoproBean.formCopro.nombreLogements}" />
 			<h:messages for="nbLogementsInput" />
 
-			
+			<h:outputLabel value="Blason : " />
+			<h:inputFile value="#{creationCoproBean.uploadedFile}">
+    		</h:inputFile>
 
 			<span></span>
 			<h:commandButton value="Créer ma copropriété" action="#{creationCoproBean.create()}" />
