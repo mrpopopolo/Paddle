@@ -10,22 +10,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 
 @Entity
+@NamedQuery(name = "Service.findByTitre", query = "SELECT ua FROM Service ua WHERE ua.titre = :titre_param")
 public class Service {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	private String titre;
 	private String description;
 	private BigDecimal prix;
 
 	private LocalDate dateDebut;
 	private LocalDate dateFin;
-	private Boolean proposeParLaCopro;// discuter avec les autres pour son implémentation dans creerService
+	// private Boolean proposeParLaCopro;// discuter avec les autres pour son
+	// implémentation dans creerService
 
 	@ManyToOne
 	private Utilisateur createurService;
@@ -83,14 +87,6 @@ public class Service {
 
 	public void setDateFin(LocalDate dateFin) {
 		this.dateFin = dateFin;
-	}
-
-	public Boolean getProposeParLaCopro() {
-		return proposeParLaCopro;
-	}
-
-	public void setProposeParLaCopro(Boolean proposeParLaCopro) {
-		this.proposeParLaCopro = proposeParLaCopro;
 	}
 
 	public Long getId() {

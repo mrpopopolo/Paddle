@@ -12,26 +12,27 @@ import fr.isika.cda.projetfinal.viewmodel.FormService;
 @ManagedBean
 @ViewScoped
 public class CreationServiceBean {
-	
-	private FormService formService= new FormService();
-	
+
 	@Inject
 	private ServiceService serviceService;
-	
+
+	private FormService formService = new FormService();
+
 	public String creer() {
 		UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("creerServiceForm");
-	
+
 		try {
-			serviceService.creer(formService);  
+			serviceService.creer(formService);
 		} catch (Error e) {
 		}
 
 		return "index";
 	}
-	
+
 	public FormService getFormService() {
 		return formService;
 	}
+
 	public void setFormService(FormService formService) {
 		this.formService = formService;
 	}
