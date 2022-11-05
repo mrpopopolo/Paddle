@@ -16,7 +16,11 @@ public class Residence {
 
 	private String nom;
 
-	private String adresse;
+	private String rue;
+
+	private int codePostal;
+
+	private String ville;
 
 	private Integer nombreLogements;
 
@@ -36,12 +40,28 @@ public class Residence {
 		this.nom = nom;
 	}
 
-	public String getAdresse() {
-		return adresse;
+	public String getRue() {
+		return rue;
 	}
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+	public void setRue(String rue) {
+		this.rue = rue;
+	}
+
+	public int getCodePostal() {
+		return codePostal;
+	}
+
+	public void setCodePostal(int codePostal) {
+		this.codePostal = codePostal;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
 	}
 
 	public Integer getNombreLogements() {

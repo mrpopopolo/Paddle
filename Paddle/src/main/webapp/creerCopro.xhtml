@@ -22,10 +22,20 @@
 						value="#{creationCoproBean.formCopro.nom}" />
 					<h:messages for="firstNameInput" />
 
-					<h:outputLabel value="Adresse : " />
-					<h:inputText size="12" id="lastNameInput"
-						value="#{creationCoproBean.formCopro.adresse}" />
-					<h:messages for="lastNameInput" />
+					<h:outputLabel value="Rue : " />
+					<h:inputText size="12" id="rueInput"
+						value="#{creationCoproBean.formCopro.rue}" />
+					<h:messages for="rueInput" />
+					
+					<h:outputLabel value="Code postal : " />
+					<h:inputText size="10" id="codePostalInput"
+						value="#{creationCoproBean.formCopro.codePostal}" />
+					<h:messages for="codePostalInput" />
+					
+					<h:outputLabel value="Ville : " />
+					<h:inputText size="12" id="villeInput"
+						value="#{creationCoproBean.formCopro.ville}" />
+					<h:messages for="villeInput" />
 
 					<h:outputLabel value="Nombre de logements : " />
 					<h:inputText size="15" id="nbLogementsInput"
