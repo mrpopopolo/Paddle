@@ -1,12 +1,17 @@
 package fr.isika.cda.projetfinal.repositories.copropriete;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
 import fr.isika.cda.projetfinal.entity.copropriete.MembreSyndic;
 import fr.isika.cda.projetfinal.entity.copropriete.Residence;
+import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.viewmodel.FormCopro;
 
 @Stateless
@@ -15,22 +20,22 @@ public class CoproRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-public Copropriete create(FormCopro formCopro) {
-		
+	public Copropriete create(FormCopro formCopro) {
+
 		Copropriete copropriete = new Copropriete();
-		
-		Residence residence =  new Residence();
+
+		Residence residence = new Residence();
 		residence.setAdresse(formCopro.getAdresse());
 		residence.setNom(formCopro.getNom());
 		residence.setNombreLogements(formCopro.getNombreLogements());
-		
+
 		copropriete.setResidence(residence);
-		
+
 		entityManager.persist(copropriete);
-		
+
 		return copropriete;
 	}
-	
+
 	public void initData() {
 		MembreSyndic membreSyndic = new MembreSyndic();
 		membreSyndic.setNom("MBA");
@@ -48,5 +53,22 @@ public Copropriete create(FormCopro formCopro) {
 
 	}
 
-	
+	// Methodes afficher liste
+
+	public Optional<Copropriete> findById(final Long id) {
+		try {
+			Copropriete copropriete = this.entityManager.createNamedQuery("Copro.findById", Copropriete.class)
+					.setParameter("id_param", id).getSingleResult();
+
+			return Optional.ofNullable(copropriete);
+		} catch (NoResultException ex) {
+			System.out.println("CoproRepository.findById() - not found : " + id);
+		}
+		return Optional.empty();
+	}
+
+	public List<Copropriete> findAll() {
+		return this.entityManager.createQuery("SELECT acc FROM Copropriete acc", Copropriete.class).getResultList();
+	}
+
 }
