@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" lang="en">
+
+<h:head>
+	<title>Copro accounts List</title>
+</h:head>
+<body>
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+			<h3>Accounts available</h3>
+			<hr />
+			<h:dataTable value="#{listeCoproManagedBean.listeCopros}" var="acc">
+
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+			#{acc.id}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Nom</f:facet>
+			#{acc.residence.nom}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Rue</f:facet>
+			#{acc.residence.rue}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Code postal</f:facet>
+			#{acc.residence.codePostal}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Ville</f:facet>
+			#{acc.residence.ville}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Nombre de logements</f:facet>
+			#{acc.residence.nombreLogements}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Blason</f:facet>
+			#{acc.identiteVisuelle.logo}
+		</h:column>
+
+
+
+			</h:dataTable>
+			<hr />
+			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
