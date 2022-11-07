@@ -2,9 +2,12 @@ package fr.isika.cda.projetfinal.repositories.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import fr.isika.cda.projetfinal.entity.service.Service;
@@ -17,16 +20,21 @@ public class ServiceRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
+	
 	public Service creer(FormService formService) {
 
+		// On fait le mapping des attributs entre l'objet qui provient de la couche
+		// présentation
+		// dans l'entité qu'on va persister
 		Service service = new Service();
-
 		service.setTypeService(formService.getTypeService());
 		service.setTitre(formService.getTitre());
 		service.setPrix(formService.getPrix());
 		service.setDateDebut(formService.getDateDebut());
 		service.setDateFin(formService.getDateFin());
 		service.setDescription(formService.getDescription());
+
+		// On persiste l'objet
 		entityManager.persist(service);
 		return service;
 	}
@@ -50,10 +58,31 @@ public class ServiceRepository {
 
 		service.setDateDebut(LocalDate.of(2022, 11, 02));
 		service.setDateFin(LocalDate.of(2023, 03, 01));
-		service.setProposeParLaCopro(true);
+		// service.setProposeParLaCopro(true);
 
 		entityManager.persist(service);
 
+	}
+
+	
+	public Optional<Service> findByTitre(String titre) {
+		try {
+			Service service = this.entityManager.createNamedQuery("Service.findByTitre", Service.class)
+					.setParameter("titre_param", titre)
+					.getSingleResult();
+
+			return Optional.ofNullable(service);
+		} catch (NoResultException ex) {
+			System.out.println("ServiceRepository.findByTitre() - not found : " + titre);
+		}
+		return Optional.empty();
+	}
+
+	
+	public List<Service> findAll() {
+		return this.entityManager
+				  .createQuery("SELECT acc FROM Service acc", Service.class)
+				  .getResultList();
 	}
 
 }
