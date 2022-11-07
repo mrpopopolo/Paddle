@@ -12,20 +12,25 @@
 		<ui:define name="content">
 			<h3>Accounts available</h3>
 			<hr />
+
 			<h:dataTable value="#{listeCoproManagedBean.listeCopros}" var="copro">
 
 				<h:column>
 					<f:facet name="header">Id</f:facet>
 			#{copro.id}
+
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Nom</f:facet>
+
 			#{copro.residence.nom}
+
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Rue</f:facet>
+
 			#{copro.residence.rue}
 		</h:column>
 
@@ -59,6 +64,7 @@
         action="#{listeCoproManagedBean.delete(copro.id)}" />
         </h:form>
 </h:column>
+
 
 
 
