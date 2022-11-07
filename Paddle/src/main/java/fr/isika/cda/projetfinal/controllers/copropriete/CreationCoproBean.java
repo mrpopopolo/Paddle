@@ -12,6 +12,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
 import fr.isika.cda.projetfinal.service.CoproService;
@@ -31,7 +32,6 @@ public class CreationCoproBean {
 
 	public String create() throws IOException {
 		//UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("createAccountForm");
-		
 		String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
 		
 		formCopro.setPathToBlason(cheminImage);

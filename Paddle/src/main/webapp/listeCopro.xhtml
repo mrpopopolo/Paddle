@@ -17,57 +17,48 @@
 
 				<h:column>
 					<f:facet name="header">Id</f:facet>
-			#{copro.id}
-
-		</h:column>
+					#{copro.id}
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Nom</f:facet>
-
-			#{copro.residence.nom}
-
-		</h:column>
+					#{copro.residence.nom}
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Rue</f:facet>
-
-			#{copro.residence.rue}
-		</h:column>
+					#{copro.residence.rue}
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Code postal</f:facet>
-			#{copro.residence.codePostal}
-		</h:column>
+					#{copro.residence.codePostal}
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Ville</f:facet>
-			#{copro.residence.ville}
-		</h:column>
+					#{copro.residence.ville}
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Nombre de logements</f:facet>
-			#{copro.residence.nombreLogements}
-		</h:column>
+					#{copro.residence.nombreLogements}
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Blason</f:facet>
-					<h:graphicImage url="#{copro.pathToBlason}"  />
-		
-		</h:column>
-		
-		<h:column>
-    <f:facet name="header">
-        <h:outputText value="Opérations" />
-    </f:facet>
-    <h:form>
-    <h:commandButton value="Supprimer"
-        action="#{listeCoproManagedBean.delete(copro.id)}" />
-        </h:form>
-</h:column>
+					<h:graphicImage url="#{copro.pathToBlason}" height="50px"/>
+				</h:column>
 
-
-
-
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Opérations" />
+					</f:facet>
+					<h:form>
+						<h:commandButton value="Supprimer"
+							action="#{listeCoproManagedBean.delete(copro.id)}" />
+					</h:form>
+				</h:column>
 
 			</h:dataTable>
 			<hr />
