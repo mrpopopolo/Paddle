@@ -27,8 +27,10 @@ public class CreationServiceBean {
 	public String creer() throws IOException {
 		UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("creerServiceForm");
 		
+		if(uploadedFile!=null) {
 		String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
 		formService.setImageService(cheminImage);
+		}
 		
 			serviceService.creer(formService);
 		

@@ -45,6 +45,8 @@ public class FormService {
 	private String description;
 	
 	private String imageService;
+	
+	//**********Getter/Setter************
 
 	public TypeService getTypeService() {
 		return typeService;

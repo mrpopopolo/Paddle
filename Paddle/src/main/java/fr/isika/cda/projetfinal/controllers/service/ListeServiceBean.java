@@ -33,4 +33,9 @@ public class ListeServiceBean {
 		return listeService;
 	}
 	
+	public String delete(Long id) {
+		serviceService.delete(id);
+		return "listeService?faces-redirect=true";
+	}
+	
 }

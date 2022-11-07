@@ -15,8 +15,9 @@ import javax.persistence.NamedQuery;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 
 @Entity
-@NamedQuery(name = "Service.findByTitre", query = "SELECT ua FROM Service ua WHERE ua.titre = :titre_param")
+@NamedQuery(name = "Service.findById", query = "SELECT ser FROM Service ser WHERE ser.id = :id_param")
 public class Service {
+	//******Attributs**********
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,11 +39,15 @@ public class Service {
 
 	@Enumerated(EnumType.STRING)
 	private TypeService typeService;
+	
+	//*****constructeur ********
 
 	public Service() {
 
 	}
 
+		//*******Getter/Setter****************
+	
 	public TypeService getTypeService() {
 		return typeService;
 	}
