@@ -95,7 +95,7 @@ public class UtilisateurRepository {
 	
 	public Optional<Utilisateur> findByEmail(final String email) {
 		try {
-			Utilisateur utilisateur = this.entityManager.createNamedQuery("Utilisateur.findByEmail", Utilisateur.class) // Email dans info perso 
+			Utilisateur utilisateur = this.entityManager.createNamedQuery("Utilisateur.findByEmail", Utilisateur.class) 
 					.setParameter("email_param", email)
 					.getSingleResult();
 			
@@ -112,5 +112,12 @@ public class UtilisateurRepository {
 				.getResultList();
 	}
 
-	
+	public void delete(String email) {
+		Utilisateur utilisateurASupprimer = findByEmail(email).get();
+		entityManager.remove(utilisateurASupprimer);
+		
+	}
+
+
+
 }
