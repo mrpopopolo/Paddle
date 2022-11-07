@@ -5,14 +5,14 @@
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
 
 <h:head>
-	<title>Liste des services</title>
+	<title>Copro accounts List</title>
 </h:head>
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-			<h3>Sevice available</h3>
+			<h3>Accounts available</h3>
 			<hr />
-			<h:dataTable value="#{listeServiceBean.listeService}" var="acc">
+			<h:dataTable value="#{listeCoproManagedBean.listeCopros}" var="acc">
 
 				<h:column>
 					<f:facet name="header">Id</f:facet>
@@ -20,29 +20,36 @@
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Titre</f:facet>
-			#{acc.titre}
+					<f:facet name="header">Nom</f:facet>
+			#{acc.residence.nom}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Description</f:facet>
-			#{acc.description}
+					<f:facet name="header">Rue</f:facet>
+			#{acc.residence.rue}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Date de début</f:facet>
-			#{acc.dateDebut}
+					<f:facet name="header">Code postal</f:facet>
+			#{acc.residence.codePostal}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Date de fin</f:facet>
-			#{acc.dateFin}
+					<f:facet name="header">Ville</f:facet>
+			#{acc.residence.ville}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Description</f:facet>
-			#{acc.description}
+					<f:facet name="header">Nombre de logements</f:facet>
+			#{acc.residence.nombreLogements}
 		</h:column>
+
+				<h:column>
+					<f:facet name="header">Blason</f:facet>
+			#{acc.identiteVisuelle.logo}
+		</h:column>
+
+
 
 			</h:dataTable>
 			<hr />

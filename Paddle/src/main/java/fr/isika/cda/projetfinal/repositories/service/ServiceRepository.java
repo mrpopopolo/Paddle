@@ -27,12 +27,14 @@ public class ServiceRepository {
 		// présentation
 		// dans l'entité qu'on va persister
 		Service service = new Service();
+		
 		service.setTypeService(formService.getTypeService());
 		service.setTitre(formService.getTitre());
 		service.setPrix(formService.getPrix());
 		service.setDateDebut(formService.getDateDebut());
 		service.setDateFin(formService.getDateFin());
 		service.setDescription(formService.getDescription());
+		service.setImageService(formService.getImageService());
 
 		// On persiste l'objet
 		entityManager.persist(service);
