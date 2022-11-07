@@ -39,4 +39,8 @@ public class CoproService {
 		return coproRepository.findAll();
 	}
 
+	public void delete(long id) {
+		coproRepository.delete(id);	
+	}
+
 }

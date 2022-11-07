@@ -29,5 +29,10 @@ public class ListeCoproManagedBean {
 	public List<Copropriete> getListeCopros() {
 		return listeCopros;
 	}
+	
+	public String delete(long id) {
+		coproService.delete(id);
+		return "listeCopro?faces-redirect=true";
+	}
 
 }

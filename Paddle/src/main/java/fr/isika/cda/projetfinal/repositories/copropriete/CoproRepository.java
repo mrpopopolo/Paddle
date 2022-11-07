@@ -33,7 +33,7 @@ public class CoproRepository {
 
 		copropriete.setResidence(residence);
 		copropriete.setPathToBlason(formCopro.getPathToBlason());
-		
+
 		entityManager.persist(copropriete);
 
 		return copropriete;
@@ -62,7 +62,7 @@ public class CoproRepository {
 
 	public Optional<Copropriete> findById(final Long id) {
 		try {
-			Copropriete copropriete = this.entityManager.createNamedQuery("Copro.findById", Copropriete.class)
+			Copropriete copropriete = this.entityManager.createNamedQuery("Copropriete.findById", Copropriete.class)
 					.setParameter("id_param", id).getSingleResult();
 
 			return Optional.ofNullable(copropriete);
@@ -73,7 +73,13 @@ public class CoproRepository {
 	}
 
 	public List<Copropriete> findAll() {
-		return this.entityManager.createQuery("SELECT acc FROM Copropriete acc", Copropriete.class).getResultList();
+		return this.entityManager.createQuery("SELECT copro FROM Copropriete copro", Copropriete.class).getResultList();
+	}
+
+	// Methode supprimer
+	public void delete(long id) {
+		Copropriete coproprieteASupprimer = findById(id).get();
+		entityManager.remove(coproprieteASupprimer);
 	}
 
 }

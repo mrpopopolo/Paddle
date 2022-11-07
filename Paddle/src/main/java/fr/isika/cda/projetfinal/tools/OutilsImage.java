@@ -20,16 +20,17 @@ public class OutilsImage {
 		System.out.println(nomFichierDecoupe.length);
 		String nomFichier = UUID.randomUUID().toString() + "." + nomFichierDecoupe[nomFichierDecoupe.length-1];
 		
-		Path chemin = Paths.get("paddlePics", "");
+		String dataDir = System.getProperty("jboss.server.data.dir") + "/paddlePics/";
+		Path chemin = Paths.get(dataDir, "");
 		if(!Files.exists(chemin)) {
 			Files.createDirectories(chemin);
 		}
 		
-		fichierSauvegarde = new File("paddlePics/", nomFichier);
+		fichierSauvegarde = new File(dataDir, nomFichier);
 		InputStream input = fichierEnvoye.getInputStream();
 		System.out.println(fichierSauvegarde.getAbsolutePath());
 		Files.copy(input, fichierSauvegarde.toPath());
-		return fichierSauvegarde.getAbsolutePath();
+		return dataDir+nomFichier;
 	}
 	
 	//public static void remplacerImage(Part fichierEnvoye)
