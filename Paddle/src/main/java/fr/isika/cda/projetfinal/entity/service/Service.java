@@ -28,8 +28,10 @@ public class Service {
 
 	private LocalDate dateDebut;
 	private LocalDate dateFin;
+	private String imageService;
 	// private Boolean proposeParLaCopro;// discuter avec les autres pour son
 	// implémentation dans creerService
+
 
 	@ManyToOne
 	private Utilisateur createurService;
@@ -100,5 +102,11 @@ public class Service {
 	public void setCreateurService(Utilisateur createurService) {
 		this.createurService = createurService;
 	}
+	public String getImageService() {
+		return imageService;
+	}
 
+	public void setImageService(String imageService) {
+		this.imageService = imageService;
+	}
 }

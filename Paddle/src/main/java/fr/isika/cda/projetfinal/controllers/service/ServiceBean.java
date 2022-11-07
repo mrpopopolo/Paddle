@@ -16,6 +16,8 @@ public class ServiceBean {
 	@Inject
 	private ServiceRepository repository;
 	
+	private String msg;
+	
 	@PostConstruct
 	private void init() {
 		
@@ -23,5 +25,12 @@ public class ServiceBean {
 		
 	}
 	
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
 
 }

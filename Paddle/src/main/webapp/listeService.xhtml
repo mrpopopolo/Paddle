@@ -8,42 +8,46 @@
 	<title>Liste des services</title>
 </h:head>
 <body>
-	<h3>Sevice available</h3>
-	<hr />
-	<h:dataTable value="#{listeServiceBean.listeService}" var="acc">
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+			<h3>Sevice available</h3>
+			<hr />
+			<h:dataTable value="#{listeServiceBean.listeService}" var="acc">
 
-		<h:column>
-			<f:facet name="header">Id</f:facet>
+				<h:column>
+					<f:facet name="header">Id</f:facet>
 			#{acc.id}
 		</h:column>
 
-		<h:column>
-			<f:facet name="header">Titre</f:facet>
+				<h:column>
+					<f:facet name="header">Titre</f:facet>
 			#{acc.titre}
 		</h:column>
 
-		<h:column>
-			<f:facet name="header">Description</f:facet>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
 			#{acc.description}
 		</h:column>
 
-		<h:column>
-			<f:facet name="header">Date de début</f:facet>
+				<h:column>
+					<f:facet name="header">Date de début</f:facet>
 			#{acc.dateDebut}
 		</h:column>
 
-		<h:column>
-			<f:facet name="header">Date de fin</f:facet>
+				<h:column>
+					<f:facet name="header">Date de fin</f:facet>
 			#{acc.dateFin}
 		</h:column>
 
-		<h:column>
-			<f:facet name="header">Description</f:facet>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
 			#{acc.description}
 		</h:column>
 
-	</h:dataTable>
-	<hr />
-	<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+			</h:dataTable>
+			<hr />
+			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+		</ui:define>
+	</ui:composition>
 </body>
 </html>

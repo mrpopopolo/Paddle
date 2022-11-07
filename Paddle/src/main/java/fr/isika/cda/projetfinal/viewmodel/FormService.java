@@ -43,6 +43,8 @@ public class FormService {
 	@NotNull(message = "Ne doit pas être null")
 	@Size(min = 1, max = 250, message = "Doit être entre 1 et 250 car.")
 	private String description;
+	
+	private String imageService;
 
 	public TypeService getTypeService() {
 		return typeService;
@@ -90,6 +92,14 @@ public class FormService {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getImageService() {
+		return imageService;
+	}
+
+	public void setImageService(String imageService) {
+		this.imageService = imageService;
 	}
 
 }
