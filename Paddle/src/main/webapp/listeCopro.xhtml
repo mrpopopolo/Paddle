@@ -12,42 +12,54 @@
 		<ui:define name="content">
 			<h3>Accounts available</h3>
 			<hr />
-			<h:dataTable value="#{listeCoproManagedBean.listeCopros}" var="acc">
+			<h:dataTable value="#{listeCoproManagedBean.listeCopros}" var="copro">
 
 				<h:column>
 					<f:facet name="header">Id</f:facet>
-			#{acc.id}
+			#{copro.id}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Nom</f:facet>
-			#{acc.residence.nom}
+			#{copro.residence.nom}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Rue</f:facet>
-			#{acc.residence.rue}
+			#{copro.residence.rue}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Code postal</f:facet>
-			#{acc.residence.codePostal}
+			#{copro.residence.codePostal}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Ville</f:facet>
-			#{acc.residence.ville}
+			#{copro.residence.ville}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Nombre de logements</f:facet>
-			#{acc.residence.nombreLogements}
+			#{copro.residence.nombreLogements}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Blason</f:facet>
-			#{acc.identiteVisuelle.logo}
+					<h:graphicImage url="#{copro.pathToBlason}"  />
+		
 		</h:column>
+		
+		<h:column>
+    <f:facet name="header">
+        <h:outputText value="Opérations" />
+    </f:facet>
+    <h:form>
+    <h:commandButton value="Supprimer"
+        action="#{listeCoproManagedBean.delete(copro.id)}" />
+        </h:form>
+</h:column>
+
 
 
 

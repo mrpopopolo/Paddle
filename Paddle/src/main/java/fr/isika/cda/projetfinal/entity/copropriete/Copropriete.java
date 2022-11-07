@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
+@NamedQuery(name = "Copropriete.findById", query = "SELECT copro FROM Copropriete copro WHERE copro.id = :id_param")
 public class Copropriete {
 
 	// ***** Variables *****
