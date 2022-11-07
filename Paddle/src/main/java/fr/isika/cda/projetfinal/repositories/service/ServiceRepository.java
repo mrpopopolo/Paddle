@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
+//import fr.isika.cda.javaee.login.model.User;
 import fr.isika.cda.projetfinal.entity.service.Service;
 import fr.isika.cda.projetfinal.entity.service.TypeService;
 import fr.isika.cda.projetfinal.viewmodel.FormService;
@@ -49,7 +50,7 @@ public class ServiceRepository {
 		service.setDescription("Je propose des cours de soutien en Maths");
 
 		// Exemples :
-		service.setPrix(new BigDecimal(25.00));
+		//service.setPrix(new BigDecimal(25.00));
 
 		// best way
 		service.setPrix(BigDecimal.valueOf(25.00));
@@ -67,15 +68,15 @@ public class ServiceRepository {
 	}
 
 	
-	public Optional<Service> findByTitre(String titre) {
+	public Optional<Service> findById(Long id) {
 		try {
-			Service service = this.entityManager.createNamedQuery("Service.findByTitre", Service.class)
-					.setParameter("titre_param", titre)
+			Service service = this.entityManager.createNamedQuery("Service.findById", Service.class)
+					.setParameter("id_param", id)
 					.getSingleResult();
 
 			return Optional.ofNullable(service);
 		} catch (NoResultException ex) {
-			System.out.println("ServiceRepository.findByTitre() - not found : " + titre);
+			System.out.println("ServiceRepository.findById() - not found : " + id);
 		}
 		return Optional.empty();
 	}
@@ -86,5 +87,8 @@ public class ServiceRepository {
 				  .createQuery("SELECT acc FROM Service acc", Service.class)
 				  .getResultList();
 	}
-
+	public void delete(Long id) {
+		Service serviceASupprimer = findById(id).get();
+		entityManager.remove(serviceASupprimer);
+	}
 }
