@@ -37,4 +37,11 @@ public class UtilisateurService {
 	public List<Utilisateur> findAll() {
 		return utilisateurRepository.findAll();
 	}
+
+	public void delete(String email) {
+		utilisateurRepository.delete(email);
+		
+	}
+
+	
 }
