@@ -7,6 +7,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
 import fr.isika.cda.projetfinal.service.ServiceService;
@@ -27,8 +28,10 @@ public class CreationServiceBean {
 	public String creer() throws IOException {
 		UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("creerServiceForm");
 		
+		if(uploadedFile!=null) {
 		String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
 		formService.setImageService(cheminImage);
+		}
 		
 			serviceService.creer(formService);
 		
