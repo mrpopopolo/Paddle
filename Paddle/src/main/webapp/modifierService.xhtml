@@ -31,34 +31,29 @@
 			<h:messages for="typeServiceInput" />-->
 
 					<h:outputLabel value="Titre : " />
-					<h:inputText size="12" id="titreInput"
-						a:placeholder="#{creationServiceBean.formService.titre}"                  
+					<h:inputText size="12" id="titreInput"						                 
 						value="#{modifierService.service.titre}" />
 					<h:messages for="titreInput" />
 
 					<h:outputLabel value="Prix : " />
-					<h:inputText size="15" id="prixInput"
-						a:placeholder="#{creationServiceBean.formService.prix}"                                                               
+					<h:inputText size="15" id="prixInput"					                                                               
 						value="#{modifierService.service.prix}" />
 					<h:messages for="prixInput" />
 
 					<h:outputLabel value="Date de début : " />
-					<h:inputText a:placeholder="#{creationServiceBean.formService.dateDebut}"
-						value="#{modifierService.service.dateDebut}">
+					<h:inputText value="#{modifierService.service.dateDebut}">
 						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
 					</h:inputText>
 					<h:messages for="dateDebutInput" />
 
 					<h:outputLabel value="Date de fin : " />
-					<h:inputText a:placeholder="#{creationServiceBean.formService.dateFin}"
-						value="#{modifierService.service.dateFin}">
+					<h:inputText value="#{modifierService.service.dateFin}">
 						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
 					</h:inputText>
 					<h:messages for="dateFinInput" />
 
 					<h:outputLabel value="Description : " />
 					<h:inputTextarea size="250" id="descriptionInput"
-						a:placeholder="#{creationServiceBean.formService.description}"
 						value="#{modifierService.service.description}" />
 					<h:messages for="descriptionInput" />
 
