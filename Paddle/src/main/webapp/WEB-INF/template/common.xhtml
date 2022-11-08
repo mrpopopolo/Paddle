@@ -15,8 +15,7 @@
 	
 </h:head>
 <h:body>
-	<div
-		style="border-width: 2px; border-color: #1E3D59; border-style: solid; background-color: #1E3D59;">
+	<div class="header">
 		<ui:insert name="header">
 			<ui:include src="header.xhtml" />
 
@@ -24,16 +23,16 @@
 	</div>
 	<br />
 
-	<div
-		style="border-width: 2px; border-color: black; border-style: solid; background-color: #F5F0E1;">
+	<div class="body"
+		style="border-width: 2px; border-color: black; border-style: solid;">
 		<ui:insert name="content">
 			<ui:include src="contents.xhtml" />
 		</ui:insert>
 	</div>
 	<br />
 
-	<div
-		style="border-width: 2px; border-color: red; border-style: solid; background-color: #FFC13B;">
+	<div class="footer"
+		style="border-width: 2px; border-color: red; border-style: solid;">
 		<ui:insert name="footer">
 			<ui:include src="footer.xhtml" />
 		</ui:insert>
