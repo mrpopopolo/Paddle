@@ -29,4 +29,10 @@ public class ListeUtilisateursManagedBean {
 	public List<Utilisateur> getListeUtilisateurs() {
 		return listeUtilisateurs;
 	}
+	
+	public String delete(String email) {
+		utilisateurService.delete(email);
+		return "listeUtilisateurs?faces-redirect=true";
+	}
+
 }

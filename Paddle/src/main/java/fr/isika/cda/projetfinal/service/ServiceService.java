@@ -29,6 +29,9 @@ public class ServiceService {
 
 	public List<Service> findAll() {
 		return serviceRepository.findAll();
-
+	}
+	
+	public void delete(Long id) {
+		serviceRepository.delete(id);
 	}
 }

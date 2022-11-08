@@ -12,36 +12,46 @@
 		<ui:define name="content">
 			<h3>Sevice available</h3>
 			<hr />
-			<h:dataTable value="#{listeServiceBean.listeService}" var="acc">
+			<h:dataTable value="#{listeServiceBean.listeService}" var="ser">
 
 				<h:column>
 					<f:facet name="header">Id</f:facet>
-			#{acc.id}
+			#{ser.id}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Titre</f:facet>
-			#{acc.titre}
+			#{ser.titre}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Description</f:facet>
-			#{acc.description}
+			#{ser.description}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Date de début</f:facet>
-			#{acc.dateDebut}
+			#{ser.dateDebut}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Date de fin</f:facet>
-			#{acc.dateFin}
+			#{ser.dateFin}
 		</h:column>
 
 				<h:column>
 					<f:facet name="header">Description</f:facet>
-			#{acc.description}
+			#{ser.description}
+		</h:column>
+
+		<h:column>
+				<f:facet name="header">
+					<h:outputText value="Opérations" />
+				</f:facet>
+				<h:form>
+					<h:commandButton value="Supprimer"
+						action="#{listeServiceBean.delete(ser.id)}" />
+				</h:form>
 		</h:column>
 
 			</h:dataTable>
