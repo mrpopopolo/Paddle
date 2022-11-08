@@ -14,17 +14,12 @@
 			<hr />
 			<h:form id="creerServiceForm" enctype="multipart/form-data">
 				<h:panelGrid columns="3">
-
-					<!--<h:outputLabel value="Type de service : " />
-			<h:inputText size="10" id="typeServiceInput"
-				value="#{creationServiceBean.formService.typeService}" />
-			<h:messages for="typeServiceInput" />
-			
-			<h:outputLabel value="Type de service : " />
-			<h:selectOneMenu value="#{creationServiceBean.formService.typeService}" >
-   			<f:selectItems value="#{data.statuses}" />
-			</h:selectOneMenu>
-			<h:messages for="typeServiceInput" />-->
+					
+					<h:outputLabel value="Type de service : " />
+					<h:selectOneMenu value="#{creationServiceBean.formService.typeService}">
+						<f:selectItems value="#{creationServiceBean.typesService}"/>
+					</h:selectOneMenu>
+					<h:messages for="typeServiceInput" />
 
 					<h:outputLabel value="Titre : " />
 					<h:inputText size="12" id="titreInput"

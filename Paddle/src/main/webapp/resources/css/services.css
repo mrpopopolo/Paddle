@@ -1,0 +1,35 @@
+.services {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.services-service {
+	border: solid 5px white;
+	border-radius: 10px;
+	padding: 10px 0;
+	margin-bottom: 30px;
+	width: 500px;
+	text-align: center;
+}
+
+.service-SERVICE {
+	background-color: silver;
+}
+
+.service-MATERIEL {
+	background-color: aqua;
+}
+
+.service-HEBERGEMENT {
+	background-color: gray;
+}
+
+.service-PARKING {
+	background-color: olive;
+}
+
+.service-EVENEMENT {
+	background-color: yellow;
+}

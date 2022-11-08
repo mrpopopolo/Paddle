@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
+import fr.isika.cda.projetfinal.entity.service.TypeService;
 import fr.isika.cda.projetfinal.service.ServiceService;
 import fr.isika.cda.projetfinal.tools.OutilsImage;
 import fr.isika.cda.projetfinal.viewmodel.FormService;
@@ -23,18 +24,18 @@ public class CreationServiceBean {
 
 	private FormService formService = new FormService();
 	
+	private TypeService[] typesService;
+	
 	private Part uploadedFile;
 
 	public String creer() throws IOException {
 		UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("creerServiceForm");
 		
-		if(uploadedFile!=null) {
-		String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
-		formService.setImageService(cheminImage);
+		if(uploadedFile != null) {
+			String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
+			formService.setImageService(cheminImage);
 		}
-		
-			serviceService.creer(formService);
-		
+		serviceService.creer(formService);
 
 		return "index";
 	}
@@ -54,5 +55,13 @@ public class CreationServiceBean {
 	public void setUploadedFile(Part uploadedFile) {
 		this.uploadedFile = uploadedFile;
 	}
+	
+	public void setTypesService(TypeService[] typesService) {
+		this.typesService = typesService;
+	}
+
+	public TypeService[] getTypesService() {
+        return TypeService.values();
+    }
 
 }

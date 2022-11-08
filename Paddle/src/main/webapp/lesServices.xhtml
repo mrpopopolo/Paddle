@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" lang="en">
+
+<h:head>
+	<title>Liste des services</title>
+</h:head>
+<body>
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+			<h1>Les Services</h1>
+			<hr />
+			
+			<div class="services">
+			<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
+				<div class="services-service service-#{serv.typeService}">
+					<div class="services-service-img">
+						<h:graphicImage url="#{serv.imageService}" height="150px"/>
+					</div>
+					<div class="services-service-text">
+						<h2>#{serv.titre}</h2>
+						<p>#{serv.description}</p>
+						<h4>#{serv.prix}€</h4>
+						<h4>#{serv.dateDebut}-#{serv.dateFin}</h4>
+						<h:form>
+							<h:commandButton value="Réserver" action="#{listeServiceBean.reserver(serv.id)}" />
+						</h:form>
+					</div>
+				</div>
+			</ui:repeat>
+			
+			</div>
+			<hr />
+			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
