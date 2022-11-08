@@ -20,6 +20,7 @@
 	 color:#1E3D59;
 }
 
+
 .formulaire {
   margin-top: 20px;
   background-color: #F5F0E1;
@@ -28,7 +29,6 @@
   min-width: 300px;
   width:50%;
   box-shadow: 5px 5px 0px #aaa; 
-  
 }
 
 form .inputs {
@@ -58,8 +58,7 @@ form .creerCopro{
   cursor:pointer;
   margin:5px;
 }
-
-
 /*--------------------------------------------------------------
 #  formulaire création utilisateur
 --------------------------------------------------------------*/
+
