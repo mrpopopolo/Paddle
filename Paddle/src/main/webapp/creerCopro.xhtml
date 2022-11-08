@@ -2,9 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
+	
 
-
+<head>
+<meta charset="utf-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+content=""<h:outputStylesheet library="css" name="formulaire.css" />
+</head>
 
 <h:head>
 	<title>Création d'une copropriété</title>
@@ -12,46 +19,52 @@
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-			<h3>Créer une copropriété</h3>
-	    <hr />
-	    <h:form id="createAccountForm" enctype="multipart/form-data">
-		  <h:panelGrid columns="3">
-
-					<h:outputLabel value="Nom : " />
-					<h:inputText size="10" id="firstNameInput"
+		
+		<div class="formulaire">
+	   
+	    <h:form class="titreFormulaire" enctype="multipart/form-data">
+	    	<h3>Créer une copropriété</h3>
+	    	
+	    	
+	    	<div class="inputs">
+					<h:inputText class="champCopro"  size="10" id="firstNameInput"
+					a:placeholder="Nom"
 						value="#{creationCoproBean.formCopro.nom}" />
 					<h:messages for="firstNameInput" />
-
-					<h:outputLabel value="Rue : " />
-					<h:inputText size="12" id="rueInput"
+				
+					<h:inputText class="champCopro" size="12" id="rueInput"
+					a:placeholder="Rue"
 						value="#{creationCoproBean.formCopro.rue}" />
 					<h:messages for="rueInput" />
 					
-					<h:outputLabel value="Code postal : " />
-					<h:inputText size="10" id="codePostalInput"
+					<h:inputText class="champCopro" size="10" id="codePostalInput"
+					a:placeholder="Code postal"
 						value="#{creationCoproBean.formCopro.codePostal}" />
 					<h:messages for="codePostalInput" />
 					
-					<h:outputLabel value="Ville : " />
-					<h:inputText size="12" id="villeInput"
+					<h:inputText class="champCopro" size="12" id="villeInput"
+					a:placeholder="Ville"
 						value="#{creationCoproBean.formCopro.ville}" />
 					<h:messages for="villeInput" />
 
-					<h:outputLabel value="Nombre de logements : " />
-					<h:inputText size="15" id="nbLogementsInput"
+					<h:inputText class="champCopro" size="15" id="nbLogementsInput"
+					a:placeholder="Nombre de logements"
 						value="#{creationCoproBean.formCopro.nombreLogements}" />
 					<h:messages for="nbLogementsInput" />
 
-			<h:outputLabel value="Blason : " />
-			<h:inputFile value="#{creationCoproBean.uploadedFile}">
-    		</h:inputFile>
-
-					<span></span>
-					<h:commandButton value="Créer ma copropriété"
+					<h:outputLabel value="Blason : " />
+					<h:inputFile value="#{creationCoproBean.uploadedFile}">
+    			</h:inputFile>
+	    	</div>
+			
+			<div align="center">
+					<h:commandButton class="creerCopro" value="Créer ma copropriété"
 						action="#{creationCoproBean.create()}" />
-				</h:panelGrid>
-
-			</h:form>
+			</div>
+			
+				
+		</h:form>
+		</div>
 			<hr />
 			<h:link outcome="index">Revenir à l'accueil</h:link>
 		</ui:define>
