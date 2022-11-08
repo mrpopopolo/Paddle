@@ -25,16 +25,11 @@ content=""
 					class="titreFormulaire">
 					<h3>Créer un service</h3>
 
-					<!--<h:outputLabel value="Type de service : " />
-			<h:inputText size="10" id="typeServiceInput"
-				value="#{creationServiceBean.formService.typeService}" />
-			<h:messages for="typeServiceInput" />
-			
-			<h:outputLabel value="Type de service : " />
-			<h:selectOneMenu value="#{creationServiceBean.formService.typeService}" >
-   			<f:selectItems value="#{data.statuses}" />
-			</h:selectOneMenu>
-			<h:messages for="typeServiceInput" />-->
+			  <h:outputLabel value="Type de service : " />
+					<h:selectOneMenu value="#{creationServiceBean.formService.typeService}">
+						<f:selectItems value="#{creationServiceBean.typesService}"/>
+					</h:selectOneMenu>
+					<h:messages for="typeServiceInput" />
 					<div class="inputs">
 						<h:inputText class="champCopro" size="12" id="titreInput"
 							a:placeholder="Titre"

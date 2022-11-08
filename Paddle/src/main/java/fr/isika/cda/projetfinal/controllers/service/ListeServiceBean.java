@@ -42,4 +42,9 @@ public class ListeServiceBean {
 		return "modifierService?serviceId="+id;
 	}
 	
+	public String reserver(Long id) {
+		//TODO something
+		return "reserverService";
+	}
+	
 }
