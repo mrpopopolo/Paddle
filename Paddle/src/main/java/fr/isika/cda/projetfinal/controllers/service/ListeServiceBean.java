@@ -38,4 +38,8 @@ public class ListeServiceBean {
 		return "listeService?faces-redirect=true";
 	}
 	
+	public String modifier(Long id) {
+		return "modifierService?serviceId="+id;
+	}
+	
 }
