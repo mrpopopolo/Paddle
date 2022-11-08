@@ -34,4 +34,8 @@ public class ServiceService {
 	public void delete(Long id) {
 		serviceRepository.delete(id);
 	}
+	
+	public void modifier(Service service) {
+		serviceRepository.modifier(service);
+	}
 }

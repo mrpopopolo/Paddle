@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<h:head>
+	<title>Modifier service</title>
+
+</h:head>
+<body>
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+			<h:outputLabel value="Service Id : " />
+			<h:outputText value="#{modifierService.service.id}" />
+
+			<h:form id="modifierServiceForm" enctype="multipart/form-data">
+				<h:panelGrid columns="3">
+
+					<!--<h:outputLabel value="Type de service : " />
+			<h:inputText size="10" id="typeServiceInput"
+				value="#{creationServiceBean.formService.typeService}" />
+			<h:messages for="typeServiceInput" />
+			
+			<h:outputLabel value="Type de service : " />
+			<h:selectOneMenu value="#{creationServiceBean.formService.typeService}" >
+   			<f:selectItems value="#{data.statuses}" />
+			</h:selectOneMenu>
+			<h:messages for="typeServiceInput" />-->
+
+					<h:outputLabel value="Titre : " />
+					<h:inputText size="12" id="titreInput"
+						a:placeholder="#{creationServiceBean.formService.titre}"                  
+						value="#{modifierService.service.titre}" />
+					<h:messages for="titreInput" />
+
+					<h:outputLabel value="Prix : " />
+					<h:inputText size="15" id="prixInput"
+						a:placeholder="#{creationServiceBean.formService.prix}"                                                               
+						value="#{modifierService.service.prix}" />
+					<h:messages for="prixInput" />
+
+					<h:outputLabel value="Date de début : " />
+					<h:inputText a:placeholder="#{creationServiceBean.formService.dateDebut}"
+						value="#{modifierService.service.dateDebut}">
+						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
+					</h:inputText>
+					<h:messages for="dateDebutInput" />
+
+					<h:outputLabel value="Date de fin : " />
+					<h:inputText a:placeholder="#{creationServiceBean.formService.dateFin}"
+						value="#{modifierService.service.dateFin}">
+						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
+					</h:inputText>
+					<h:messages for="dateFinInput" />
+
+					<h:outputLabel value="Description : " />
+					<h:inputTextarea size="250" id="descriptionInput"
+						a:placeholder="#{creationServiceBean.formService.description}"
+						value="#{modifierService.service.description}" />
+					<h:messages for="descriptionInput" />
+
+					<h:outputLabel value="Image : " />
+					<h:inputFile value="#{creationServiceBean.uploadedFile}">
+					</h:inputFile>
+
+					<span></span>
+					<h:commandButton value="Modifier mon service"
+						action="#{modifierService.modifier(modifierService.service)}" />
+				</h:panelGrid>
+
+			</h:form>
+			<hr />
+			<h:link outcome="listeService.xhtml">Revenir à liste de services</h:link>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

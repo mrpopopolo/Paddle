@@ -91,4 +91,10 @@ public class ServiceRepository {
 		Service serviceASupprimer = findById(id).get();
 		entityManager.remove(serviceASupprimer);
 	}
+
+	public void modifier(Service service) {
+		entityManager.merge(service);
+	}
+
+	
 }

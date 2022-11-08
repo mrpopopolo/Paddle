@@ -23,6 +23,11 @@
 					<f:facet name="header">Titre</f:facet>
 			#{ser.titre}
 		</h:column>
+		
+			<h:column>
+					<f:facet name="header">Prix</f:facet>
+			#{ser.prix}
+		</h:column>
 
 				<h:column>
 					<f:facet name="header">Description</f:facet>
@@ -49,6 +54,10 @@
 					<h:outputText value="Opérations" />
 				</f:facet>
 				<h:form>
+					<h:commandButton value="Modifier"
+						action="#{modifierService.modifier(ser.id)}">
+						<f:param name="serviceId" value="#{ser.id}"/>
+					</h:commandButton>
 					<h:commandButton value="Supprimer"
 						action="#{listeServiceBean.delete(ser.id)}" />
 				</h:form>
