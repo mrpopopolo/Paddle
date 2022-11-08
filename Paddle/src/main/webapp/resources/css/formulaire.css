@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-#  formulaire
+#  formulaire création copro
 --------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -11,6 +11,8 @@
 	align-items: center;
 	flex-direction: columns;
 	font-family: 'Roboto', sans-serif;
+	 margin-left: auto;
+   margin-right: auto;
 }
 
 .titreFormulaire{
@@ -18,14 +20,15 @@
 	 color:#1E3D59;
 }
 
-form {
+
+.formulaire {
   margin-top: 20px;
   background-color: #F5F0E1;
   padding: 40px 60px;
   border-radius: 10px;
   min-width: 300px;
   width:50%;
-  
+  box-shadow: 5px 5px 0px #aaa; 
 }
 
 form .inputs {
@@ -55,3 +58,7 @@ form .creerCopro{
   cursor:pointer;
   margin:5px;
 }
+/*--------------------------------------------------------------
+#  formulaire création utilisateur
+--------------------------------------------------------------*/
+
