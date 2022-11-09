@@ -11,7 +11,7 @@
 content=""<h:outputStylesheet library="css" name="formulaire.css" />
 </head>
 <h:head>
-	<title>Création d'un compte utilisateur</title>
+	<title>Modification d'un compte utilisateur</title>
 </h:head>
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
@@ -19,39 +19,30 @@ content=""<h:outputStylesheet library="css" name="formulaire.css" />
 		
 			<div class="formulaire">
 			<h:form id="createAccountForm" class="titreFormulaire">
-			<h3>Créer un compte utilisateur</h3>
+			<h3>Modifier un compte utilisateur</h3>
 			
 			
 			
 				<div class="inputs">
 					<h:inputText class="champCopro" size="10" id="firstNameInput"
 					a:placeholder="Nom"
-						value="#{}" />
+						value="#{modifierUtilisateur.utilisateur.infosPerso.nom}" />
 					<h:messages for="firstNameInput" />
 
 					<h:inputText class="champCopro" size="12" id="lastNameInput"
 					a:placeholder="Prenom"
-						value="#{creationUtilisateurBean.formCompte.prenom}" />
+						value="#{modifierUtilisateur.utilisateur.infosPerso.prenom}" />
 					<h:messages for="lastNameInput" />
 
 					<h:inputText class="champCopro" size="15" id="emailInput"
 					a:placeholder="Email"
-						value="#{creationUtilisateurBean.formCompte.email}" />
+						value="#{modifierUtilisateur.utilisateur.compte.email}" />
 					<h:messages for="emailInput" />
 
-					<h:inputSecret class="champCopro" size="8" id="passwordInput"
-					a:placeholder="Mot de passe"
-						value="#{creationUtilisateurBean.formCompte.motDePasse}" />
-					<h:messages for="passwordInput" />
-
-					<h:inputSecret class="champCopro" size="8" id="confirmPasswordInput"
-					a:placeholder="Confirmer le mot de passe"
-						value="#{creationUtilisateurBean.formCompte.confirmerMdp}" />
-					<h:messages for="confirmPasswordInput" />
 				</div>
 					
-					<h:commandButton class="creerCopro" value="Créer mon compte"
-						action="#{creationUtilisateurBean.create()}" />
+					<h:commandButton class="modifierUtilisateur" value="Modifier l'utilisateur"
+						action="#{modifierUtilisateur.modifier(modifierUtilisateur.utilisateur)}" />
 			
 
 			</h:form>

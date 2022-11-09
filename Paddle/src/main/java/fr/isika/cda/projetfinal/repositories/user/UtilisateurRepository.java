@@ -117,6 +117,10 @@ public class UtilisateurRepository {
 		entityManager.remove(utilisateurASupprimer);
 		
 	}
+	
+	public void modifier(Utilisateur utilisateur) {
+		entityManager.merge(utilisateur);
+	}
 
 
 

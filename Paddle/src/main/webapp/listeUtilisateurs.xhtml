@@ -31,10 +31,13 @@
 			<f:facet name="header">Email</f:facet>
 			#{acc.compte.email}
 		</h:column>
-		<h:column>
+		<h:column rows="2">
 			<f:facet name="header">Actions</f:facet>
 			<h:form>
 				<h:commandButton value ="Supprimer" action="#{listeUtilisateursManagedBean.delete(acc.compte.email)}"/>
+			</h:form>
+			<h:form>
+				<h:commandButton value ="Modifier" action="#{modifierUtilisateur.modifier(acc.compte.email)}"/>
 			</h:form>
 		</h:column>
 		
