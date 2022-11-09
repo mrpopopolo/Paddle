@@ -11,15 +11,16 @@
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-			<h1>
-				<h:outputLabel value="#{welcomeBean.status}" />
-			</h1>
-			<hr />
-
-			<h3>Menu</h3>
+	
+		<div class="imgCopro" >
+		
+		</div>
+			
+		<div class="actu">
+			<h3>Actualités de la copropriété</h3>
 			<hr width="150" align="left" />
 			<br />
-
+		</div>
 			<h:link outcome="creerUtilisateur.xhtml">New User</h:link>
 			<br />
 			<h:link outcome="creerCopro.xhtml">New Copro</h:link>
