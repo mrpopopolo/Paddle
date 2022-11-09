@@ -2,31 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-
+		xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html" lang="en">
+<head>
+<meta charset="utf-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+content=<h:outputStylesheet library="css" name="formulaire.css" />
+</head>
 <h:head>
-	<title>connexion</title>
+	<title>Connexion</title>
 </h:head>
 <body>
-	<h1>Se Connecter</h1>
-	<hr />
-	<h:form id="loginForm">
-		<h:panelGrid columns="3">
-
-			<h:outputLabel value="Nom d'utilisateur : " />
-			<h:inputText id="emailInput" size="10" value="#{loginBean.email}" />
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+		
+			<div class="formulaire">
+			<h:form id="createAccountForm" class="titreFormulaire">
+			<h3>Se Connecter</h3>
+			
+			
+			
+				<div class="inputs">
+					
+					
+			<h:inputText class="champCopro" id="emailInput" size="10" value="#{loginBean.email}"
+			a:placeholder="Nom" />
 			<h:messages for="emailInput" />
 			
-			<h:outputLabel value="Mot de passe : " />
-			<h:inputSecret id="passwordInput" size="10" value="#{loginBean.motDePasse}"/>
-			<h:messages for="passwordInput" />
 			
-			<span></span>
-			<h:commandButton value="Se connecter" action="#{loginBean.doLogin()}"/>
-		</h:panelGrid>
-	</h:form>
+			<h:inputSecret class="champCopro" id="passwordInput" size="10" value="#{loginBean.motDePasse}"
+			a:placeholder="Mot de passe"/>
+			<h:messages for="passwordInput" />
+				</div>
+					
+				<h:commandButton class="creerCopro" value="Se connecter" action="#{loginBean.doLogin()}"/>
 
-	<hr />
-	<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+			</h:form>
+			</div>
+			
+			<h:link outcome="index">Revenir à l'accueil</h:link>
+			
+		</ui:define>
+	</ui:composition>
 </body>
 </html>
+
