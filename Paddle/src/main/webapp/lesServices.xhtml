@@ -15,15 +15,12 @@
 			
 			<div class="services">
 			<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
-				<div class="services-service service-#{serv.typeService}">
-					<div class="services-service-img">
-						<h:graphicImage url="#{serv.imageService}" height="150px"/>
-					</div>
-					<div class="services-service-text">
-						<h2>#{serv.titre}</h2>
+				<div class="services-container"><!-- service-#{serv.typeService} -->
+					<h:graphicImage url="#{serv.imageService}"/>
+					<div class="services-caption">
+						<h1>#{serv.titre}</h1>
 						<p>#{serv.description}</p>
-						<h4>#{serv.prix}€</h4>
-						<h4>#{serv.dateDebut}-#{serv.dateFin}</h4>
+						<span>#{serv.prix}€</span>
 						<h:form>
 							<h:commandButton value="Réserver" action="#{listeServiceBean.reserver(serv.id)}" />
 						</h:form>
