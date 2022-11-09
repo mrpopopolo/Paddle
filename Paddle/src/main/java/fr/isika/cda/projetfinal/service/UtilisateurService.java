@@ -43,5 +43,11 @@ public class UtilisateurService {
 		
 	}
 
+	public void modifier(Utilisateur utilisateur) {
+		utilisateurRepository.modifier(utilisateur);
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }
