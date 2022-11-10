@@ -256,3 +256,10 @@ body{
   color:var(--orange); 
 }
 
+.carte-prix{
+	font-size: 20px;
+	color:var(--gris); 
+}
+
+
+
