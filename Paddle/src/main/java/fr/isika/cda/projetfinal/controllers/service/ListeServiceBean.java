@@ -17,14 +17,11 @@ public class ListeServiceBean {
 	
 	private List<Service> listeService;
 	
-	private int page;
-	
 	//méthode pour charger la liste automatiquement lorsqu'un service est créé
 	
 	@PostConstruct
 	private void init() {
 		listeService= getAllServices();
-		page = 0;
 	}
 	
 	private List<Service> getAllServices(){
@@ -48,14 +45,6 @@ public class ListeServiceBean {
 	public String reserver(Long id) {
 		//TODO something
 		return "reserverService";
-	}
-
-	public int getPage() {
-		return page;
-	}
-
-	public void setPage(int page) {
-		this.page = page;
 	}
 	
 }
