@@ -4,27 +4,34 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
-
 <h:head>
 	<title>Accueil utilisateur</title>
+	
 </h:head>
+
 
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
+	
 		<ui:define name="content">
-			<div class="card" style="width: 18rem;">
-				<img src=" " class="card-img-top" alt=" " />
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
+		
+			<div class="hnav">
+				<nav> <!-- La partie Gauche LOGO-->
+				<ul class="mesinfos">
+					<li><a href="#">Accueil</a></li>
+					<li><a href="#">Mes informations personnelles</a></li>
+					<li><a href="#">Mes annonces</a></li>
+					<li><a href="#">Mes reservations</a></li>
+					<li><a href="#">Paiements</a></li>
+					<li><a href="#">Mes messages</a></li>
+				</ul>
+				
+				</nav>
 			</div>
 
-			<hr />
-			<h:link outcome="index">Revenir à l'accueil</h:link>
 		</ui:define>
+
+		
 	</ui:composition>
 </body>
 </html>
