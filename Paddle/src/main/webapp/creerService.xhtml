@@ -6,11 +6,10 @@
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
 
 <head>
-<meta charset="utf-8"></meta>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
-<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
-content=""
-<h:outputStylesheet library="css" name="formulaire.css" />
+	<meta charset="utf-8"></meta>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+	<h:outputStylesheet library="css" name="formulaire.css" />
 </head>
 <h:head>
 	<title>Création d'un service</title>
@@ -25,12 +24,13 @@ content=""
 					class="titreFormulaire">
 					<h3>Créer un service</h3>
 
-			  <h:outputLabel value="Type de service : " />
-					<h:selectOneMenu value="#{creationServiceBean.formService.typeService}">
-						<f:selectItems value="#{creationServiceBean.typesService}"/>
-					</h:selectOneMenu>
-					<h:messages for="typeServiceInput" />
 					<div class="inputs">
+						<h:outputLabel value="Type de service : " />
+						<h:selectOneMenu
+							value="#{creationServiceBean.formService.typeService}">
+							<f:selectItems value="#{creationServiceBean.typesService}" />
+						</h:selectOneMenu>
+						
 						<h:inputText class="champCopro" size="12" id="titreInput"
 							a:placeholder="Titre"
 							value="#{creationServiceBean.formService.titre}" />
