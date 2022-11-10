@@ -1,0 +1,28 @@
+
+
+.hnav{
+	background-color: #1e3d59;
+	height: 80px;
+	margin: 10px;	
+}
+.hnav nav ul li{
+
+	list-style-type: none;
+	display: inline-block;
+	padding: 10px;
+}
+.hnav ul li a{
+	color: #fff;
+	letter-spacing: 0.1rem;
+}
+.hnav ul li a:hover{
+	color: #ffd358;
+	text-decoration: underline;
+}
+.mesinfos li{
+	float: left;
+	padding: 20px;
+}
+.mesinfos li a{
+	text-decoration: none;
+}
