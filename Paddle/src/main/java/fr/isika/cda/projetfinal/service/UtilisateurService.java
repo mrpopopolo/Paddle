@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
+import fr.isika.cda.projetfinal.tools.UserUtils;
 import fr.isika.cda.projetfinal.viewmodel.FormCompte;
 
 @Stateless
@@ -18,13 +19,9 @@ public class UtilisateurService {
 	
 	public UtilisateurService() {}
 
-	public UtilisateurService(UtilisateurRepository utilisateurRepository) {
-		this.utilisateurRepository = utilisateurRepository;
-	}
-
-
-
 	public Utilisateur create(FormCompte formCompte) {
+		String motDePasseCrypte = UserUtils.encodePassword(formCompte.getMotDePasse());
+		formCompte.setMotDePasse(motDePasseCrypte);
 		return utilisateurRepository.create(formCompte);
 	}
 

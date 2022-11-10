@@ -8,9 +8,15 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 
 import javax.inject.Inject;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.service.UtilisateurService;
+import fr.isika.cda.projetfinal.tools.SessionUtils;
 
 
 @ManagedBean
@@ -19,12 +25,27 @@ public class LoginBean {
 	@Inject
 	private UtilisateurService utilisateurService;
 
+	@NotEmpty(message = "Ne doit pas être vide")
+	@NotNull(message = "Ne doit pas être null")
+	@Email
 	private String email;
 
+	@NotEmpty(message = "Ne doit pas être vide")
+	@NotNull(message = "Ne doit pas être null")
+	@Size(min = 1, max = 25, message = "Doit être entre 1 et 25 car.")
 	private String motDePasse;
 
 	private String utilisateurConnecte = "";
 
+	public boolean isUserConnected() {
+		return SessionUtils.isUserConnected();
+	}
+	
+	public String doLogout() {
+		SessionUtils.viderSession();
+		return "index";
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -59,6 +80,9 @@ public class LoginBean {
 
 				// Si même email et mot de passe -> On redirige vers une autre page
 				utilisateurConnecte = utilisateur.getCompte().getEmail();
+				
+				SessionUtils.setConnectedUserEmail(utilisateurConnecte);
+				
 				return "connexionReussie";
 			} else {
 				// En cas d'erreur on ajoute des messages au formulaire pour indiquer l'erreur

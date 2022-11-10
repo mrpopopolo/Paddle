@@ -10,6 +10,9 @@
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
+			<f:metadata>
+			    <f:viewAction action="#{authenticator.check()}" /> <!-- Vérification si connecté et envoyé au login si ce n'est pas le cas -->
+			</f:metadata>
 			<h3>Accounts available</h3>
 			<hr />
 

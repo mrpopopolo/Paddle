@@ -5,7 +5,12 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
-
+<head>
+<meta charset="utf-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+content=<h:outputStylesheet library="css" name="formulaire.css" />
+</head>
 <h:head>
 	<title>Modifier service</title>
 
@@ -13,11 +18,12 @@
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-			<h:outputLabel value="Service Id : " />
-			<h:outputText value="#{modifierService.service.id}" />
+		
+		<div class="formulaire">
+			
 
-			<h:form id="modifierServiceForm" enctype="multipart/form-data">
-				<h:panelGrid columns="3">
+			<h:form id="modifierServiceForm" enctype="multipart/form-data" class="titreFormulaire">
+				
 
 					<!--<h:outputLabel value="Type de service : " />
 			<h:inputText size="10" id="typeServiceInput"
@@ -29,47 +35,49 @@
    			<f:selectItems value="#{data.statuses}" />
 			</h:selectOneMenu>
 			<h:messages for="typeServiceInput" />-->
-
+			<div class="inputs">
 					<h:outputLabel value="Titre : " />
-					<h:inputText size="12" id="titreInput"						                 
+					<h:inputText class="champCopro" size="12" id="titreInput"						                 
 						value="#{modifierService.service.titre}" />
 					<h:messages for="titreInput" />
 
 					<h:outputLabel value="Prix : " />
-					<h:inputText size="15" id="prixInput"					                                                               
+					<h:inputText class="champCopro" size="15" id="prixInput"					                                                               
 						value="#{modifierService.service.prix}" />
 					<h:messages for="prixInput" />
 
 					<h:outputLabel value="Date de début : " />
 
-					<h:inputText value="#{modifierService.service.dateDebut}">
+					<h:inputText class="champCopro" value="#{modifierService.service.dateDebut}">
 						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
 					</h:inputText>
 					<h:messages for="dateDebutInput" />
 
 					<h:outputLabel value="Date de fin : " />
-					<h:inputText value="#{modifierService.service.dateFin}">
+					<h:inputText class="champCopro" value="#{modifierService.service.dateFin}">
 						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
 					</h:inputText>
 					<h:messages for="dateFinInput" />
 
 					<h:outputLabel value="Description : " />
-					<h:inputTextarea size="250" id="descriptionInput"
+					<h:inputTextarea class="champCopro" size="250" id="descriptionInput"
 						value="#{modifierService.service.description}" />
 					<h:messages for="descriptionInput" />
 
 					<h:outputLabel value="Image : " />
-					<h:inputFile value="#{creationServiceBean.uploadedFile}">
+					<h:inputFile class="champCopro" value="#{creationServiceBean.uploadedFile}">
 					</h:inputFile>
+				</div>
 
-					<span></span>
+					
 					<h:commandButton value="Modifier mon service"
 						action="#{modifierService.modifier(modifierService.service)}" />
-				</h:panelGrid>
+				
 
 			</h:form>
-			<hr />
-			<h:link outcome="listeService.xhtml">Revenir à liste de services</h:link>
+		
+
+			</div>
 		</ui:define>
 	</ui:composition>
 </body>

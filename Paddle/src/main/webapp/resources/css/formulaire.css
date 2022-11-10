@@ -22,7 +22,7 @@
 
 
 .formulaire {
-  margin-top: 20px;
+  margin-top: 90px;
   background-color: #F5F0E1;
   padding: 40px 60px;
   border-radius: 10px;
@@ -59,6 +59,20 @@ form .creerCopro{
   margin:5px;
 }
 /*--------------------------------------------------------------
-#  formulaire création utilisateur
+  Media Queries
 --------------------------------------------------------------*/
+
+@media only screen and (max-width: 1100px) {
+	.formulaire{
+		 margin-top: 120px;
+		}
+}
+
+@media only screen and (max-width: 650px) {
+		.formulaire{
+		 margin-top: 230px;
+		}
+}
+
+
 
