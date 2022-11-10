@@ -39,24 +39,24 @@ public class CoproRepository {
 		return copropriete;
 	}
 
-	public void initData() {
-		MembreSyndic membreSyndic = new MembreSyndic();
-		membreSyndic.setNom("MBA");
-		membreSyndic.setPrenom("Arsène");
-		membreSyndic.setFonction("Admin");
-
-		Residence residence = new Residence();
-		residence.setRue("rue general Lizé");
-		residence.setCodePostal(75000);
-		residence.setVille("Paris");
-		residence.setNom("Puy Garnier");
-		residence.setNombreLogements(1);
-
-		Copropriete copropriete = new Copropriete();
-		copropriete.setResidence(residence);
-		entityManager.persist(copropriete);
-
-	}
+//	public void initData() {
+//		MembreSyndic membreSyndic = new MembreSyndic();
+//		membreSyndic.setNom("MBA");
+//		membreSyndic.setPrenom("Arsène");
+//		membreSyndic.setFonction("Admin");
+//
+//		Residence residence = new Residence();
+//		residence.setRue("rue general Lizé");
+//		residence.setCodePostal(75000);
+//		residence.setVille("Paris");
+//		residence.setNom("Puy Garnier");
+//		residence.setNombreLogements(1);
+//
+//		Copropriete copropriete = new Copropriete();
+//		copropriete.setResidence(residence);
+//		entityManager.persist(copropriete);
+//
+//	}
 
 	// Methodes afficher liste
 
