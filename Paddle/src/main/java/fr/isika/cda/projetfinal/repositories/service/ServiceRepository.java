@@ -32,8 +32,7 @@ public class ServiceRepository {
 		service.setTypeService(formService.getTypeService());
 		service.setTitre(formService.getTitre());
 		service.setPrix(formService.getPrix());
-		service.setDateDebut(formService.getDateDebut());
-		service.setDateFin(formService.getDateFin());
+		service.setDateEvenement(formService.getDateEvenement());
 		service.setDescription(formService.getDescription());
 		service.setImageService(formService.getImageService());
 

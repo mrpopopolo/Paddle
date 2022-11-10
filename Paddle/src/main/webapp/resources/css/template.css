@@ -24,16 +24,18 @@
 --------------------------------------------------------------*/
 .header {
 	background: #1E3D59;
-	height: 10vh;
+	height: 8vh;
 	position:fixed;
 	width:100%;
 	top:0;
+	z-index:999;
 }
 
 .navigation {
 	padding: 10px 100px;
 	display: flex;
 	align-items: center;
+	padding:0 15px;
 }
 
 .titre {
@@ -66,8 +68,12 @@
   Body
 --------------------------------------------------------------*/
 .body {
-	background-color: white;
-	height: 130vh;
+	background: var(--gris);
+	height: 200vh;
+}
+
+body{
+	margin:0;
 }
 
 /*--------------------------------------------------------------
@@ -122,7 +128,7 @@
 
 .imgCopro{
 	background-image: url("#{resource['images/copro2.jpeg']}");
-	height: 40vh;
+	height: 25vh;
 	background-size: cover;
 	padding-bottom: 10vh;	
 }
@@ -138,7 +144,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
     font-family: 'Lato', sans-serif;
 }
@@ -151,7 +157,7 @@
     border-radius: 3px;
     display: flex;
     align-items: flex-start;
-    padding: 40px 60px;
+    padding: 30px 50px;
 }
 
 .event_date{
@@ -198,5 +204,55 @@
     margin-bottom: 20px;
 }
 
+/*--------------------------------------------------------------
+#  Services index
+--------------------------------------------------------------*/
+.titreIndex{
+	padding: 1em;
+	color:var(--bleu); 	
+}
 
+.serviceIndex {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.carteIndex{
+  width: 300px; 
+  margin: 0px auto; 
+  box-shadow: 0px 5px 20px #999; 
+  background: var(--bleu);
+  border-radius: 3px;
+}
+
+.carte-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.carte-image img {
+  width: 100%;
+  position: absolute;
+}
+
+.carte-body {
+    text-align:center;  
+  padding: 5px 5px; 
+  box-sizing: border-box; 
+}
+
+.carte-title, .carte-prix {
+   font-family: 'Playfair Display', serif;
+}
+
+.carte-titre {
+  text-align:center;
+  text-transform:uppercase;
+  font-weight: bold;
+  color:var(--orange); 
+}
 
