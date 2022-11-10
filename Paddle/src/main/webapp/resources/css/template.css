@@ -1,6 +1,27 @@
 /*--------------------------------------------------------------
 #  Header
 --------------------------------------------------------------*/
+:root{
+    --orange: #FFC13B;
+    --bleu: #1E3D59;
+    --text: rgba(236,236,236,.9);
+    --gris: #F5F0E1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+#  Header
+--------------------------------------------------------------*/
 .header {
 	background: #1E3D59;
 	height: 10vh;
@@ -108,6 +129,74 @@
 
 
 
+/*--------------------------------------------------------------
+#  Actualités copro
+--------------------------------------------------------------*/
+.actu{
+    background: var(--gris);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+}
+
+.event{
+    background: var(--bleu);
+    box-shadow: 0 0 20px var(--bleu);
+    height: auto;
+    width: 800px;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 60px;
+}
+
+.event_date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--orange);
+    padding-right: 30px;
+}
+
+.event_date--day{
+    font-size: 80px;
+    font-weight: 300;
+}
+
+.event_date--month{
+    text-transform: uppercase;
+    margin-top: -10px;
+    font-size: 25px;
+}
+
+.event_date--year{
+    margin-top: -4px;
+    font-size: 25px;
+}
+
+.event_description{
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event_description--title{
+    font-size: 32px;
+    margin-bottom: 12px;
+    padding-bottom: 3px;
+    border-bottom: 3px solid var(--orange);
+    font-weight: 700;
+}
+
+.event_description--text{
+    margin-bottom: 20px;
+}
 
 
 
