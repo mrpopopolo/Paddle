@@ -11,42 +11,62 @@
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-	
-		<div class="imgCopro" >
-		
-		</div>
 
-	<div class="actu">
-		<div class="event">
-			<div class="event_date">
-				<div class="event_date--day">21</div>
-				<div class="event_date--month">Mars</div>
-				<div class="event_date--year">2022</div>
-			</div>
-			
-			<div class="event_description">
-				<div class="event_description--title">Entretien de la chaudière</div>
-			
-			
-			<div class="event_description--text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			 Phasellus dapibus, augue et porta tempus, libero felis pharetra tellus, eu malesuada erat nunc placerat nibh.
-			  Aliquam nec ex ornare, sodales velit sit amet, rutrum ex. Aenean vestibulum nisi ullamcorper arcu tincidunt fringilla.
-			   Nulla consectetur ac orci sed tristique. Nulla ornare nisi elit, sed sagittis sem tincidunt nec. Suspendisse potenti.
-			    Suspendisse ex lorem, convallis non nisl vitae, eleifend volutpat turpis. Proin tempus quam posuere lectus tincidunt
-			     ornare. Nullam blandit aliquam risus, sit amet sagittis nisi. Cras mattis luctus enim. Curabitur fermentum diam quam
-			     , vel consectetur metus porttitor eget. Morbi venenatis quam urna, sit amet dictum leo sodales vitae. Nam et purus eros.
-			
-			</div>
-			</div>
-		
-		</div>
-	</div>
+			<div class="imgCopro"></div>
 
-		<div class="actu">
-			<h3>Actualités de la copropriété</h3>
-			<hr width="150" align="left" />
-			<br />
-		</div>
+			<div class="actu">
+				<div class="event">
+					<div class="event_date">
+						<div class="event_date--day">21</div>
+						<div class="event_date--month">Mars</div>
+						<div class="event_date--year">2022</div>
+					</div>
+
+					<div class="event_description">
+						<div class="event_description--title">Entretien de la
+							chaudière</div>
+
+
+						<div class="event_description--text">Lorem ipsum dolor sit
+							amet, consectetur adipiscing elit. Phasellus dapibus, augue et
+							porta tempus, libero felis pharetra tellus, eu malesuada erat
+							nunc placerat nibh. Aliquam nec ex ornare, sodales velit sit
+							amet, rutrum ex. Aenean vestibulum nisi ullamcorper arcu
+							tincidunt fringilla. Nulla consectetur ac orci sed tristique.
+							Nulla ornare nisi elit, sed sagittis sem tincidunt nec.
+							Suspendisse potenti. Suspendisse ex lorem, convallis non nisl
+							vitae, eleifend volutpat turpis. Proin tempus quam posuere lectus
+							tincidunt.</div>
+					</div>
+
+				</div>
+			</div>
+			<h1 class="titreIndex">Dernières annonces</h1>
+			<div class="serviceIndex">
+			
+			<ui:repeat  var="serv" value="#{listeServiceBean.listeService}">
+					<div class="carteIndex">
+				
+						<div class="carte-image">
+							<h:graphicImage url="#{serv.imageService}"/>
+						</div> <!-- Fin de l'image à la une --> <!-- Corp de notre carte -->
+						<div class="carte-body">
+
+							<!-- Titre de l'article -->
+							<div class="carte-titre">
+								<h2>#{serv.titre}</h2>
+							</div>
+					
+							<div class="carte-prix">
+								<p>#{serv.prix}€</p>
+							</div>
+
+						</div>
+
+				</div>	
+				</ui:repeat>
+			</div>
+
 			<h:link outcome="creerUtilisateur.xhtml">New User</h:link>
 			<br />
 			<h:link outcome="creerCopro.xhtml">New Copro</h:link>
