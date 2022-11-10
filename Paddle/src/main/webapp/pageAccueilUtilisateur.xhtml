@@ -10,28 +10,76 @@
 	
 </h:head>
 
-<body>
+<h:body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 	
 		<ui:define name="content">
+		<h1 class="menu-utilisateur-titre">Page d'Accueil</h1>
 		
-			<div class="hnav">
-				<nav> <!-- La partie Gauche LOGO-->
-				<ul class="mesinfos">
+		<div class="menu-utilisateur">
+		<h:link outcome="listeUtilisateurs.xhtml">
+			<div class="menu-utilisateur-container">
+			  
+			  <div class="menu-utilisateur-text">
+			  <br />
+			  <h:graphicImage  library="images" name="imgProfil.png" width="40" height="40"/>
+			 
+			 	<h2>PROFIL</h2>
+			 	<p>Mes informations personnelles</p>
+			 	</div>
+			 	</div>
+			 </h:link>
+			 
+			 <h:link outcome="listeUtilisateurs.xhtml">
+			<div class="menu-utilisateur-container">
+			  
+			  <div class="menu-utilisateur-text">
+			   <br />
+			  <h:graphicImage  library="images" name="imgAnnonce.png" width="40" height="40"/>
+			 	<h2>ANNONCES</h2>
+			 	<p>Mes annonces</p>
+			 	</div>
+			 	</div>
+			 </h:link>
+			 
+			 <h:link outcome="listeUtilisateurs.xhtml">
+			<div class="menu-utilisateur-container">
+			  <div class="menu-utilisateur-text">	
+			  <br />
+			  <h:graphicImage  library="images" name="imgReservation.png" width="40" height="40"/>	  
+			 	<h2>RESERVATIONS</h2>
+			 	<p>Mes reservations</p>
+			 	</div>
+			 	</div>
+			 </h:link>
+			 
+			  <h:link outcome="listeUtilisateurs.xhtml">
+			<div class="menu-utilisateur-container">
+			  <div class="menu-utilisateur-text">
+			     <br />
+			  <h:graphicImage  library="images" name="imgPaiement.png" width="40" height="40"/>
+			 	<h2>PAIEMENTS</h2>
+			 	<p>Suivre mes paiements</p>
+			 	</div>
+			 	</div>
+			 </h:link>
+			 </div> 	
+			 	
+				<!--  <ul class="mesinfos">
 					<li><a href="#">Accueil</a></li>
 					<li><a href="#">Mes informations personnelles</a></li>
 					<li><a href="#">Mes annonces</a></li>
 					<li><a href="#">Mes reservations</a></li>
 					<li><a href="#">Paiements</a></li>
 					<li><a href="#">Mes messages</a></li>
-				</ul>
+				</ul>-->
 				
-				</nav>
-			</div>
-
+		
+			
+			
 		</ui:define>
 
 		
 	</ui:composition>
-</body>
+</h:body>
 </html>
