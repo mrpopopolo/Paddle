@@ -26,7 +26,7 @@
 
 					<div class="inputs">
 						<h:outputLabel value="Type de service : " />
-						<h:selectOneMenu
+						<h:selectOneMenu class="champCopro"
 							value="#{creationServiceBean.formService.typeService}">
 							<f:selectItems value="#{creationServiceBean.typesService}" />
 						</h:selectOneMenu>
@@ -52,18 +52,17 @@
 							value="#{creationServiceBean.formService.description}" />
 						<h:messages for="descriptionInput" />
 
-						<h:outputLabel value="Image : " />
-						<h:inputFile value="#{creationServiceBean.uploadedFile}">
+						<h:outputLabel  value="Image : " />
+						<h:inputFile class="champCopro" value="#{creationServiceBean.uploadedFile}">
 						</h:inputFile>
 					</div>
-					<span></span>
+					
 					<h:commandButton value="Créer mon service" class="creerCopro"
 						action="#{creationServiceBean.creer()}" />
 
 
 				</h:form>
 			</div>
-			<h:link outcome="index">Revenir à l'accueil</h:link>
 		</ui:define>
 	</ui:composition>
 </body>

@@ -26,7 +26,7 @@
 
 					<div class="inputs">
 						<h:outputLabel value="Type de service : " />
-						<h:selectOneMenu
+						<h:selectOneMenu class="champCopro"
 							value="#{creationServiceBean.formService.typeService}">
 							<f:selectItems value="#{creationServiceBean.typesService}" />
 						</h:selectOneMenu>
@@ -61,12 +61,10 @@
 					</div>
 
 
-					<h:commandButton value="Modifier mon service"
+					<h:commandButton class="creerCopro" value="Modifier mon service"
 						action="#{modifierService.modifier(modifierService.service)}" />
 
-
 				</h:form>
-
 
 			</div>
 		</ui:define>
