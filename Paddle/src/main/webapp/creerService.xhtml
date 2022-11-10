@@ -42,18 +42,10 @@ content=""
 						<h:messages for="prixInput" />
 
 						<h:inputText class="champCopro"
-							value="#{creationServiceBean.formService.dateDebut}"
-							a:placeholder="Date de début">
+							value="#{creationServiceBean.formService.dateEvenement}"
+							a:placeholder="Date de l'évènement">
 							<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
 						</h:inputText>
-						<h:messages for="dateDebutInput" />
-
-						<h:inputText class="champCopro"
-							value="#{creationServiceBean.formService.dateFin}"
-							a:placeholder="Date de fin">
-							<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
-						</h:inputText>
-						<h:messages for="dateFinInput" />
 
 						<h:inputTextarea class="champCopro" size="250"
 							id="descriptionInput" a:placeholder="Description"

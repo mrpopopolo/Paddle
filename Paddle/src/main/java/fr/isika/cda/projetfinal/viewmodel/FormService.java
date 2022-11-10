@@ -16,16 +16,6 @@ import fr.isika.cda.projetfinal.entity.service.TypeService;
 
 public class FormService {
 
-	// @NotEmpty(message = "Ne doit pas être vide")
-	// @NotNull(message = "Ne doit pas être null")
-	// @Size(min = 1, max = 25, message = "Doit être entre 1 et 25 car.")
-	// @Pattern(regexp = "[^0-9]*", message = "Ne doit pas contenir des chiffres")
-
-	// @NotEmpty(message = "Ne doit pas être vide")
-	// @NotNull(message = "Ne doit pas être null")
-	// @Size(min = 1, max = 25, message = "Doit être entre 1 et 25 car.")
-	// @Pattern(regexp = "[^0-9]*", message = "Ne doit pas contenir des chiffres")
-
 	private TypeService typeService;
 
 	@NotEmpty(message = "Ne doit pas être vide")
@@ -35,9 +25,7 @@ public class FormService {
 	@Digits(fraction = 4, integer = 4)
 	private BigDecimal prix;
 
-	private LocalDate dateDebut;
-
-	private LocalDate dateFin;
+	private LocalDate dateEvenement;
 
 	@NotEmpty(message = "Ne doit pas être vide")
 	@NotNull(message = "Ne doit pas être null")
@@ -72,20 +60,12 @@ public class FormService {
 		this.prix = prix;
 	}
 
-	public LocalDate getDateDebut() {
-		return dateDebut;
+	public LocalDate getDateEvenement() {
+		return dateEvenement;
 	}
 
-	public void setDateDebut(LocalDate dateDebut) {
-		this.dateDebut = dateDebut;
-	}
-
-	public LocalDate getDateFin() {
-		return dateFin;
-	}
-
-	public void setDateFin(LocalDate dateFin) {
-		this.dateFin = dateFin;
+	public void setDateEvenement(LocalDate dateEvenement) {
+		this.dateEvenement = dateEvenement;
 	}
 
 	public String getDescription() {
