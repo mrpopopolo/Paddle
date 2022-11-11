@@ -69,7 +69,9 @@
 --------------------------------------------------------------*/
 .body {
 	background: var(--gris);
-	height: 200vh;
+
+	padding: 50px 0 150px 0;
+
 }
 
 body{
@@ -80,7 +82,7 @@ body{
   Footer
 --------------------------------------------------------------*/
 .footer {
-	background-color: #FFC13B;
+	background-color: var(--bleu);
 }
 
 /*--------------------------------------------------------------
@@ -119,6 +121,11 @@ body{
 	.header {
 		height: 30vh;
 	}
+	.body {
+	
+	padding: 150px 0 150px 0;
+}
+	
 }
 
 
@@ -255,4 +262,11 @@ body{
   font-weight: bold;
   color:var(--orange); 
 }
+
+.carte-prix{
+	font-size: 20px;
+	color:var(--gris); 
+}
+
+
 
