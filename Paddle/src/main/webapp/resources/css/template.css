@@ -286,7 +286,7 @@ body{
 
 .carteService{
 	 width: 500px; 
-  margin: 0px auto; 
+  margin: 50px auto; 
   box-shadow: 0px 5px 20px #999; 
   background: var(--bleu);
   border-radius: 3px;
