@@ -1,5 +1,6 @@
 package fr.isika.cda.projetfinal.controllers.user;
 
+import java.util.Base64;
 import java.util.Optional;
 
 import javax.faces.application.FacesMessage;
@@ -17,6 +18,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.service.UtilisateurService;
 import fr.isika.cda.projetfinal.tools.SessionUtils;
+import fr.isika.cda.projetfinal.tools.UserUtils;
 
 
 @ManagedBean

@@ -7,8 +7,26 @@ import java.security.spec.KeySpec;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+import javax.ejb.Singleton;
 
-public class UserUtils {
+@Singleton
+public final class UserUtils {
+	
+	private static volatile UserUtils instance = null;
+	
+	private UserUtils() {
+	}
+	
+	public final static UserUtils getInstance() {
+		if(UserUtils.instance == null) {
+			synchronized(UserUtils.class) {
+				if(UserUtils.instance == null) {
+					UserUtils.instance = new UserUtils();
+				}
+			}
+		}
+		return UserUtils.instance;
+	}
 
 	public static String encodePassword(String password){
 		SecureRandom random = new SecureRandom();
