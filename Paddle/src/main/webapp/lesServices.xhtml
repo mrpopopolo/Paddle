@@ -22,7 +22,8 @@
 						<p>#{serv.description}</p>
 						<span>#{serv.prix}€</span>
 						<h:form>
-							<h:commandButton value="Réserver" action="#{listeServiceBean.reserver(serv.id)}" />
+							<h:commandButton value="Réserver" action="#{modifierService.afficher(serv.id)}" />
+							
 						</h:form>
 					</div>
 				</div>

@@ -42,8 +42,9 @@
 				</div>
 			</div>
 			<h1 class="titreIndex">Dernières annonces</h1>
+			 
 			<div class="serviceIndex">
-
+		
 				<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
 					<div class="carteIndex">
 
@@ -61,11 +62,21 @@
 
 							<div class="carte-prix">
 								<p>#{serv.prix}€</p>
+								
 							</div>
+							<h:form>
+							<h:commandButton value="afficher" class="reserver"
+						action="#{modifierService.afficher(serv.id)}">
+						<f:param name="serviceId" value="#{serv.id}"/>
+						
+					</h:commandButton>
+					</h:form>
 						</div>
+						
 					</div>
 				</ui:repeat>
 			</div>
+		
 		</ui:define>
 	</ui:composition>
 </body>
