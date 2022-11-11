@@ -16,6 +16,7 @@ margin-top: 100px;
 	margin: 30px;
 	border-radius: 8px;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	background: var(--bleu);
 	overflow: hidden;
 	transition: 0.4s;
 }
@@ -26,11 +27,14 @@ margin-top: 100px;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-color: white;
 	padding: 10px 0;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+.menu-utilisateur-text-titre{
+	text-align:center;
+  font-weight: bold;
+  color:var(--orange); 
 }
 
 .menu-utilisateur-container:hover {
