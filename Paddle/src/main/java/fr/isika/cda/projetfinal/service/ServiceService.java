@@ -65,4 +65,13 @@ public class ServiceService {
 	public void modifier(Service service) {
 		serviceRepository.modifier(service);
 	}
+	
+	public List<Service> servicesDeMaCopro() {
+		if(SessionUtils.isUserConnected()) {
+			String userMail = SessionUtils.getConnectedUserEmail();
+			Utilisateur demandeurService = this.utilisateurRepository.findByEmail(userMail).get();
+			return serviceRepository.findCoproServices(demandeurService.getCopropriete().getId());
+		}
+		return null;
+	}
 }

@@ -11,46 +11,35 @@
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
 			<h3>Sevice available</h3>
-			<hr />
-			<h:dataTable value="#{listeServiceBean.listeService}" var="ser">
+			
+<div class="table-style">	
+		<h:dataTable styleClass="table"   value="#{listeServiceBean.listeService}" var="ser">
 
-				<h:column>
-					<f:facet name="header">Id</f:facet>
-			#{ser.id}
-		</h:column>
+			
 
-				<h:column>
-					<f:facet name="header">Titre</f:facet>
+				<h:column class="column">
+					<f:facet  name="header">Titre</f:facet>
 			#{ser.titre}
 		</h:column>
 		
-			<h:column>
-					<f:facet name="header">Prix</f:facet>
+			<h:column class="column">
+					<f:facet class="tbody" name="header">Prix</f:facet>
 			#{ser.prix}
 		</h:column>
 
-				<h:column>
-					<f:facet name="header">Description</f:facet>
+				<h:column class="column">
+					<f:facet class="tbody"  name="header">Date de l'évènement</f:facet>
+			#{ser.dateEvenement}
+
+		</h:column>
+
+				<h:column class="column">
+					<f:facet class="tbody" name="header">Description</f:facet>
 			#{ser.description}
 		</h:column>
 
-				<h:column>
-					<f:facet name="header">Date de début</f:facet>
-			#{ser.dateDebut}
-		</h:column>
-
-				<h:column>
-					<f:facet name="header">Date de fin</f:facet>
-			#{ser.dateFin}
-		</h:column>
-
-				<h:column>
-					<f:facet name="header">Description</f:facet>
-			#{ser.description}
-		</h:column>
-
-		<h:column>
-				<f:facet name="header">
+		<h:column class="column">
+				<f:facet class="tbody" name="header">
 					<h:outputText value="Opérations" />
 				</f:facet>
 				<h:form>
@@ -68,8 +57,12 @@
 		</h:column>
 
 			</h:dataTable>
+
 			<hr />
 			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
+
+			</div>		
+
 		</ui:define>
 	</ui:composition>
 </body>

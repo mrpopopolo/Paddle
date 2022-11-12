@@ -29,7 +29,7 @@ public class ListeServiceBean {
 	}
 	
 	private List<Service> getAllServices(){
-		return this.serviceService.findAll();
+		return this.serviceService.servicesDeMaCopro();
 		
 	}
 
