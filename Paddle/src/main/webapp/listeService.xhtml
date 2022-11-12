@@ -11,38 +11,33 @@
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
 			<h3>Sevice available</h3>
-			<hr />
+			
 <div class="table-style">	
-		<h:dataTable  value="#{listeServiceBean.listeService}" var="ser">
+		<h:dataTable styleClass="table"   value="#{listeServiceBean.listeService}" var="ser">
 
 			
 
-				<h:column class="comumn">
-					<f:facet class="title" name="header">Titre</f:facet>
+				<h:column class="column">
+					<f:facet  name="header">Titre</f:facet>
 			#{ser.titre}
 		</h:column>
 		
-			<h:column>
+			<h:column class="column">
 					<f:facet class="tbody" name="header">Prix</f:facet>
 			#{ser.prix}
 		</h:column>
 
-				<h:column>
-					<f:facet class="tbody" name="header">Description</f:facet>
-			#{ser.description}
-		</h:column>
-
-				<h:column>
+				<h:column class="column">
 					<f:facet class="tbody"  name="header">Date de l'évènement</f:facet>
 			#{ser.dateEvenement}
 		</h:column>
 
-				<h:column>
+				<h:column class="column">
 					<f:facet class="tbody" name="header">Description</f:facet>
 			#{ser.description}
 		</h:column>
 
-		<h:column>
+		<h:column class="column">
 				<f:facet class="tbody" name="header">
 					<h:outputText value="Opérations" />
 				</f:facet>

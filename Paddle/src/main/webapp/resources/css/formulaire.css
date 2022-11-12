@@ -87,18 +87,33 @@ form .creerCopro{
   Tableau
 --------------------------------------------------------------*/v
 .table-style  {
-    border-collapse: collapse;
-    box-shadow: 0 5px 50px rgba(0,0,0,0.15);
-    cursor: pointer;
-    margin: 0px auto;
-    border: 2px solid midnightblue;
+  padding: 0 20px;
+  margin-left: 100px;
+ 
 
 }
 
-.column {
-    background-color: midnightblue;
-    color: #fff;
-    text-align: left;
+.column { 
+    color: var(--bleu); 
+    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border: 1px solid #ddd;
+}
+
+.column:nth-child(even){
+    background-color: #f3f3f3;
+}
+
+.table{
+
+ padding: 20px;
+ margin:auto;
+ border: 1px solid #ddd;
+
 
 }
+}
+
+
 
