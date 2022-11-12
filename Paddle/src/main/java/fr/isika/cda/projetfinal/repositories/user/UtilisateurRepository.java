@@ -38,10 +38,14 @@ public class UtilisateurRepository {
 		Compte compte = new Compte();
 		compte.setEmail(formCompte.getEmail());
 		compte.setMotDePasse(formCompte.getMotDePasse());
+		compte.setRole(Role.User);
 
+		utilisateur.setInfosLogement(new InfosLogement());
+		utilisateur.setContact(new Contact());
 		utilisateur.setCompte(compte);
 		utilisateur.setInfosPerso(infosPerso);
 
+		
 		entityManager.persist(utilisateur);
 
 		return utilisateur;
