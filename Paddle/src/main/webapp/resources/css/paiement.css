@@ -1,25 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 input, select {
-  color: rgba(255, 255, 255, 0.5);
+ 
 }
 input option, select option {
   color: gray;
 }
 
 ::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: gray;
 }
 
 ::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: gray;
 }
 
 :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: gray;
 }
 
 :-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: gray;
 }
 
 #area {

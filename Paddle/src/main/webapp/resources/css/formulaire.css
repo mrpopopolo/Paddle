@@ -43,12 +43,13 @@ form .champCopro{
 	 padding: 10px;
   border:none;
   border-radius: 5px;
-  background-color:#ffffff;
+  background-color:var(--gris);
   outline:none;
   margin-bottom: 8px;
   margin-top: 8px;
   max-width: 400px;
   max-height:200px;
+  
 }
 
 form .creerCopro{
@@ -63,9 +64,9 @@ form .creerCopro{
   margin:5px;
 }
 
-outputLabel .inputs{
-	color:red;
-}
+
+
+
 /*--------------------------------------------------------------
   Media Queries
 --------------------------------------------------------------*/

@@ -12,40 +12,38 @@
 		<ui:define name="content">
 			<h3>Sevice available</h3>
 			<hr />
-			<h:dataTable value="#{listeServiceBean.listeService}" var="ser">
+			
+		<h:dataTable class="table-style" value="#{listeServiceBean.listeService}" var="ser">
+
+			
 
 				<h:column>
-					<f:facet name="header">Id</f:facet>
-			#{ser.id}
-		</h:column>
-
-				<h:column>
-					<f:facet name="header">Titre</f:facet>
+					<f:facet class="title" name="header">Titre</f:facet>
 			#{ser.titre}
 		</h:column>
 		
 			<h:column>
-					<f:facet name="header">Prix</f:facet>
+					<f:facet class="tbody" name="header">Prix</f:facet>
 			#{ser.prix}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Description</f:facet>
+					<f:facet class="tbody" name="header">Description</f:facet>
 			#{ser.description}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Date de l'évènement</f:facet>
+					<f:facet class="tbody"  name="header">Date de l'évènement</f:facet>
 			#{ser.dateEvenement}
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Description</f:facet>
+					<f:facet class="tbody" name="header">Description</f:facet>
 			#{ser.description}
 		</h:column>
 
 		<h:column>
-				<f:facet name="header">
+				<f:facet class="tbody" name="header">
 					<h:outputText value="Opérations" />
 				</f:facet>
 				<h:form>
