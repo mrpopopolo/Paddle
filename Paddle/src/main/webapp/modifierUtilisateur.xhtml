@@ -38,6 +38,16 @@ content=""<h:outputStylesheet library="css" name="formulaire.css" />
 					a:placeholder="Email"
 						value="#{modifierUtilisateur.utilisateur.compte.email}" />
 					<h:messages for="emailInput" />
+					
+					<h:inputText class="champCopro" size="15" id="adressInput"
+					a:placeholder="Adresse"
+						value="#{modifierUtilisateur.utilisateur.contact.adresseContact}" />
+					<h:messages for="adressInput" />
+					
+					<h:inputText class="champCopro" size="15" id="telInput"
+					a:placeholder="Téléphone"
+						value="#{modifierUtilisateur.utilisateur.contact.numeroDeTelephone}" />
+					<h:messages for="telInput" />
 
 				</div>
 					

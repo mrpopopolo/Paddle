@@ -23,6 +23,16 @@ public class Reservation {
 	public Reservation() {
 
 	}
+	
+	
+
+	public Reservation(Service serviceReserve, LocalDate dateExecution) {
+		super();
+		this.serviceReserve = serviceReserve;
+		this.dateExecution = dateExecution;
+	}
+
+
 
 	public Service getServiceReserve() {
 		return serviceReserve;

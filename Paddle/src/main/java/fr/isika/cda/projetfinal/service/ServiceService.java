@@ -1,6 +1,7 @@
 package fr.isika.cda.projetfinal.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -51,6 +52,10 @@ public class ServiceService {
 
 	public List<Service> findAll() {
 		return serviceRepository.findAll();
+	}
+	
+	public Optional<Service> findById(Long id){
+		return serviceRepository.findById(id);
 	}
 	
 	public void delete(Long id) {
