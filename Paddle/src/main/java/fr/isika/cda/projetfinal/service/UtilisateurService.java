@@ -41,6 +41,7 @@ public class UtilisateurService {
 		String adminMail = SessionUtils.getConnectedUserEmail();
 		Utilisateur admin = findByEmail(adminMail).get();
 		Copropriete copropriete = admin.getCopropriete();
+
 		utilisateur.setCopropriete(copropriete);
 		
 		return utilisateurRepository.create(utilisateur);

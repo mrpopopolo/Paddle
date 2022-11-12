@@ -43,7 +43,7 @@ public class Copropriete {
 	@OneToOne
 	private PackageCopro packageChoisi;
 	
-	@OneToMany
+	@OneToMany (mappedBy = "copropriete")
 	private List<Utilisateur> utilisateurs;
 	
 	@OneToOne

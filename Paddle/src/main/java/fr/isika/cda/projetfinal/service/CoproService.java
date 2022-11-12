@@ -58,14 +58,14 @@ public class CoproService {
 		infosAdmin.setNom(formCopro.getNomAdmin());
 		infosAdmin.setPrenom(formCopro.getPrenomAdmin());
 		
+		coproRepository.create(copropriete);
+		
 		admin.setCompte(compteAdmin);
 		admin.setInfosPerso(infosAdmin);
+		admin.setCopropriete(copropriete);
 		this.utilisateurRepository.create(admin);
+		return copropriete;
 		
-		copropriete.setAdminCopro(admin);
-		copropriete.setUtilisateurs(Arrays.asList(admin));
-		
-		return coproRepository.create(copropriete);
 	}
 
 	// Methodes afficher la liste des copropriétés
