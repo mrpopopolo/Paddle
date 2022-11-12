@@ -35,8 +35,13 @@
 		</h:column>
 
 				<h:column>
-					<f:facet name="header">Date de l'évènement</f:facet>
-			#{ser.dateEvenement}
+					<f:facet name="header">Date de début</f:facet>
+			#{ser.dateDebut}
+		</h:column>
+
+				<h:column>
+					<f:facet name="header">Date de fin</f:facet>
+			#{ser.dateFin}
 		</h:column>
 
 				<h:column>
@@ -55,10 +60,16 @@
 					</h:commandButton>
 					<h:commandButton value="Supprimer"
 						action="#{listeServiceBean.delete(ser.id)}" />
+						<h:commandButton value="Resever"
+						action="#{reservationService.reserver(ser.id)}">
+						<f:param name="serviceId" value="#{ser.id}"/>
+					</h:commandButton>
 				</h:form>
 		</h:column>
 
 			</h:dataTable>
+			<hr />
+			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
 		</ui:define>
 	</ui:composition>
 </body>

@@ -115,6 +115,9 @@ public class Utilisateur {
 		this.services.add(service);
 	}
 
+	public void ajouterReservation(Reservation reservation) {
+		this.reservations.add(reservation);
+	}
 	
 
 }
