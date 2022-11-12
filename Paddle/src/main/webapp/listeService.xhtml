@@ -12,12 +12,12 @@
 		<ui:define name="content">
 			<h3>Sevice available</h3>
 			<hr />
-			
-		<h:dataTable class="table-style" value="#{listeServiceBean.listeService}" var="ser">
+<div class="table-style">	
+		<h:dataTable  value="#{listeServiceBean.listeService}" var="ser">
 
 			
 
-				<h:column>
+				<h:column class="comumn">
 					<f:facet class="title" name="header">Titre</f:facet>
 			#{ser.titre}
 		</h:column>
@@ -57,6 +57,7 @@
 		</h:column>
 
 			</h:dataTable>
+			</div>		
 		</ui:define>
 	</ui:composition>
 </body>
