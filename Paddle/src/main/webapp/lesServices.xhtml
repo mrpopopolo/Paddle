@@ -16,9 +16,10 @@
 			<div class="services">
 			<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
 				<div class="services-container"><!-- service-#{serv.typeService} -->
-					<h:graphicImage url="#{serv.imageService}"/>
+					<h:graphicImage value="#{serv.imageService}"/>
 					<div class="services-caption">
 						<h1>#{serv.titre}</h1>
+						<p>By #{serv.createurService.infosPerso.nom}</p>
 						<p>#{serv.description}</p>
 						<span>#{serv.prix}€</span>
 						<h:form>
@@ -29,8 +30,6 @@
 			</ui:repeat>
 			
 			</div>
-			<hr />
-			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
 		</ui:define>
 	</ui:composition>
 </body>

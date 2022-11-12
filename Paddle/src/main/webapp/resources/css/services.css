@@ -7,6 +7,7 @@
 
 .services-container {
     width: 600px;
+    max-height: 400px;
     position: relative;
     margin: 30px;
     border-radius: 8px;
@@ -16,6 +17,7 @@
 
 .services-container img {
     width: 100%;
+    min-height: 100%;
     border-radius: 8px;
     transition: all 0.4s;
 }

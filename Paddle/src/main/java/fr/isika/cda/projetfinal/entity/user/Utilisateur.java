@@ -7,10 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
 import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
 
@@ -34,11 +37,15 @@ public class Utilisateur {
 	@OneToOne (cascade = CascadeType.ALL)
 	private Contact contact;
 
-	@OneToMany
+	@OneToMany (mappedBy = "createurService")
 	private List<Service> services;
 
-	@OneToMany
+	@OneToMany (cascade = CascadeType.ALL)
 	private List<Reservation> reservations;
+	
+	@ManyToOne
+	@JoinColumn(name = "copropriete_id")
+	private Copropriete copropriete;
 
 	public Utilisateur() {
 
@@ -76,8 +83,36 @@ public class Utilisateur {
 		this.contact = contact;
 	}
 
+	public List<Service> getServices() {
+		return services;
+	}
+
+	public void setServices(List<Service> services) {
+		this.services = services;
+	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
+
+	public Copropriete getCopropriete() {
+		return copropriete;
+	}
+
+	public void setCopropriete(Copropriete copropriete) {
+		this.copropriete = copropriete;
+	}
+
 	public Long getId() {
 		return id;
+	}
+	
+	public void ajouterService(Service service) {
+		this.services.add(service);
 	}
 
 	public List<Service> getServices() {

@@ -6,76 +6,65 @@
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
 <head>
-<meta charset="utf-8"></meta>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
-<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
-content=<h:outputStylesheet library="css" name="formulaire.css" />
+	<meta charset="utf-8"></meta>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
+	<h:outputStylesheet library="css" name="formulaire.css" />
 </head>
 <h:head>
 	<title>Modifier service</title>
-
 </h:head>
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-		
-		<div class="formulaire">
-			
 
-			<h:form id="modifierServiceForm" enctype="multipart/form-data" class="titreFormulaire">
-				
+			<div class="formulaire">
 
-					<!--<h:outputLabel value="Type de service : " />
-			<h:inputText size="10" id="typeServiceInput"
-				value="#{creationServiceBean.formService.typeService}" />
-			<h:messages for="typeServiceInput" />
-			
-			<h:outputLabel value="Type de service : " />
-			<h:selectOneMenu value="#{creationServiceBean.formService.typeService}" >
-   			<f:selectItems value="#{data.statuses}" />
-			</h:selectOneMenu>
-			<h:messages for="typeServiceInput" />-->
-			<div class="inputs">
-					<h:outputLabel value="Titre : " />
-					<h:inputText class="champCopro" size="12" id="titreInput"						                 
-						value="#{modifierService.service.titre}" />
-					<h:messages for="titreInput" />
 
-					<h:outputLabel value="Prix : " />
-					<h:inputText class="champCopro" size="15" id="prixInput"					                                                               
-						value="#{modifierService.service.prix}" />
-					<h:messages for="prixInput" />
+				<h:form id="modifierServiceForm" enctype="multipart/form-data"
+					class="titreFormulaire">
 
-					<h:outputLabel value="Date de début : " />
+					<div class="inputs">
+						<h:outputLabel value="Type de service : " />
+						<h:selectOneMenu class="champCopro"
+							value="#{creationServiceBean.formService.typeService}">
+							<f:selectItems value="#{creationServiceBean.typesService}" />
+						</h:selectOneMenu>
 
-					<h:inputText class="champCopro" value="#{modifierService.service.dateDebut}">
-						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
-					</h:inputText>
-					<h:messages for="dateDebutInput" />
+						<h:outputLabel value="Titre : " />
+						<h:inputText class="champCopro" size="12" id="titreInput"
+							value="#{modifierService.service.titre}" />
+						<h:messages for="titreInput" />
 
-					<h:outputLabel value="Date de fin : " />
-					<h:inputText class="champCopro" value="#{modifierService.service.dateFin}">
-						<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
-					</h:inputText>
-					<h:messages for="dateFinInput" />
+						<h:outputLabel value="Prix : " />
+						<h:inputText class="champCopro" size="15" id="prixInput"
+							value="#{modifierService.service.prix}" />
+						<h:messages for="prixInput" />
 
-					<h:outputLabel value="Description : " />
-					<h:inputTextarea class="champCopro" size="250" id="descriptionInput"
-						value="#{modifierService.service.description}" />
-					<h:messages for="descriptionInput" />
+						<h:outputLabel value="Date de début : " />
 
-					<h:outputLabel value="Image : " />
-					<h:inputFile class="champCopro" value="#{creationServiceBean.uploadedFile}">
-					</h:inputFile>
-				</div>
+						<h:inputText class="champCopro"
+							value="#{modifierService.service.dateEvenement}">
+							<f:convertDateTime type="localDate" pattern="yyyy-MM-dd" />
+						</h:inputText>
 
-					
-					<h:commandButton value="Modifier mon service"
+						<h:outputLabel value="Description : " />
+						<h:inputTextarea class="champCopro" size="250"
+							id="descriptionInput"
+							value="#{modifierService.service.description}" />
+						<h:messages for="descriptionInput" />
+
+						<h:outputLabel value="Image : " />
+						<h:inputFile class="champCopro"
+							value="#{modifierService.uploadedFile}">
+						</h:inputFile>
+					</div>
+
+
+					<h:commandButton class="creerCopro" value="Modifier mon service"
 						action="#{modifierService.modifier(modifierService.service)}" />
-				
 
-			</h:form>
-		
+				</h:form>
 
 			</div>
 		</ui:define>

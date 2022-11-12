@@ -3,12 +3,14 @@ package fr.isika.cda.projetfinal.entity.service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
@@ -28,14 +30,16 @@ public class Service {
 	private String description;
 	private BigDecimal prix;
 
-	private LocalDate dateDebut;
-	private LocalDate dateFin;
+	private LocalDate dateEvenement;
+	
+	@Lob
 	private String imageService;
 	// private Boolean proposeParLaCopro;// discuter avec les autres pour son
 	// implémentation dans creerService
 
 
 	@ManyToOne
+	@JoinColumn(name = "utilisateur_id")
 	private Utilisateur createurService;
 
 	@Enumerated(EnumType.STRING)
@@ -81,20 +85,12 @@ public class Service {
 		this.prix = prix;
 	}
 
-	public LocalDate getDateDebut() {
-		return dateDebut;
+	public LocalDate getDateEvenement() {
+		return dateEvenement;
 	}
 
-	public void setDateDebut(LocalDate dateDebut) {
-		this.dateDebut = dateDebut;
-	}
-
-	public LocalDate getDateFin() {
-		return dateFin;
-	}
-
-	public void setDateFin(LocalDate dateFin) {
-		this.dateFin = dateFin;
+	public void setDateEvenement(LocalDate dateEvenement) {
+		this.dateEvenement = dateEvenement;
 	}
 
 	public Long getId() {

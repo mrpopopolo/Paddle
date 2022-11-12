@@ -8,6 +8,10 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import fr.isika.cda.projetfinal.entity.user.Compte;
+import fr.isika.cda.projetfinal.entity.user.InfosPerso;
+import fr.isika.cda.projetfinal.entity.user.Utilisateur;
+
 public class FormCopro {
 
 	@NotEmpty(message = "Ne doit pas être vide")
@@ -33,8 +37,19 @@ public class FormCopro {
 	private Integer nombreLogements;
 	
 	private String pathToBlason;
+	
+	private String nomAdmin;
+	
+	private String prenomAdmin;
+	
+	private String emailAdmin;
+	
+	private String motDePasseAdmin;
+	
+	private String confirmerMotDePasse;
 
-	public FormCopro() {}
+	public FormCopro() {
+	}
 
 	
 	// ***** Getters / Setters *****
@@ -89,10 +104,50 @@ public class FormCopro {
 		return pathToBlason;
 	}
 
-
 	public void setPathToBlason(String pathToBlason) {
 		this.pathToBlason = pathToBlason;
 	}
-	
+
+	public String getNomAdmin() {
+		return nomAdmin;
+	}
+
+	public void setNomAdmin(String nomAdmin) {
+		this.nomAdmin = nomAdmin;
+	}
+
+	public String getPrenomAdmin() {
+		return prenomAdmin;
+	}
+
+	public void setPrenomAdmin(String prenomAdmin) {
+		this.prenomAdmin = prenomAdmin;
+	}
+
+
+	public String getEmailAdmin() {
+		return emailAdmin;
+	}
+
+	public void setEmailAdmin(String emailAdmin) {
+		this.emailAdmin = emailAdmin;
+	}
+
+
+	public String getMotDePasseAdmin() {
+		return motDePasseAdmin;
+	}
+
+	public void setMotDePasseAdmin(String motDePasseAdmin) {
+		this.motDePasseAdmin = motDePasseAdmin;
+	}
+
+	public String getConfirmerMotDePasse() {
+		return confirmerMotDePasse;
+	}
+
+	public void setConfirmerMotDePasse(String confirmerMotDePasse) {
+		this.confirmerMotDePasse = confirmerMotDePasse;
+	}
 	
 }
