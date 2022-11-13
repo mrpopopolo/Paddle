@@ -12,13 +12,14 @@ import javax.inject.Inject;
 import javax.servlet.http.Part;
 
 import fr.isika.cda.projetfinal.entity.service.Service;
+import fr.isika.cda.projetfinal.entity.service.TypeService;
 import fr.isika.cda.projetfinal.repositories.service.ServiceRepository;
 import fr.isika.cda.projetfinal.tools.OutilsImage;
 
 @ManagedBean
 @SessionScoped
 public class ModifierService implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -26,22 +27,24 @@ public class ModifierService implements Serializable {
 
 	@Inject
 	private ServiceRepository serviceRepo;
-	
+
 	private Service service;
 
 	private Part uploadedFile;
-	
+
+	private TypeService[] typesService;
+
 	public String modifier(Long id) {
 		Optional<Service> optional = serviceRepo.findById(id);
-		if(optional.isPresent()) {
+		if (optional.isPresent()) {
 			service = optional.get();
 			return "modifierService.xhtml";
 		}
 		return "listeService.xhtml";
 	}
-	
+
 	public String modifier(Service serviceModifie) throws IOException {
-		if(uploadedFile != null) {
+		if (uploadedFile != null) {
 			String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
 			serviceModifie.setImageService(cheminImage);
 		}
@@ -52,6 +55,7 @@ public class ModifierService implements Serializable {
 	public Service getService() {
 		return service;
 	}
+
 	public void setService(Service service) {
 		this.service = service;
 	}
@@ -64,14 +68,20 @@ public class ModifierService implements Serializable {
 		this.uploadedFile = uploadedFile;
 	}
 
-
-public String afficher(Long id) {
-	Optional<Service> optional = serviceRepo.findById(id);
-	if(optional.isPresent()) {
-		service = optional.get();
-		return "pageAnnonce.xhtml";
+	public String afficher(Long id) {
+		Optional<Service> optional = serviceRepo.findById(id);
+		if (optional.isPresent()) {
+			service = optional.get();
+			return "pageAnnonce.xhtml";
+		}
+		return "listeService.xhtml";
 	}
-	return "listeService.xhtml";
-}
 
+	public void setTypesService(TypeService[] typesService) {
+		this.typesService = typesService;
+	}
+
+	public TypeService[] getTypesService() {
+		return TypeService.values();
+	}
 }
