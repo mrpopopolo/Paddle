@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" lang="en">
+
+<h:head>
+	<title>Mes infos</title>
+</h:head>
+<body>
+<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+	<div class="formulaire">
+			<h:form id="createAccountForm" class="titreFormulaire">
+			<h3>Mes infos</h3>
+			
+			
+			
+				<div class="inputs">
+					<h:inputText class="champCopro" size="10" id="firstNameInput"
+					
+						value="#{modifierUtilisateur.utilisateur.infosPerso.nom}" />
+					<h:messages for="firstNameInput" />
+
+					<h:inputText class="champCopro" size="12" id="lastNameInput"
+					
+						value="#{modifierUtilisateur.utilisateur.infosPerso.prenom}" />
+					<h:messages for="lastNameInput" />
+
+					<h:inputText class="champCopro" size="15" id="emailInput"
+					
+						value="#{modifierUtilisateur.utilisateur.compte.email}" />
+					<h:messages for="emailInput" />
+					
+					<h:inputText class="champCopro" size="15" id="adressInput"
+					
+						value="#{modifierUtilisateur.utilisateur.contact.adresseContact}" />
+					<h:messages for="adressInput" />
+					
+					<h:inputText class="champCopro" size="15" id="telInput"
+					
+						value="#{modifierUtilisateur.utilisateur.contact.numeroDeTelephone}" />
+					<h:messages for="telInput" />
+
+				</div>
+					
+					<h:commandButton class="creerCopro" value="Modifier"
+						action="#{modifierUtilisateur.modifier(modifierUtilisateur.utilisateur)}" />
+			
+
+			</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

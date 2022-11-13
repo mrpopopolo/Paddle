@@ -13,11 +13,11 @@
 <h:body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 
-		<ui:define name="content">
-			<h1 class="menu-utilisateur-titre">Page d'Accueil</h1>
+		<ui:define name="content" value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
+			<h1 class="menu-utilisateur-titre">Bienvenue + "#{acc.infosPerso.nom}"</h1>
 
 			<div class="menu-utilisateur">
-				<h:link outcome="listeUtilisateurs.xhtml">
+				<h:link outcome="mesInfos.xhtml">
 					<div class="menu-utilisateur-container">
 
 						<div class="menu-utilisateur-text">
