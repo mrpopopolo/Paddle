@@ -17,28 +17,30 @@
 			
 			
 				<div class="inputs">
-					<h:inputText class="champCopro" size="10" id="firstNameInput"
-					
+
+					<h:outputLabel value="Nom " />
+					<h:inputText class="champCopro" size="10" id="firstNameInput"					
 						value="#{modifierUtilisateur.utilisateur.infosPerso.nom}" />
 					<h:messages for="firstNameInput" />
 
-					<h:inputText class="champCopro" size="12" id="lastNameInput"
-					
+					<h:outputLabel value="Prénom " />
+					<h:inputText class="champCopro" size="12" id="lastNameInput"	
 						value="#{modifierUtilisateur.utilisateur.infosPerso.prenom}" />
 					<h:messages for="lastNameInput" />
 
+					<h:outputLabel value="Email" />
 					<h:inputText class="champCopro" size="15" id="emailInput"
-					
 						value="#{modifierUtilisateur.utilisateur.compte.email}" />
 					<h:messages for="emailInput" />
-					
-					<h:inputText class="champCopro" size="15" id="adressInput"
-					
+
+					<h:outputLabel value="Adresse " />					
+					<h:inputText class="champCopro" size="15" id="adressInput"				
 						value="#{modifierUtilisateur.utilisateur.contact.adresseContact}" />
 					<h:messages for="adressInput" />
-					
-					<h:inputText class="champCopro" size="15" id="telInput"
-					
+
+					<h:outputLabel value="Telephone" />					
+					<h:inputText class="champCopro" size="15" id="telInput"					
+
 						value="#{modifierUtilisateur.utilisateur.contact.numeroDeTelephone}" />
 					<h:messages for="telInput" />
 
