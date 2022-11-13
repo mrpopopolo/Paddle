@@ -19,6 +19,7 @@ import fr.isika.cda.projetfinal.entity.user.InfosLogement;
 import fr.isika.cda.projetfinal.entity.user.InfosPerso;
 import fr.isika.cda.projetfinal.entity.user.Role;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
+import fr.isika.cda.projetfinal.tools.SessionUtils;
 import fr.isika.cda.projetfinal.viewmodel.FormCompte;
 
 @Stateless
@@ -27,23 +28,9 @@ public class UtilisateurRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Utilisateur create(FormCompte formCompte) {
 
-		Utilisateur utilisateur = new Utilisateur();
-
-		InfosPerso infosPerso = new InfosPerso();
-		infosPerso.setPrenom(formCompte.getPrenom());
-		infosPerso.setNom(formCompte.getNom());
-
-		Compte compte = new Compte();
-		compte.setEmail(formCompte.getEmail());
-		compte.setMotDePasse(formCompte.getMotDePasse());
-
-		utilisateur.setCompte(compte);
-		utilisateur.setInfosPerso(infosPerso);
-
+	public Utilisateur create(Utilisateur utilisateur) {
 		entityManager.persist(utilisateur);
-
 		return utilisateur;
 	}
 

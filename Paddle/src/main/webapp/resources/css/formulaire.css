@@ -43,12 +43,13 @@ form .champCopro{
 	 padding: 10px;
   border:none;
   border-radius: 5px;
-  background-color:#ffffff;
+  background-color:var(--gris);
   outline:none;
   margin-bottom: 8px;
   margin-top: 8px;
   max-width: 400px;
   max-height:200px;
+  
 }
 
 form .creerCopro{
@@ -63,9 +64,9 @@ form .creerCopro{
   margin:5px;
 }
 
-outputLabel .inputs{
-	color:red;
-}
+
+
+
 /*--------------------------------------------------------------
   Media Queries
 --------------------------------------------------------------*/
@@ -80,6 +81,38 @@ outputLabel .inputs{
 		.formulaire{
 		 margin-top: 230px;
 		}
+}
+
+/*--------------------------------------------------------------
+  Tableau
+--------------------------------------------------------------*/v
+.table-style  {
+  padding: 0 20px;
+  margin-left: 100px;
+ 
+
+}
+
+.column { 
+    color: var(--bleu); 
+    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border: 1px solid #ddd;
+}
+
+.column:nth-child(even){
+    background-color: #f3f3f3;
+}
+
+.table{
+
+ padding: 20px;
+ margin:auto;
+ border: 1px solid #ddd;
+
+
+}
 }
 
 

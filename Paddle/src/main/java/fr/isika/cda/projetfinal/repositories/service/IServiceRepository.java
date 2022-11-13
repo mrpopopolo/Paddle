@@ -8,7 +8,7 @@ import fr.isika.cda.projetfinal.viewmodel.FormService;
 
 public interface IServiceRepository {
 
-	Service creer(FormService formService);
+	Service creer(Service service);
 
 	List<Service> findAll();
 

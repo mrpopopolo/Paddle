@@ -6,8 +6,12 @@ import java.util.Optional;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
+import fr.isika.cda.projetfinal.entity.user.Compte;
+import fr.isika.cda.projetfinal.entity.user.InfosPerso;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
+import fr.isika.cda.projetfinal.tools.SessionUtils;
 import fr.isika.cda.projetfinal.tools.UserUtils;
 import fr.isika.cda.projetfinal.viewmodel.FormCompte;
 
@@ -20,9 +24,27 @@ public class UtilisateurService {
 	public UtilisateurService() {}
 
 	public Utilisateur create(FormCompte formCompte) {
-		String motDePasseCrypte = UserUtils.encodePassword(formCompte.getMotDePasse());
-		formCompte.setMotDePasse(motDePasseCrypte);
-		return utilisateurRepository.create(formCompte);
+		Utilisateur utilisateur = new Utilisateur();
+
+		InfosPerso infosPerso = new InfosPerso();
+		infosPerso.setPrenom(formCompte.getPrenom());
+		infosPerso.setNom(formCompte.getNom());
+
+		Compte compte = new Compte();
+		compte.setEmail(formCompte.getEmail());
+		//String motDePasseCrypte = UserUtils.encodePassword(formCompte.getMotDePasse());
+		compte.setMotDePasse(formCompte.getMotDePasse());
+
+		utilisateur.setCompte(compte);
+		utilisateur.setInfosPerso(infosPerso);
+		
+		String adminMail = SessionUtils.getConnectedUserEmail();
+		Utilisateur admin = findByEmail(adminMail).get();
+		Copropriete copropriete = admin.getCopropriete();
+
+		utilisateur.setCopropriete(copropriete);
+		
+		return utilisateurRepository.create(utilisateur);
 	}
 
 	// Methodes afficher la liste des utilisateurs 

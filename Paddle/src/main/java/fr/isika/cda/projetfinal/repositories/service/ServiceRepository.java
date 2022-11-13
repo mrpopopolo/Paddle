@@ -22,20 +22,7 @@ public class ServiceRepository {
 	private EntityManager entityManager;
 
 	
-	public Service creer(FormService formService) {
-
-		// On fait le mapping des attributs entre l'objet qui provient de la couche
-		// présentation
-		// dans l'entité qu'on va persister
-		Service service = new Service();
-		
-		service.setTypeService(formService.getTypeService());
-		service.setTitre(formService.getTitre());
-		service.setPrix(formService.getPrix());
-		service.setDateEvenement(formService.getDateEvenement());
-		service.setDescription(formService.getDescription());
-		service.setImageService(formService.getImageService());
-
+	public Service creer(Service service) {
 		// On persiste l'objet
 		entityManager.persist(service);
 		return service;
@@ -95,5 +82,16 @@ public class ServiceRepository {
 		entityManager.merge(service);
 	}
 
+
+	public void reserver(Service service) {
+		entityManager.persist(service);
+	}
+
+	public List<Service> findCoproServices(Long coproId) {
+		return this.entityManager
+				  .createQuery("SELECT ser FROM Service ser where ser.createurService.copropriete.id = "+coproId, Service.class)
+				  .getResultList();
+
+	}
 	
 }

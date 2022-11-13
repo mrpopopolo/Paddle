@@ -1,11 +1,13 @@
 package fr.isika.cda.projetfinal.controllers.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
+import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
 import fr.isika.cda.projetfinal.service.ServiceService;
 
@@ -17,6 +19,8 @@ public class ListeServiceBean {
 	
 	private List<Service> listeService;
 	
+	private List<Reservation> listeReservation;
+	
 	//méthode pour charger la liste automatiquement lorsqu'un service est créé
 	
 	@PostConstruct
@@ -25,7 +29,7 @@ public class ListeServiceBean {
 	}
 	
 	private List<Service> getAllServices(){
-		return this.serviceService.findAll();
+		return this.serviceService.servicesDeMaCopro();
 		
 	}
 
@@ -43,8 +47,9 @@ public class ListeServiceBean {
 	}
 	
 	public String reserver(Long id) {
-		//TODO something
-		return "reserverService";
+		// récuperer l'utilisateur + utiliser l'attribut listeResevation pour lui ajouter le service 
+		listeReservation.add(new Reservation(serviceService.findById(id).get(),LocalDate.now()));
+		return "listeService"; // return vers la liste des services réservés pas l'utilisateur 
 	}
 	
 }

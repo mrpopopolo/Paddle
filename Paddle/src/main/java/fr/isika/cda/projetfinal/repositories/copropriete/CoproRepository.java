@@ -20,22 +20,8 @@ public class CoproRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Copropriete create(FormCopro formCopro) {
-
-		Copropriete copropriete = new Copropriete();
-
-		Residence residence = new Residence();
-		residence.setRue(formCopro.getRue());
-		residence.setCodePostal(formCopro.getCodePostal());
-		residence.setVille(formCopro.getVille());
-		residence.setNom(formCopro.getNom());
-		residence.setNombreLogements(formCopro.getNombreLogements());
-
-		copropriete.setResidence(residence);
-		copropriete.setPathToBlason(formCopro.getPathToBlason());
-
+	public Copropriete create(Copropriete copropriete) {
 		entityManager.persist(copropriete);
-
 		return copropriete;
 	}
 
