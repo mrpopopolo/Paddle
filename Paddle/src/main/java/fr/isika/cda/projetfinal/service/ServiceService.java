@@ -80,4 +80,16 @@ public class ServiceService {
 		}
 		return null;
 	}
+	
+	public List<Service> mesServices() {
+		if(SessionUtils.isUserConnected()) {
+			String userMail = SessionUtils.getConnectedUserEmail();
+			Optional<Utilisateur> optional = this.utilisateurRepository.findByEmail(userMail);
+			if(optional.isPresent()) {
+				Utilisateur utilisateurConnect = optional.get();
+				return serviceRepository.findMesServices(utilisateurConnect.getId());  
+			}
+		}
+		return null;
+	}
 }

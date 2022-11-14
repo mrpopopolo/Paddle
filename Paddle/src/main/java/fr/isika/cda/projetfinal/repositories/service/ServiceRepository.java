@@ -89,4 +89,11 @@ public class ServiceRepository {
 
 	}
 	
+	public List<Service> findMesServices(Long userId) {
+		return this.entityManager
+				  .createQuery("SELECT ser FROM Service ser where ser.createurService.id = "+userId, Service.class)
+				  .getResultList();
+
+	}
+	
 }
