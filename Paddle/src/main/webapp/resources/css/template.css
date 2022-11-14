@@ -7,6 +7,21 @@
     --text: rgba(236,236,236,.9);
     --gris: #F5F0E1;
     --rouge: #FF6E40;
+    
+   --orangebase: #FFC13B;
+    --bleubase: #1E3D59;
+    --textbase: rgba(236,236,236,.9);
+    --grisbase: #F5F0E1;
+    --rougebase: #FF6E40; 
+    
+     --orangebase: #FFC13B;
+    --bleuopt: #c6d7eb;
+    --textbase: rgba(236,236,236,.9);
+    --grisopt: #1868ae;
+    --rougeopt: #FF6E40; 
+    
+    
+    
 }
 
 
