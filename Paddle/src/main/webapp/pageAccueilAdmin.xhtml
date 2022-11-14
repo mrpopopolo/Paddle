@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html" lang="en">
+
+<h:head>
+	<title>Accueil admin</title>
+
+</h:head>
+
+<h:body>
+	<ui:composition template="/WEB-INF/template/common.xhtml">
+
+		<ui:define name="content">
+			<h1 class="menu-utilisateur-titre">Page d'Accueil Admin</h1>
+
+			<div class="menu-utilisateur">
+				<h:link outcome="listeUtilisateurs.xhtml">
+					<div class="menu-utilisateur-container">
+
+						<div class="menu-utilisateur-text">
+							<br />
+							<div class="menu-utilisateur-text-titre">
+							<h:graphicImage library="images" name="imgProfilOrange2.png" width="50"
+								height="50" />
+							
+								<h2>UTILISATEURS</h2>
+								<p>Gestion utilisateurs</p>
+							</div>
+						</div>
+					</div>
+				</h:link>
+
+				<h:link outcome="listeUtilisateurs.xhtml">
+					<div class="menu-utilisateur-container">
+
+						<div class="menu-utilisateur-text">
+							<br />
+							<div class="menu-utilisateur-text-titre">
+							<h:graphicImage library="images" name="imgPlateformeOrange.png" width="50"
+								height="50" />							
+								<h2>PLATEFORME</h2>
+								<p>Gestion de la plateforme</p>
+							</div>
+						</div>
+					</div>
+				</h:link>
+
+				<h:link outcome="listeUtilisateurs.xhtml">
+					<div class="menu-utilisateur-container">
+						<div class="menu-utilisateur-text">
+							<br />
+							<div class="menu-utilisateur-text-titre">
+							<h:graphicImage library="images" name="imgServiceOrange.png"
+								width="50" height="50" />
+							
+								<h2>SERVICES</h2>
+								<p>Modération services</p>
+							</div>
+						</div>
+					</div>
+				</h:link>
+
+				<h:link outcome="listeUtilisateurs.xhtml">
+					<div class="menu-utilisateur-container">
+						<div class="menu-utilisateur-text">
+							<br />
+							<div class="menu-utilisateur-text-titre">
+							<h:graphicImage library="images" name="imgActualitéOrange.png"
+								width="50" height="50" />						
+								<h2>ACTUALITE</h2>
+								<p>Mettre à jour l'actualité du site</p>
+							</div>
+						</div>
+					</div>
+				</h:link>
+			</div>
+
+			<!--  <ul class="mesinfos">
+					<li><a href="#">Accueil</a></li>
+					<li><a href="#">Mes informations personnelles</a></li>
+					<li><a href="#">Mes annonces</a></li>
+					<li><a href="#">Mes reservations</a></li>
+					<li><a href="#">Paiements</a></li>
+					<li><a href="#">Mes messages</a></li>
+				</ul>-->
+
+
+
+
+		</ui:define>
+
+
+	</ui:composition>
+</h:body>
+</html>
