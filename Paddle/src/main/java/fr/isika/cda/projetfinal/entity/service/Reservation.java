@@ -6,7 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 
 @Entity
 public class Reservation {
@@ -17,6 +21,11 @@ public class Reservation {
 
 	@OneToOne
 	private Service serviceReserve;
+	
+	@ManyToOne
+	@JoinColumn(name = "utilisateur_id")
+	private Utilisateur reserveur;
+	
 	private LocalDate dateExecution;
 	// attribut paiment de la reservation (voir avec les autres)
 
@@ -52,6 +61,14 @@ public class Reservation {
 
 	public Long getId() {
 		return id;
+	}
+
+	public Utilisateur getReserveur() {
+		return reserveur;
+	}
+
+	public void setReserveur(Utilisateur reserveur) {
+		this.reserveur = reserveur;
 	}
 
 }

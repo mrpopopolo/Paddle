@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import fr.isika.cda.projetfinal.entity.paiement.Paiement;
 import fr.isika.cda.projetfinal.entity.paiement.PaiementAbonnement;
 import fr.isika.cda.projetfinal.entity.paiement.Statut;
+import fr.isika.cda.projetfinal.entity.service.Service;
 
 @Stateless
 public class PaiementRepository {
@@ -35,5 +36,10 @@ public class PaiementRepository {
 //		entityManager.persist(paiement);
 //
 //	}
+	
+	public Paiement creer(Paiement paiement) {
+		entityManager.persist(paiement);
+		return paiement;
+	}
 
 }

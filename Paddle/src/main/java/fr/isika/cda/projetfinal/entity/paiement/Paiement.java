@@ -1,5 +1,6 @@
 package fr.isika.cda.projetfinal.entity.paiement;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
@@ -8,6 +9,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 
 @Entity
 public class Paiement {
@@ -16,30 +22,33 @@ public class Paiement {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private Double montant;
+	private BigDecimal montant;
 
 	private LocalDate datePaiement;
 
-	private Integer idPayeur;
+	@ManyToOne
+	@JoinColumn(name = "utilisateur_id")
+	private Utilisateur payeur;
 
-	private Integer idBeneficiaire;
+	@OneToOne
+	private Utilisateur beneficiaire;
 
-	private String motifPaiement;
-
-	private String formePaiement;
-
-	@Enumerated(EnumType.STRING)
-	private Statut statut;
+//	private String motifPaiement;
+//
+//	private String formePaiement;
+//
+//	@Enumerated(EnumType.STRING)
+//	private Statut statut;
 
 	public Paiement() {
 
 	}
 
-	public double getMontant() {
+	public BigDecimal getMontant() {
 		return montant;
 	}
 
-	public void setMontant(double montant) {
+	public void setMontant(BigDecimal montant) {
 		this.montant = montant;
 	}
 
@@ -49,45 +58,27 @@ public class Paiement {
 
 	public void setDatePaiement(LocalDate datePaiement) {
 		this.datePaiement = datePaiement;
-
 	}
 
-	public int getIdPayeur() {
-		return idPayeur;
+	public Utilisateur getPayeur() {
+		return payeur;
 	}
 
-	public int getIdBeneficiare() {
-
-		return idBeneficiaire;
+	public void setPayeur(Utilisateur payeur) {
+		this.payeur = payeur;
 	}
 
-	public void setIdBeneficiare(int idBeneficiare) {
-		this.idBeneficiaire = idBeneficiare;
-
+	public Utilisateur getBeneficiaire() {
+		return beneficiaire;
 	}
 
-	public String getFormePaiement() {
-		return formePaiement;
+	public void setBeneficiaire(Utilisateur beneficiaire) {
+		this.beneficiaire = beneficiaire;
 	}
 
-	public void setFormePaiement(String formePaiement) {
-		this.formePaiement = formePaiement;
+	public Long getId() {
+		return id;
 	}
 
-	public Statut getStatut() {
-		return statut;
-	}
-
-	public void setStatut(Statut statut) {
-		this.statut = statut;
-	}
-
-	public String getMotifPaiement() {
-		return motifPaiement;
-	}
-
-	public void setMotifPaiement(String motifPaiement) {
-		this.motifPaiement = motifPaiement;
-	}
 
 }

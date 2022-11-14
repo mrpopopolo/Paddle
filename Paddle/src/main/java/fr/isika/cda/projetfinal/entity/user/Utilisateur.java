@@ -1,9 +1,11 @@
 package fr.isika.cda.projetfinal.entity.user;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
+import fr.isika.cda.projetfinal.entity.paiement.Paiement;
 import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
 
@@ -40,8 +43,11 @@ public class Utilisateur {
 	@OneToMany (mappedBy = "createurService")
 	private List<Service> services;
 
-	@OneToMany (cascade = CascadeType.ALL)
+	@OneToMany (mappedBy = "reserveur")
 	private List<Reservation> reservations;
+	
+	@OneToMany  (mappedBy = "payeur")
+	private List<Paiement> paiements;
 	
 	@ManyToOne
 	@JoinColumn(name = "copropriete_id")
@@ -119,5 +125,4 @@ public class Utilisateur {
 		this.reservations.add(reservation);
 	}
 	
-
 }
