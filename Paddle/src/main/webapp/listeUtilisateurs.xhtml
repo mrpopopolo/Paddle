@@ -5,35 +5,47 @@
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
 
 <h:head>
-	<title>User accounts List</title>
+	<title>Liste des utilisateurs</title>
 </h:head>
 <body>
-	<h3>Accounts available</h3>
+<ui:composition template="/WEB-INF/template/common.xhtml">
+		<ui:define name="content">
+	<h3>Liste des utilisateurs</h3>
 	<hr />
-	<h:dataTable value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
+	<h:dataTable styleClass="table" value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
 		
-		<h:column>
-			<f:facet name="header">Id</f:facet>
-			#{acc.id}
-		</h:column>
-		
-		<h:column>
+		<h:column class="column">
 			<f:facet name="header">Nom</f:facet>
 			#{acc.infosPerso.nom}
 		</h:column>
 		
-		<h:column>
+		<h:column class="column">
 			<f:facet name="header">Prenom</f:facet>
 			#{acc.infosPerso.prenom}
 		</h:column>
 		
-		<h:column>
+		<h:column class="column">
 			<f:facet name="header">Email</f:facet>
 			#{acc.compte.email}
 		</h:column>
-		<h:column rows="2">
+		
+		<h:column class="column">
+			<f:facet name="header">Adresse</f:facet>
+			#{acc.contact.adresseContact}
+		</h:column>
+		
+		<h:column class="column">
+			<f:facet name="header">Telephone</f:facet>
+			#{acc.contact.numeroDeTelephone}
+		</h:column>
+		
+		
+		<h:column class="column" rows="2">
 			<f:facet name="header">Actions</f:facet>
 			<h:form>
+			
+			
+			
 				<h:commandButton value ="Supprimer" action="#{listeUtilisateursManagedBean.delete(acc.compte.email)}"/>
 			</h:form>
 			<h:form>
@@ -42,6 +54,7 @@
 		</h:column>
 		
 	</h:dataTable>
-
+		</ui:define>
+	</ui:composition>
 </body>
 </html>

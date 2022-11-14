@@ -67,4 +67,11 @@ public class InfosPerso {
 		return id;
 	}
 
+	@Override
+	public String toString() {
+		return   nom + " " + prenom  ;
+	}
+	
+	
+
 }

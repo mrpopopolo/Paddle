@@ -3,6 +3,7 @@ package fr.isika.cda.projetfinal.controllers.service;
 import java.time.LocalDate;
 
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
 
 import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
@@ -17,9 +18,9 @@ import fr.isika.cda.projetfinal.tools.SessionUtils;
 public class ReservationService {
 
 	// ***** Attributs *****
-	
+	@Inject
 	private ServiceRepository serviceRepository;
-	
+	@Inject
 	private UtilisateurRepository utilisateurRepository;
 	
 	private Service service;
@@ -61,9 +62,11 @@ public class ReservationService {
 		this.service = service;
 	}
 	
-	public String reserver(Long id) {
-		Service serviceAReserver = serviceRepository.findById(id).get();
-		Reservation reservation = new Reservation(serviceAReserver, LocalDate.now());
+	
+	public String reserver(Service service) {
+		// System.err.println(id);
+		// Service serviceAReserver = serviceRepository.findById(id).get();
+		Reservation reservation = new Reservation(service, LocalDate.now());
 		String userMail = SessionUtils.getConnectedUserEmail();
 		Utilisateur utilisateurQuiReserve = this.utilisateurRepository.findByEmail(userMail).get();
 		utilisateurQuiReserve.ajouterReservation(reservation);

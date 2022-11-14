@@ -82,11 +82,6 @@ public class ServiceRepository {
 		entityManager.merge(service);
 	}
 
-
-	public void reserver(Service service) {
-		entityManager.persist(service);
-	}
-
 	public List<Service> findCoproServices(Long coproId) {
 		return this.entityManager
 				  .createQuery("SELECT ser FROM Service ser where ser.createurService.copropriete.id = "+coproId, Service.class)
