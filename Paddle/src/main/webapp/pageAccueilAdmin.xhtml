@@ -14,7 +14,7 @@
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 
 		<ui:define name="content">
-			<h1 class="menu-utilisateur-titre">Page d'Accueil Admin</h1>
+			<h1 class="menu-utilisateur-titre">Tableau de bord</h1>
 
 			<div class="menu-utilisateur">
 				<h:link outcome="listeUtilisateurs.xhtml">
@@ -27,28 +27,14 @@
 								height="50" />
 							
 								<h2>UTILISATEURS</h2>
-								<p>Gestion utilisateurs</p>
+								<p>Gestion des utilisateurs</p>
 							</div>
 						</div>
 					</div>
 				</h:link>
 
-				<h:link outcome="listeUtilisateurs.xhtml">
-					<div class="menu-utilisateur-container">
 
-						<div class="menu-utilisateur-text">
-							<br />
-							<div class="menu-utilisateur-text-titre">
-							<h:graphicImage library="images" name="imgPlateformeOrange.png" width="50"
-								height="50" />							
-								<h2>PLATEFORME</h2>
-								<p>Gestion de la plateforme</p>
-							</div>
-						</div>
-					</div>
-				</h:link>
-
-				<h:link outcome="listeUtilisateurs.xhtml">
+				<h:link outcome="listeService.xhtml">
 					<div class="menu-utilisateur-container">
 						<div class="menu-utilisateur-text">
 							<br />
@@ -57,7 +43,7 @@
 								width="50" height="50" />
 							
 								<h2>SERVICES</h2>
-								<p>Modération services</p>
+								<p>Modération des services</p>
 							</div>
 						</div>
 					</div>

@@ -54,6 +54,7 @@
 	display: inline-block;
 	text-align: center;
 	transition: all .2s;
+	font-family: 'Roboto', sans-serif;
 }
 
 .nav-lien:not(:last-child) {
@@ -120,7 +121,7 @@ body{
 		border-bottom: 1px solid #F5F0E1;
 	}
 	.header {
-		height: 30vh;
+		height: 40vh;
 	}
 	.body {
 	
@@ -282,9 +283,7 @@ body{
   box-shadow: 0 0 20px var(--bleu);
 }
 
-.btnCreerService{
-	
-}
+
 
 /*--------------------------------------------------------------
 #  Détail service
