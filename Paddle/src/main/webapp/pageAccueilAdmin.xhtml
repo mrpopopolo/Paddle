@@ -6,42 +6,43 @@
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
 
 <h:head>
-	<title>Accueil utilisateur</title>
+	<title>Accueil admin</title>
 
 </h:head>
 
 <h:body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 
-		<ui:define name="content" value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
-			<h1 class="menu-utilisateur-titre">Bienvenue + "#{acc.infosPerso.nom}"</h1>
+		<ui:define name="content">
+			<h1 class="menu-utilisateur-titre">Page d'Accueil Admin</h1>
 
 			<div class="menu-utilisateur">
-				<h:link outcome="mesInfos.xhtml">
+				<h:link outcome="listeUtilisateurs.xhtml">
 					<div class="menu-utilisateur-container">
+
 						<div class="menu-utilisateur-text">
 							<br />
 							<div class="menu-utilisateur-text-titre">
 							<h:graphicImage library="images" name="imgProfilOrange2.png" width="50"
 								height="50" />
 							
-								<h2>PROFIL</h2>
-								<p>Mes informations personnelles</p>
+								<h2>UTILISATEURS</h2>
+								<p>Gestion utilisateurs</p>
 							</div>
 						</div>
 					</div>
 				</h:link>
 
-				<h:link outcome="mesAnnonces.xhtml">
+				<h:link outcome="listeUtilisateurs.xhtml">
 					<div class="menu-utilisateur-container">
 
 						<div class="menu-utilisateur-text">
 							<br />
 							<div class="menu-utilisateur-text-titre">
-							<h:graphicImage library="images" name="imgAnnonceOrange.png" width="40"
-								height="40" />							
-								<h2>ANNONCES</h2>
-								<p>Mes annonces</p>
+							<h:graphicImage library="images" name="imgPlateformeOrange.png" width="50"
+								height="50" />							
+								<h2>PLATEFORME</h2>
+								<p>Gestion de la plateforme</p>
 							</div>
 						</div>
 					</div>
@@ -52,11 +53,11 @@
 						<div class="menu-utilisateur-text">
 							<br />
 							<div class="menu-utilisateur-text-titre">
-							<h:graphicImage library="images" name="imgReservationOrange.png"
-								width="40" height="40" />
+							<h:graphicImage library="images" name="imgServiceOrange.png"
+								width="50" height="50" />
 							
-								<h2>RESERVATIONS</h2>
-								<p>Mes reservations</p>
+								<h2>SERVICES</h2>
+								<p>Modération services</p>
 							</div>
 						</div>
 					</div>
@@ -67,10 +68,10 @@
 						<div class="menu-utilisateur-text">
 							<br />
 							<div class="menu-utilisateur-text-titre">
-							<h:graphicImage library="images" name="imgPaiementOrange.png"
-								width="40" height="40" />						
-								<h2>PAIEMENTS</h2>
-								<p>Suivre mes paiements</p>
+							<h:graphicImage library="images" name="imgActualitéOrange.png"
+								width="50" height="50" />						
+								<h2>ACTUALITE</h2>
+								<p>Mettre à jour l'actualité du site</p>
 							</div>
 						</div>
 					</div>

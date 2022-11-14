@@ -40,12 +40,13 @@ public class ServiceService {
 		service.setImageService(formService.getImageService());
 
 		String userMail = SessionUtils.getConnectedUserEmail();
-		Utilisateur createurService = this.utilisateurRepository.findByEmail(userMail).get();
-		createurService.ajouterService(service);
-		
-		this.utilisateurRepository.modifier(createurService);
-		
-		service.setCreateurService(createurService);
+		Optional<Utilisateur> optional = this.utilisateurRepository.findByEmail(userMail);
+		if(optional.isPresent()) {
+			Utilisateur createurService = optional.get();
+			createurService.ajouterService(service);
+			this.utilisateurRepository.modifier(createurService);
+			service.setCreateurService(createurService);
+		}
 		return serviceRepository.creer(service);
 	}
 	
@@ -69,8 +70,13 @@ public class ServiceService {
 	public List<Service> servicesDeMaCopro() {
 		if(SessionUtils.isUserConnected()) {
 			String userMail = SessionUtils.getConnectedUserEmail();
-			Utilisateur demandeurService = this.utilisateurRepository.findByEmail(userMail).get();
-			return serviceRepository.findCoproServices(demandeurService.getCopropriete().getId());
+			Optional<Utilisateur> optional = this.utilisateurRepository.findByEmail(userMail);
+			if(optional.isPresent()) {
+				Utilisateur demandeurService = optional.get();
+				if(demandeurService.getCopropriete() != null) {
+					return serviceRepository.findCoproServices(demandeurService.getCopropriete().getId());
+				}
+			}
 		}
 		return null;
 	}

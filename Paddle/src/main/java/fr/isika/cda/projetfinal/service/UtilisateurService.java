@@ -8,11 +8,12 @@ import javax.inject.Inject;
 
 import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
 import fr.isika.cda.projetfinal.entity.user.Compte;
+import fr.isika.cda.projetfinal.entity.user.Contact;
+import fr.isika.cda.projetfinal.entity.user.InfosLogement;
 import fr.isika.cda.projetfinal.entity.user.InfosPerso;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
 import fr.isika.cda.projetfinal.tools.SessionUtils;
-import fr.isika.cda.projetfinal.tools.UserUtils;
 import fr.isika.cda.projetfinal.viewmodel.FormCompte;
 
 @Stateless
@@ -35,15 +36,22 @@ public class UtilisateurService {
 		//String motDePasseCrypte = UserUtils.encodePassword(formCompte.getMotDePasse());
 		compte.setMotDePasse(formCompte.getMotDePasse());
 
+		Contact contact = new Contact();
+		InfosLogement infosLogement = new InfosLogement();
 		utilisateur.setCompte(compte);
 		utilisateur.setInfosPerso(infosPerso);
+		utilisateur.setContact(contact);
+		utilisateur.setInfosLogement(infosLogement);
 		
 		String adminMail = SessionUtils.getConnectedUserEmail();
-		Utilisateur admin = findByEmail(adminMail).get();
-		Copropriete copropriete = admin.getCopropriete();
-
-		utilisateur.setCopropriete(copropriete);
-		
+		if(adminMail != null) {
+			Optional<Utilisateur> optional = findByEmail(adminMail);
+			if(optional.isPresent()) {
+				Utilisateur admin = optional.get();
+				Copropriete copropriete = admin.getCopropriete();
+				utilisateur.setCopropriete(copropriete);
+			}
+		}
 		return utilisateurRepository.create(utilisateur);
 	}
 

@@ -46,6 +46,8 @@
 			<div class="serviceIndex">
 		
 				<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
+				<h:form>
+				<h:commandLink action="#{modifierService.afficher(serv.id)}" value="" >
 					<div class="carteIndex">
 
 						<div class="carte-image">
@@ -64,16 +66,15 @@
 								<p>#{serv.prix}€</p>
 								
 							</div>
-							<h:form>
-							<h:commandButton value="afficher" class="reserver"
-						action="#{modifierService.afficher(serv.id)}">
-						<f:param name="serviceId" value="#{serv.id}"/>
+							
 						
-					</h:commandButton>
-					</h:form>
+					
+					
 						</div>
 						
 					</div>
+					</h:commandLink>
+					</h:form>
 				</ui:repeat>
 			</div>
 		

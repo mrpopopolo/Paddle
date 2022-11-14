@@ -1,6 +1,5 @@
 package fr.isika.cda.projetfinal.controllers.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -36,6 +35,9 @@ public class ListeServiceBean {
 	public List<Service> getListeService() {
 		return listeService;
 	}
+	public void setListeService(List<Service> listeService) {
+		this.listeService = listeService;
+	}
 	
 	public String delete(Long id) {
 		serviceService.delete(id);
@@ -46,10 +48,11 @@ public class ListeServiceBean {
 		return "modifierService?serviceId="+id;
 	}
 	
-	public String reserver(Long id) {
+ /*	public String reserver(Long id) {
 		// récuperer l'utilisateur + utiliser l'attribut listeResevation pour lui ajouter le service 
 		listeReservation.add(new Reservation(serviceService.findById(id).get(),LocalDate.now()));
 		return "listeService"; // return vers la liste des services réservés pas l'utilisateur 
 	}
+	*/ 
 	
 }
