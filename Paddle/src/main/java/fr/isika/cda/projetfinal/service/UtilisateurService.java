@@ -8,6 +8,8 @@ import javax.inject.Inject;
 
 import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
 import fr.isika.cda.projetfinal.entity.user.Compte;
+import fr.isika.cda.projetfinal.entity.user.Contact;
+import fr.isika.cda.projetfinal.entity.user.InfosLogement;
 import fr.isika.cda.projetfinal.entity.user.InfosPerso;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
@@ -35,9 +37,11 @@ public class UtilisateurService {
 		//String motDePasseCrypte = UserUtils.encodePassword(formCompte.getMotDePasse());
 		compte.setMotDePasse(formCompte.getMotDePasse());
 
+		Contact contact = new Contact();
+		InfosLogement infosLogement = new InfosLogement();
 		utilisateur.setCompte(compte);
 		utilisateur.setInfosPerso(infosPerso);
-		
+		utilisateur.setContact(contact);
 		String adminMail = SessionUtils.getConnectedUserEmail();
 		Utilisateur admin = findByEmail(adminMail).get();
 		Copropriete copropriete = admin.getCopropriete();

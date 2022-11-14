@@ -50,17 +50,15 @@
 					<h:commandButton value="Supprimer"
 						action="#{listeServiceBean.delete(ser.id)}" />
 						<h:commandButton value="Resever"
-						action="#{reservationService.reserver(ser.id)}">
-						<f:param name="serviceId" value="#{ser.id}"/>
+						action="#{reservationService.reserver(ser)}">
+						
 					</h:commandButton>
 				</h:form>
 		</h:column>
 
 			</h:dataTable>
 
-			<hr />
-			<h:link outcome="index.xhtml">Revenir à l'accueil</h:link>
-
+			
 			</div>		
 
 		</ui:define>
