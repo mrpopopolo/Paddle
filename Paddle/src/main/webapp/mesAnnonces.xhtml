@@ -18,9 +18,10 @@
 			<div class="serviceIndex">
 
 
-				<div class="carteService">
+				
 
 					<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
+					<div class="carteService">
 						<div class="carte-image">
 							<h:graphicImage value="#{serv.imageService}" />
 						</div>
@@ -47,9 +48,10 @@
 								<f:param name="serviceId" value="#{ser.id}" />
 							</h:form>
 						</div>
+						</div>
 					</ui:repeat>
 				</div>
-			</div>
+			
 		</ui:define>
 	</ui:composition>
 </body>
