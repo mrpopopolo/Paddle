@@ -15,9 +15,11 @@
 
 		<ui:define name="content" value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
 			<h1 class="menu-utilisateur-titre">Bienvenue + "#{acc.infosPerso.nom}"</h1>
-
+			<h:form >
+			
 			<div class="menu-utilisateur">
-				<h:link outcome="mesInfos.xhtml">
+				
+				<h:commandLink action="#{modifierUtilisateur.modifierMesInfos()}">
 					<div class="menu-utilisateur-container">
 						<div class="menu-utilisateur-text">
 							<br />
@@ -30,7 +32,7 @@
 							</div>
 						</div>
 					</div>
-				</h:link>
+				</h:commandLink>
 
 				<h:link outcome="mesAnnonces.xhtml">
 					<div class="menu-utilisateur-container">
@@ -76,7 +78,7 @@
 					</div>
 				</h:link>
 			</div>
-
+		</h:form>
 			<!--  <ul class="mesinfos">
 					<li><a href="#">Accueil</a></li>
 					<li><a href="#">Mes informations personnelles</a></li>

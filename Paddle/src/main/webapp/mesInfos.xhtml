@@ -9,8 +9,8 @@
 </h:head>
 <body>
 <ui:composition template="/WEB-INF/template/common.xhtml">
-		<ui:define name="content" value="#{listeUtilisateursManagedBean.listeUtilisateurs}">
-	<div class="formulaire">
+		<ui:define name="content" >
+			<div class="formulaire">
 			<h:form id="createAccountForm" class="titreFormulaire">
 			<h3>Mes infos</h3>
 			
@@ -47,7 +47,7 @@
 				</div>
 					
 					<h:commandButton class="creerCopro" value="Modifier"
-						action="#{modifierUtilisateur.modifier(modifierUtilisateur.utilisateur)}" />
+						action="#{modifierUtilisateur.modifierMesInfos(modifierUtilisateur.utilisateur)}" />
 			
 
 			</h:form>
