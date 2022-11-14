@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-		xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:h="http://java.sun.com/jsf/html" lang="en">
 <head>
 <meta charset="utf-8"></meta>
@@ -13,14 +13,14 @@
 
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
-		<ui:define name="content" >
-		
-			<div class="serviceIndex" >
+		<ui:define name="content">
 
-				
-					<div class="carteService">
-					
-				<h:form var="serv" value="#{listeServiceBean.listeService}">
+			<div class="serviceIndex">
+
+
+				<div class="carteService">
+
+					<ui:repeat var="serv" value="#{listeServiceBean.listeService}">
 						<div class="carte-image">
 							<h:graphicImage value="#{serv.imageService}" />
 						</div>
@@ -32,27 +32,23 @@
 							<div class="carte-titre">
 								<h2>#{serv.titre}</h2>
 							</div>
-							
+
 							<div class="carte-prix">
 								<p>#{serv.prix} €</p>
 							</div>
-							
+
 							<div class="annonce-description">
-							<h3>Description </h3>
+								<h3>Description</h3>
 								<p>#{serv.description}</p>
 							</div>
-							
-							<h:commandButton value="Modifier" class="reserver"
-						action="#{modifierService.modifier()}" />
-						<f:param name="serviceId" value="#{ser.id}"/>
-							
-							
-							
+							<h:form>
+								<h:commandButton value="Modifier" class="reserver"
+									action="#{modifierService.modifier()}" />
+								<f:param name="serviceId" value="#{ser.id}" />
+							</h:form>
 						</div>
-						</h:form>
-					</div>
-					
-				
+					</ui:repeat>
+				</div>
 			</div>
 		</ui:define>
 	</ui:composition>

@@ -1,6 +1,5 @@
 package fr.isika.cda.projetfinal.controllers.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -35,6 +34,9 @@ public class ListeServiceBean {
 
 	public List<Service> getListeService() {
 		return listeService;
+	}
+	public void setListeService(List<Service> listeService) {
+		this.listeService = listeService;
 	}
 	
 	public String delete(Long id) {

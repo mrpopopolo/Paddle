@@ -14,7 +14,6 @@ import fr.isika.cda.projetfinal.entity.user.InfosPerso;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
 import fr.isika.cda.projetfinal.tools.SessionUtils;
-import fr.isika.cda.projetfinal.tools.UserUtils;
 import fr.isika.cda.projetfinal.viewmodel.FormCompte;
 
 @Stateless
@@ -42,12 +41,17 @@ public class UtilisateurService {
 		utilisateur.setCompte(compte);
 		utilisateur.setInfosPerso(infosPerso);
 		utilisateur.setContact(contact);
-		String adminMail = SessionUtils.getConnectedUserEmail();
-		Utilisateur admin = findByEmail(adminMail).get();
-		Copropriete copropriete = admin.getCopropriete();
-
-		utilisateur.setCopropriete(copropriete);
+		utilisateur.setInfosLogement(infosLogement);
 		
+		String adminMail = SessionUtils.getConnectedUserEmail();
+		if(adminMail != null) {
+			Optional<Utilisateur> optional = findByEmail(adminMail);
+			if(optional.isPresent()) {
+				Utilisateur admin = optional.get();
+				Copropriete copropriete = admin.getCopropriete();
+				utilisateur.setCopropriete(copropriete);
+			}
+		}
 		return utilisateurRepository.create(utilisateur);
 	}
 
