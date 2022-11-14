@@ -6,6 +6,7 @@
     --bleu: #1E3D59;
     --text: rgba(236,236,236,.9);
     --gris: #F5F0E1;
+    --rouge: #FF6E40;
 }
 
 
@@ -268,8 +269,22 @@ body{
 	color:var(--gris); 
 }
 
+.creerCopro{
+  padding: 15px 25px;
+  border-radius: 10px;
+  border:none;
+  font-size: 30px;
+  color: var(--orange);
+  background-color: var(--bleu);
+  outline:none;
+  cursor:pointer;
+  margin:15px;
+  box-shadow: 0 0 20px var(--bleu);
+}
 
-
+.btnCreerService{
+	
+}
 
 /*--------------------------------------------------------------
 #  Détail service

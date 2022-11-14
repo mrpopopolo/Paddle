@@ -97,8 +97,8 @@ form .creerCopro{
     color: var(--bleu); 
     padding: 15px 20px;
     text-align: center;
-    border: 1px solid #ddd;
-    border: 1px solid #ddd;
+    border: 1px solid  var(--bleu);;
+    border: 1px solid  var(--bleu);;
 }
 
 .column:nth-child(even){
@@ -109,11 +109,17 @@ form .creerCopro{
 
  padding: 20px;
  margin:auto;
- border: 1px solid #ddd;
-
+ border: 1px solid;
+color: var(--bleu);
 
 }
-}
 
+.reservationTitre{
+	text-align: center;
+	padding: 40px;
+	font-size: 25px;
+	color: var(--bleu);
+	text-decoration: underline var(--rouge);  
+}
 
 

@@ -10,8 +10,8 @@
 <body>
 <ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
-	<h3>Liste des utilisateurs</h3>
-	<hr />
+	<h3 class="reservationTitre">Liste des utilisateurs</h3>
+
 	<h:dataTable styleClass="table" value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
 		
 		<h:column class="column">
