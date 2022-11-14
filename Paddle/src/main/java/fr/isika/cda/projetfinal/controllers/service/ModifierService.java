@@ -34,11 +34,16 @@ public class ModifierService implements Serializable {
 
 	private TypeService[] typesService;
 
-	public String modifier(Long id) {
-		Optional<Service> optional = serviceRepo.findById(id);
-		if (optional.isPresent()) {
-			service = optional.get();
-			return "modifierService.xhtml";
+	public String modifier() {
+		Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		String serviceIdParam = map.get("servId");
+		if(serviceIdParam != null) {
+			Long id = Long.valueOf(serviceIdParam);
+			Optional<Service> optional = serviceRepo.findById(id);
+			if (optional.isPresent()) {
+				service = optional.get();
+				return "modifierService.xhtml";
+			}
 		}
 		return "listeService.xhtml";
 	}
