@@ -115,7 +115,7 @@ public class Utilisateur {
 		this.services.add(service);
 	}
 
-	public void ajouterReservation(Reservation reservation) {
+	public void ajouterReservation(Reservation reservation) { // voir avec Mohammed 
 		this.reservations.add(reservation);
 	}
 	
