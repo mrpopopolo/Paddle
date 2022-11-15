@@ -48,15 +48,19 @@
 }
 
 .navigation {
-	padding: 10px 100px;
+	padding: 10px 50px;
 	display: flex;
 	align-items: center;
-	padding:0 15px;
+	padding:10 15px;
 }
 
 .titre {
 	margin-right: auto;
 	color: #F5F0E1;
+	margin-bottom:0;
+	margin-top:0;
+
+	
 }
 
 .nav-lien:link, .nav-lien:visited {
