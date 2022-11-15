@@ -85,7 +85,7 @@ public class LoginBean {
 				
 				SessionUtils.setConnectedUserEmail(utilisateurConnecte);
 				
-				return "connexionReussie";
+				return "index";
 			} else {
 				// En cas d'erreur on ajoute des messages au formulaire pour indiquer l'erreur
 				// une bonne pratique est de toujours dire identifiants incorrects sans
