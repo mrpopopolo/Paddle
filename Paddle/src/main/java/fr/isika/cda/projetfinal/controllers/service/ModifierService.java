@@ -49,7 +49,7 @@ public class ModifierService implements Serializable {
 			serviceModifie.setImageService(cheminImage);
 		}
 		serviceRepo.modifier(serviceModifie);
-		return "listeService.xhtml";
+		return "mesAnnonces.xhtml";
 	}
 
 	public Service getService() {
