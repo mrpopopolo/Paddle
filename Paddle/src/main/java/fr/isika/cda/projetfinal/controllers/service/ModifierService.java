@@ -68,15 +68,6 @@ public class ModifierService implements Serializable {
 		this.uploadedFile = uploadedFile;
 	}
 
-	public String afficher(Long id) {
-		Optional<Service> optional = serviceRepo.findById(id);
-		if (optional.isPresent()) {
-			service = optional.get();
-			return "pageAnnonce.xhtml";
-		}
-		return "listeService.xhtml";
-	}
-
 	public void setTypesService(TypeService[] typesService) {
 		this.typesService = typesService;
 	}

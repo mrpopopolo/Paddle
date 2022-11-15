@@ -57,7 +57,7 @@
 				<ui:repeat var="serv" value="#{listeServiceBean.listeService}" varStatus="status">
 				<ui:fragment rendered="#{status.index lt limit}">
 				<h:form>
-				<h:commandLink action="#{modifierService.afficher(serv.id)}" class="lienAnnonce" >
+				<h:commandLink action="#{afficherService.afficher(serv.id)}" class="lienAnnonce" >
 					<div class="carteIndex">
 
 						<div class="carte-image">
