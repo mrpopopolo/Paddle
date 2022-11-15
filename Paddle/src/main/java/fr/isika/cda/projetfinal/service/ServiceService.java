@@ -38,6 +38,7 @@ public class ServiceService {
 		service.setDateEvenement(formService.getDateEvenement());
 		service.setDescription(formService.getDescription());
 		service.setImageService(formService.getImageService());
+		service.setEstUneDemande(formService.getEstUneDemande());
 
 		String userMail = SessionUtils.getConnectedUserEmail();
 		Optional<Utilisateur> optional = this.utilisateurRepository.findByEmail(userMail);

@@ -45,6 +45,8 @@ public class Service {
 	@Enumerated(EnumType.STRING)
 	private TypeService typeService;
 	
+	private Boolean estUneDemande;
+	
 	//*****constructeur ********
 
 	public Service() {
@@ -110,5 +112,13 @@ public class Service {
 
 	public void setImageService(String imageService) {
 		this.imageService = imageService;
+	}
+
+	public Boolean getEstUneDemande() {
+		return estUneDemande;
+	}
+
+	public void setEstUneDemande(Boolean estUneDemande) {
+		this.estUneDemande = estUneDemande;
 	}
 }
