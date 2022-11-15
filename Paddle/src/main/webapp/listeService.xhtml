@@ -45,7 +45,6 @@
 				<h:form>
 					<h:commandButton value="Modifier"
 						action="#{modifierService.modifier(ser.id)}">
-						<f:param name="serviceId" value="#{ser.id}"/>
 					</h:commandButton>
 					<h:commandButton value="Supprimer"
 						action="#{listeServiceBean.delete(ser.id)}" />
