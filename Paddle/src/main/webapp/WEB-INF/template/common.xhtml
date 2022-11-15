@@ -12,14 +12,18 @@
 	<h:outputStylesheet library = "css" name="formulaire.css"/>
 	<h:outputStylesheet library = "css" name="stylesPageAccueilUtilisateur.css"/>
 	<h:outputStylesheet library = "css" name="paiement.css"/>
-
+	<c:if test="#{userInfoBean.userRole.equalsIgnoreCase('Admin')}">
+        <h:outputStylesheet library = "css" name="templateAlt.css"/>
+    </c:if>
 </h:head>
 
 <h:head>
 	<title>Template</title>
 	
+	<h:outputScript library="js" name="app.js" />
 </h:head>
 <h:body>
+
 	<div class="header">
 		<ui:insert name="header">
 			<ui:include src="header.xhtml" />

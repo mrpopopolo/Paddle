@@ -13,7 +13,7 @@
 
 <body>
 	<ui:composition template="/WEB-INF/template/common.xhtml">
-		<ui:define name="content" var="serv" value="#{listeServiceBean.listeService}">
+		<ui:define name="content" var="serv" value="#{afficherService.service}">
 		
 			<div class="serviceIndex" >
 
@@ -22,7 +22,7 @@
 					
 
 						<div class="carte-image">
-							<h:graphicImage value="#{serv.imageService}" />
+							<h:graphicImage value="#{afficherService.service.imageService}" />
 						</div>
 						<!-- Fin de l'image à la une -->
 						<!-- Corp de notre carte -->
@@ -30,24 +30,25 @@
 
 							<!-- Titre de l'article -->
 							<div class="carte-titre">
-								<h2>#{modifierService.service.titre}</h2>
+								<h2>#{afficherService.service.titre}</h2>
 							</div>
 							
 							<div class="carte-prix">
-								<p>#{serv.prix} €</p>
+								<p>#{afficherService.service.prix} €</p>
 							</div>
 							
 							<div class="annonce-description">
 							<h3>Description </h3>
-								<p>#{serv.description}</p>
+								<p>#{afficherService.service.description}</p>
 							</div>
 							<div class="annonce-proprio">
 							<h3>Mis en ligne par</h3>
-								<p>#{serv.createurService.infosPerso}</p>
+								<p>#{afficherService.service.createurService.infosPerso}</p>
 							</div>
+							<h:form>
 							<h:commandButton value="Réserver" class="reserver"
-						action="#{creationServiceBean.creer()}" />
-							<h:link outcome="paiement.xhtml">Réserver</h:link>
+						onclick="alert('Service réservé avec succès !')" action="#{reservationBean.reserver(afficherService.service)}"/>
+							</h:form>
 							
 							
 						</div>

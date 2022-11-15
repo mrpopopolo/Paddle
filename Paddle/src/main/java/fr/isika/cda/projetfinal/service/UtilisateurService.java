@@ -11,6 +11,7 @@ import fr.isika.cda.projetfinal.entity.user.Compte;
 import fr.isika.cda.projetfinal.entity.user.Contact;
 import fr.isika.cda.projetfinal.entity.user.InfosLogement;
 import fr.isika.cda.projetfinal.entity.user.InfosPerso;
+import fr.isika.cda.projetfinal.entity.user.Role;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
 import fr.isika.cda.projetfinal.tools.SessionUtils;
@@ -35,6 +36,7 @@ public class UtilisateurService {
 		compte.setEmail(formCompte.getEmail());
 		//String motDePasseCrypte = UserUtils.encodePassword(formCompte.getMotDePasse());
 		compte.setMotDePasse(formCompte.getMotDePasse());
+		compte.setRole(Role.User);
 
 		Contact contact = new Contact();
 		InfosLogement infosLogement = new InfosLogement();

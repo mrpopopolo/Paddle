@@ -34,6 +34,8 @@ public class FormService {
 	
 	private String imageService;
 	
+	private Boolean estUneDemande;
+	
 	//**********Getter/Setter************
 
 	public TypeService getTypeService() {
@@ -82,6 +84,14 @@ public class FormService {
 
 	public void setImageService(String imageService) {
 		this.imageService = imageService;
+	}
+
+	public Boolean getEstUneDemande() {
+		return estUneDemande;
+	}
+
+	public void setEstUneDemande(Boolean estUneDemande) {
+		this.estUneDemande = estUneDemande;
 	}
 
 }

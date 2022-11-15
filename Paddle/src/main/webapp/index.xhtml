@@ -17,8 +17,8 @@
 			<div class="actu">
 				<div class="event">
 					<div class="event_date">
-						<div class="event_date--day">21</div>
-						<div class="event_date--month">Mars</div>
+						<div class="event_date--day">18</div>
+						<div class="event_date--month">Novembre</div>
 						<div class="event_date--year">2022</div>
 					</div>
 
@@ -27,27 +27,26 @@
 							chaudière</div>
 
 
-						<div class="event_description--text">Lorem ipsum dolor sit
-							amet, consectetur adipiscing elit. Phasellus dapibus, augue et
-							porta tempus, libero felis pharetra tellus, eu malesuada erat
-							nunc placerat nibh. Aliquam nec ex ornare, sodales velit sit
-							amet, rutrum ex. Aenean vestibulum nisi ullamcorper arcu
-							tincidunt fringilla. Nulla consectetur ac orci sed tristique.
-							Nulla ornare nisi elit, sed sagittis sem tincidunt nec.
-							Suspendisse potenti. Suspendisse ex lorem, convallis non nisl
-							vitae, eleifend volutpat turpis. Proin tempus quam posuere lectus
-							tincidunt.</div>
+						<div class="event_description--text">
+						L'entretien annuel obligatoire de la chaudière sera réalisé par un agent d'entretien spécialisé 
+						le 18 novembre.
+							</div>
 					</div>
 
 				</div>
 			</div>
-			<h:link outcome="creerService.xhtml">
-			<div class="btnCreerService" align="center">
-						<h:commandButton value="Deposer une annonce" class="creerCopro"
-						 />
+			
+		
+			<div class="btnCreerUtilisateur" align="center">
+				
+			<h:link outcome="creerService.xhtml">	
+						<button class="creerCopro">Deposer une annonce</button> 
+						
+						 </h:link>	
 						
 			</div>
-			</h:link>
+				
+			
 			
 			
 			
@@ -58,7 +57,7 @@
 				<ui:repeat var="serv" value="#{listeServiceBean.listeService}" varStatus="status">
 				<ui:fragment rendered="#{status.index lt limit}">
 				<h:form>
-				<h:commandLink action="#{modifierService.afficher(serv.id)}" value="" >
+				<h:commandLink action="#{afficherService.afficher(serv.id)}" class="lienAnnonce" >
 					<div class="carteIndex">
 
 						<div class="carte-image">
@@ -77,10 +76,6 @@
 								<p>#{serv.prix}€</p>
 								
 							</div>
-							
-						
-					
-					
 						</div>
 						
 					</div>

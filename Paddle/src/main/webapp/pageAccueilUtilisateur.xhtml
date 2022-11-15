@@ -14,7 +14,7 @@
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 
 		<ui:define name="content" value="#{listeUtilisateursManagedBean.listeUtilisateurs}" var="acc">
-			<h1 class="menu-utilisateur-titre">Bienvenue + "#{acc.infosPerso.nom}"</h1>
+			<h1 class="menu-utilisateur-titre">Bienvenue #{userInfoBean.getUserName()}</h1>
 			<h:form >
 			
 			<div class="menu-utilisateur">

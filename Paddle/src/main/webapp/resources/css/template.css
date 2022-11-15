@@ -7,6 +7,21 @@
     --text: rgba(236,236,236,.9);
     --gris: #F5F0E1;
     --rouge: #FF6E40;
+    
+   --orangebase: #FFC13B;
+    --bleubase: #1E3D59;
+    --textbase: rgba(236,236,236,.9);
+    --grisbase: #F5F0E1;
+    --rougebase: #FF6E40; 
+    
+     --orangebase: #FFC13B;
+    --bleuopt: #c6d7eb;
+    --textbase: rgba(236,236,236,.9);
+    --grisopt: #1868ae;
+    --rougeopt: #FF6E40; 
+    
+    
+    
 }
 
 
@@ -83,9 +98,45 @@ body{
 /*--------------------------------------------------------------
   Footer
 --------------------------------------------------------------*/
-.footer {
-	background-color: var(--bleu);
+.footer-basic {
+  padding:20px 0;
+  background-color:var(--bleu);
+  color:var(--gris);
 }
+
+.footer-basic ul {
+	display:flex;
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 15px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
 
 /*--------------------------------------------------------------
   Media Queries
@@ -148,7 +199,7 @@ body{
 #  Actualités copro
 --------------------------------------------------------------*/
 .actu{
-    background: var(--gris);
+   
     color: var(--text);
     display: flex;
     justify-content: center;
@@ -256,13 +307,15 @@ body{
 
 .carte-title, .carte-prix {
    font-family: 'Playfair Display', serif;
+  
 }
 
 .carte-titre {
   text-align:center;
   text-transform:uppercase;
   font-weight: bold;
-  color:var(--orange); 
+  color:var(--orange);
+  text-decoration: none; 
 }
 
 .carte-prix{
@@ -325,3 +378,10 @@ body{
   margin:5px;
 }
 
+.btnCreerService{
+	margin-top:30px;
+}
+
+.lienAnnonce{
+	text-decoration: none;
+}

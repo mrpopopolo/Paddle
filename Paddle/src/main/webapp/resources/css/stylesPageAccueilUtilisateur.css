@@ -38,9 +38,7 @@ margin-top: 100px;
 }
 
 .menu-utilisateur-container:hover {
-	text-decoration: underline;
-	width: 300px;
-	height: 175px;
+	background-color: var(--grisopt);
 }
 
 form .creerCopro{
@@ -54,3 +52,5 @@ form .creerCopro{
   cursor:pointer;
   margin:5px;
 }
+
+

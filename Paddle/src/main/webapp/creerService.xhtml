@@ -31,6 +31,10 @@
 							<f:selectItems value="#{creationServiceBean.typesService}" />
 						</h:selectOneMenu>
 						
+						<h:outputLabel value="Ceci est une demande ? " />
+						<h:selectBooleanCheckbox class="champCopro"
+							value="#{creationServiceBean.formService.estUneDemande}" />
+						
 						<h:inputText class="champCopro" size="12" id="titreInput"
 							a:placeholder="Titre"
 							value="#{creationServiceBean.formService.titre}" />

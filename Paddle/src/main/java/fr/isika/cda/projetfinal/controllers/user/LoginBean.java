@@ -84,6 +84,9 @@ public class LoginBean {
 				utilisateurConnecte = utilisateur.getCompte().getEmail();
 				
 				SessionUtils.setConnectedUserEmail(utilisateurConnecte);
+				SessionUtils.setConnectedUserCopro(utilisateur.getCopropriete().getResidence().getNom());
+				SessionUtils.setConnectedUserName(utilisateur.getInfosPerso().getPrenom());
+				SessionUtils.setConnectedUserRole(utilisateur.getCompte().getRole().toString());
 				
 				return "index";
 			} else {

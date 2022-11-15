@@ -49,7 +49,7 @@ public class ModifierService implements Serializable {
 			serviceModifie.setImageService(cheminImage);
 		}
 		serviceRepo.modifier(serviceModifie);
-		return "listeService.xhtml";
+		return "mesAnnonces.xhtml";
 	}
 
 	public Service getService() {
@@ -66,15 +66,6 @@ public class ModifierService implements Serializable {
 
 	public void setUploadedFile(Part uploadedFile) {
 		this.uploadedFile = uploadedFile;
-	}
-
-	public String afficher(Long id) {
-		Optional<Service> optional = serviceRepo.findById(id);
-		if (optional.isPresent()) {
-			service = optional.get();
-			return "pageAnnonce.xhtml";
-		}
-		return "listeService.xhtml";
 	}
 
 	public void setTypesService(TypeService[] typesService) {

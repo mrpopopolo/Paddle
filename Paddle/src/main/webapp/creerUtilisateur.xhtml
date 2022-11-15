@@ -8,7 +8,7 @@
 <meta charset="utf-8"></meta>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
 <meta http-equiv="X-UA-Compatible" content="ie=edge"></meta>
-content=<h:outputStylesheet library="css" name="formulaire.css" />
+<h:outputStylesheet library="css" name="formulaire.css" />
 </head>
 <h:head>
 	<title>Création d'un compte utilisateur</title>
@@ -17,6 +17,14 @@ content=<h:outputStylesheet library="css" name="formulaire.css" />
 	<ui:composition template="/WEB-INF/template/common.xhtml">
 		<ui:define name="content">
 		
+	
+	<!--	
+			<div >
+        Change theme <ion-icon id="theme-logo" name="moon"></ion-icon>
+        <button value="changer"  
+						id="theme-button" />
+						      </div>
+						    -->
 			<div class="formulaire">
 			<h:form id="createAccountForm" class="titreFormulaire">
 			<h3>Créer un compte utilisateur</h3>
@@ -56,6 +64,15 @@ content=<h:outputStylesheet library="css" name="formulaire.css" />
 
 			</h:form>
 			</div>
+	<script type="module" src="resources/js/app.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      type="nomodule"
+		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+	></script>
 			
 		</ui:define>
 	</ui:composition>
