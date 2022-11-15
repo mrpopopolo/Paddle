@@ -198,7 +198,7 @@ body{
 #  Actualités copro
 --------------------------------------------------------------*/
 .actu{
-    background: var(--gris);
+   
     color: var(--text);
     display: flex;
     justify-content: center;
