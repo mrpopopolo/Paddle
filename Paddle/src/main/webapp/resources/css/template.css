@@ -59,6 +59,7 @@
 	color: #F5F0E1;
 	margin-bottom:0;
 	margin-top:0;
+	font-family: 'Playfair Display', serif;
 
 	
 }
@@ -67,13 +68,13 @@
 	text-decoration: none;
 	font: size 20px;
 	padding: 10px 30px;
-	text-transform: uppercase;
+	
 	color: #F5F0E1;
-	font-weight: 600;
+	
 	display: inline-block;
 	text-align: center;
 	transition: all .2s;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .nav-lien:not(:last-child) {
@@ -92,6 +93,7 @@
 	background: var(--gris);
 	min-height: 500px;
 	padding: 50px 0 150px 0;
+	font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -163,7 +165,7 @@ body{
 		margin-right: 0;
 	}
 	.header {
-		height: 15vh;
+		height: 12vh;
 	}
 }
 
@@ -176,7 +178,7 @@ body{
 		border-bottom: 1px solid #F5F0E1;
 	}
 	.header {
-		height: 40vh;
+		height: 30vh;
 	}
 	.body {
 	
@@ -285,7 +287,7 @@ body{
 
 .carteIndex{
   width: 300px; 
-  margin: 0px auto; 
+  margin: 10px auto; 
   box-shadow: 0px 5px 20px #999; 
   background: var(--bleu);
   border-radius: 3px;
@@ -310,7 +312,7 @@ body{
 }
 
 .carte-title, .carte-prix {
-   font-family: 'Playfair Display', serif;
+   font-family: 'Montserrat', sans-serif;
   
 }
 

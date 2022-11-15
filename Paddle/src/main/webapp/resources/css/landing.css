@@ -124,7 +124,6 @@ header button, .btnSubscribe button {
 
 footer{
     margin-top: 40px;
-    border-top: 5px solid #6f6f6f;
     background-color: #1E3D59;
     color: #fff;
     padding: 30px 100px;;
@@ -169,4 +168,8 @@ footer #contact{
     footer{
         padding: 30px;
     }
+}
+
+.btnSubscribe{
+	padding:40px 0 0;
 }
