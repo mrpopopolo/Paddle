@@ -5,7 +5,10 @@ import javax.servlet.http.HttpSession;
 
 public class SessionUtils {
 
-	private static final String CONNECTED_USER_EMAIL = "connectedUserEmail";
+	private static final String CONNECTED_USER_EMAIL = "connectedUserEmail",
+								CONNECTED_USER_NAME = "connectedUserName",
+								CONNECTED_USER_COPRO = "connectedUserCopro",
+								CONNECTED_USER_ROLE = "connectedUserRole";
 
 	/*
 	 * 
@@ -23,6 +26,36 @@ public class SessionUtils {
 	public static String getConnectedUserEmail() {
 		HttpSession session = getSession();
 		return (String) session.getAttribute(CONNECTED_USER_EMAIL);
+	}
+	
+	public static void setConnectedUserName(String connectedUserName) {
+		HttpSession session = getSession();
+		session.setAttribute(CONNECTED_USER_NAME, connectedUserName);
+	}
+	
+	public static String getConnectedUserName() {
+		HttpSession session = getSession();
+		return (String) session.getAttribute(CONNECTED_USER_NAME);
+	}
+
+	public static void setConnectedUserCopro(String connectedUserCopro) {
+		HttpSession session = getSession();
+		session.setAttribute(CONNECTED_USER_COPRO, connectedUserCopro);
+	}
+	
+	public static String getConnectedUserCopro() {
+		HttpSession session = getSession();
+		return (String) session.getAttribute(CONNECTED_USER_COPRO);
+	}
+
+	public static void setConnectedUserRole(String connectedUserRole) {
+		HttpSession session = getSession();
+		session.setAttribute(CONNECTED_USER_ROLE, connectedUserRole);
+	}
+	
+	public static String getConnectedUserRole() {
+		HttpSession session = getSession();
+		return (String) session.getAttribute(CONNECTED_USER_ROLE);
 	}
 
 	public static void viderSession() {
