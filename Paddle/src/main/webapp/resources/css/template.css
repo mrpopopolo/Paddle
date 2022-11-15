@@ -99,12 +99,13 @@ body{
   Footer
 --------------------------------------------------------------*/
 .footer-basic {
-  padding:40px 0;
+  padding:20px 0;
   background-color:var(--bleu);
   color:var(--gris);
 }
 
 .footer-basic ul {
+	display:flex;
   padding:0;
   list-style:none;
   text-align:center;
@@ -114,7 +115,7 @@ body{
 }
 
 .footer-basic li {
-  padding:0 10px;
+  padding:0 15px;
 }
 
 .footer-basic ul a {
