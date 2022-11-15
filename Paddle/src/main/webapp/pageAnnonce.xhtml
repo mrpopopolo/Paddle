@@ -45,9 +45,10 @@
 							<h3>Mis en ligne par</h3>
 								<p>#{serv.createurService.infosPerso}</p>
 							</div>
+							<h:form>
 							<h:commandButton value="Réserver" class="reserver"
-						action="#{creationServiceBean.creer()}" />
-							<h:link outcome="paiement.xhtml">Réserver</h:link>
+						onclick="alert('Service réservé avec succès !')" action="#{reservationBean.reserver(serv)}"/>
+							</h:form>
 							
 							
 						</div>
