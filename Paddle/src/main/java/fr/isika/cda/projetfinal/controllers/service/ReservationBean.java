@@ -2,6 +2,7 @@ package fr.isika.cda.projetfinal.controllers.service;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -54,8 +55,16 @@ public class ReservationBean implements Serializable {
 	
 	@PostConstruct
 	private void init() {
-		mesReservations= mesReservations();
-		mesPaiements= mesPaiements();
+		mesReservations = mesReservations();
+		mesPaiements = mesPaiements();
+	}
+	
+	public void clear() {
+		mesReservations = new ArrayList<Reservation>();
+		mesPaiements = new ArrayList<Paiement>();
+	}
+	public void reload() {
+		init();
 	}
 	
 	private List<Reservation> mesReservations(){
@@ -107,6 +116,10 @@ public class ReservationBean implements Serializable {
 		
 		this.paiementRepository.creer(paiement);
 		this.reservationRepository.creer(reservation);
+		
+		// recharger les réservations et les paiements (manuellement)
+		reload();
+		
 		return "index";
 	}
 	

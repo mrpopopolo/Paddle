@@ -6,7 +6,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
-import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
 import fr.isika.cda.projetfinal.service.ServiceService;
 
@@ -26,9 +25,8 @@ public class ListeServiceBean {
 	
 	@PostConstruct
 	private void init() {
-		listeService= getAllServices();
-		mesServices= mesServices();
-		
+		listeService = getAllServices();
+		mesServices = mesServices();
 	}
 	
 	private List<Service> getAllServices(){
