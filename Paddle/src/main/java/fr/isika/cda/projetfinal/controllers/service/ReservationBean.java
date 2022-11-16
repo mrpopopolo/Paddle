@@ -2,7 +2,9 @@ package fr.isika.cda.projetfinal.controllers.service;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -13,8 +15,8 @@ import fr.isika.cda.projetfinal.entity.service.Service;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.repositories.paiement.PaiementRepository;
 import fr.isika.cda.projetfinal.repositories.reservation.ReservationRepository;
-import fr.isika.cda.projetfinal.repositories.service.ServiceRepository;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
+import fr.isika.cda.projetfinal.service.ServiceService;
 import fr.isika.cda.projetfinal.tools.SessionUtils;
 
 @ManagedBean
@@ -28,8 +30,6 @@ public class ReservationBean implements Serializable {
 	
 	// ***** Attributs *****
 	
-	@Inject
-	private ServiceRepository serviceRepository;
 	
 	@Inject
 	private UtilisateurRepository utilisateurRepository;
@@ -38,11 +38,26 @@ public class ReservationBean implements Serializable {
 	private PaiementRepository paiementRepository;
 	
 	@Inject
+	private ServiceService serviceService;
+	
+	@Inject
 	private ReservationRepository reservationRepository;
 	
 	private Service service;
 	
 	private Utilisateur utilisateur;
+	
+	private List<Reservation> mesReservations;
+	
+	
+	@PostConstruct
+	private void init() {
+		mesReservations= mesReservations();
+	}
+	
+	private List<Reservation> mesReservations(){
+		return this.serviceService.mesReservations();	
+	}
 	
 	// ***** Getters / setters *****
 
@@ -50,6 +65,10 @@ public class ReservationBean implements Serializable {
 		return service;
 	}
 	
+	public List<Reservation> getMesReservations() {
+		return mesReservations;
+	}
+
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
 	}

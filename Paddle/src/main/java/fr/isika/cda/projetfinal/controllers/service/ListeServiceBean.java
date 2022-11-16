@@ -20,7 +20,7 @@ public class ListeServiceBean {
 	
 	private List<Service> mesServices;
 	
-	private List<Reservation> listeReservation;
+	
 	
 	//méthode pour charger la liste automatiquement lorsqu'un service est créé
 	
@@ -28,6 +28,7 @@ public class ListeServiceBean {
 	private void init() {
 		listeService= getAllServices();
 		mesServices= mesServices();
+		
 	}
 	
 	private List<Service> getAllServices(){
@@ -38,6 +39,8 @@ public class ListeServiceBean {
 	private List<Service> mesServices(){
 		return this.serviceService.mesServices();	
 	}
+	
+	
 	
 	public List<Service> getListeService() {
 		return listeService;
@@ -58,6 +61,7 @@ public class ListeServiceBean {
 	public List<Service> getMesServices() {
 		return mesServices;
 	}
+	
 	
  /*	public String reserver(Long id) {
 		// récuperer l'utilisateur + utiliser l'attribut listeResevation pour lui ajouter le service 
