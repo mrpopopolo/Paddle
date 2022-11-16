@@ -21,9 +21,9 @@ public class ReservationRepository {
 	}
 	
 	public List<Reservation> findMesReservations(Long userId) {
-		System.out.println(userId);
 		return this.entityManager
-				  .createQuery("SELECT res FROM Reservation res WHERE res.reserveur.id = "+userId, Reservation.class)
+				  .createQuery("SELECT res FROM Reservation res LEFT JOIN FETCH res.reserveur WHERE res.reserveur.id = :user_id_param", Reservation.class)
+				  .setParameter("user_id_param", userId)
 				  .getResultList();
 
 	}

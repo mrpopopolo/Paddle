@@ -1,15 +1,12 @@
 package fr.isika.cda.projetfinal.repositories.paiement;
 
-import java.time.LocalDate;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import fr.isika.cda.projetfinal.entity.paiement.Paiement;
-import fr.isika.cda.projetfinal.entity.paiement.PaiementAbonnement;
-import fr.isika.cda.projetfinal.entity.paiement.Statut;
-import fr.isika.cda.projetfinal.entity.service.Service;
 
 @Stateless
 public class PaiementRepository {
@@ -40,6 +37,14 @@ public class PaiementRepository {
 	public Paiement creer(Paiement paiement) {
 		entityManager.persist(paiement);
 		return paiement;
+	}
+	
+	public List<Paiement> findMesPaiements(Long userId) {
+		return this.entityManager
+				  .createQuery("SELECT paye FROM Paiement paye WHERE paye.payeur.id = :user_id_param", Paiement.class)
+				  .setParameter("user_id_param", userId)
+				  .getResultList();
+
 	}
 
 }
