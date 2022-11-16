@@ -15,6 +15,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import fr.isika.cda.projetfinal.controllers.service.ReservationBean;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
 import fr.isika.cda.projetfinal.service.UtilisateurService;
 import fr.isika.cda.projetfinal.tools.SessionUtils;
@@ -27,6 +28,9 @@ public class LoginBean {
 	@Inject
 	private UtilisateurService utilisateurService;
 
+	@Inject
+	private ReservationBean reservationBean;
+	
 	@NotEmpty(message = "Ne doit pas être vide")
 	@NotNull(message = "Ne doit pas être null")
 	@Email
@@ -44,6 +48,7 @@ public class LoginBean {
 	}
 	
 	public String doLogout() {
+		reservationBean.clear();
 		SessionUtils.viderSession();
 		return "landing";
 	}
