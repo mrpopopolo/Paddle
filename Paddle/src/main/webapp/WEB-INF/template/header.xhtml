@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
 <head>
  <meta charset="utf-8"></meta>
@@ -24,11 +25,15 @@
 
 
 	<div class="liens">
-		<h:link class="nav-lien" outcome="index.xhtml">Accueil</h:link>
-		<h:link class="nav-lien" outcome="pageAccueilAdmin.xhtml">Admin</h:link>
-		<h:link class="nav-lien" outcome="pageAccueilUtilisateur.xhtml">Ma page</h:link>
-		<h:link class="nav-lien" outcome="lesServices.xhtml">Annonces</h:link>
-		<h:link class="nav-lien" outcome="connexion.xhtml">Déconnexion</h:link>
+		<h:form>
+			<h:link class="nav-lien" outcome="index.xhtml">Accueil</h:link>
+			<c:if test="#{userInfoBean.userRole.equalsIgnoreCase('Admin')}">
+				<h:link class="nav-lien" outcome="pageAccueilAdmin.xhtml">Admin</h:link>
+			</c:if>
+			<h:link class="nav-lien" outcome="pageAccueilUtilisateur.xhtml">Ma page</h:link>
+			<h:link class="nav-lien" outcome="lesServices.xhtml">Annonces</h:link>
+			<h:commandLink class="nav-lien" action="#{loginBean.doLogout()}">Déconnexion</h:commandLink>
+		</h:form>
 	</div>
 	</nav>
 
