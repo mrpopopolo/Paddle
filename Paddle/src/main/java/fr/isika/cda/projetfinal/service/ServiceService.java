@@ -6,9 +6,11 @@ import java.util.Optional;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import fr.isika.cda.projetfinal.entity.paiement.Paiement;
 import fr.isika.cda.projetfinal.entity.service.Reservation;
 import fr.isika.cda.projetfinal.entity.service.Service;
 import fr.isika.cda.projetfinal.entity.user.Utilisateur;
+import fr.isika.cda.projetfinal.repositories.paiement.PaiementRepository;
 import fr.isika.cda.projetfinal.repositories.reservation.ReservationRepository;
 import fr.isika.cda.projetfinal.repositories.service.ServiceRepository;
 import fr.isika.cda.projetfinal.repositories.user.UtilisateurRepository;
@@ -26,6 +28,9 @@ public class ServiceService {
 	
 	@Inject
 	private ReservationRepository reservationRepository;
+	
+	@Inject
+	private PaiementRepository paiementRepository;
 
 	public ServiceService() {
 	}
@@ -106,6 +111,18 @@ public class ServiceService {
 			if(optional.isPresent()) {
 				Utilisateur utilisateurConnect = optional.get();
 				return reservationRepository.findMesReservations(utilisateurConnect.getId());  
+			}
+		}
+		return null;
+	}
+	
+	public List<Paiement> mesPaiements() {
+		if(SessionUtils.isUserConnected()) {
+			String userMail = SessionUtils.getConnectedUserEmail();
+			Optional<Utilisateur> optional = this.utilisateurRepository.findByEmail(userMail);
+			if(optional.isPresent()) {
+				Utilisateur utilisateurConnect = optional.get();
+				return paiementRepository.findMesPaiements(utilisateurConnect.getId());  
 			}
 		}
 		return null;

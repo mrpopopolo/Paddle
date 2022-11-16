@@ -49,14 +49,21 @@ public class ReservationBean implements Serializable {
 	
 	private List<Reservation> mesReservations;
 	
+	private List<Paiement> mesPaiements;
+	
 	
 	@PostConstruct
 	private void init() {
 		mesReservations= mesReservations();
+		mesPaiements= mesPaiements();
 	}
 	
 	private List<Reservation> mesReservations(){
 		return this.serviceService.mesReservations();	
+	}
+	
+	private List<Paiement> mesPaiements(){
+		return this.serviceService.mesPaiements();	
 	}
 	
 	// ***** Getters / setters *****
@@ -67,6 +74,10 @@ public class ReservationBean implements Serializable {
 	
 	public List<Reservation> getMesReservations() {
 		return mesReservations;
+	}
+
+	public List<Paiement> getMesPaiements() {
+		return mesPaiements;
 	}
 
 	public Utilisateur getUtilisateur() {

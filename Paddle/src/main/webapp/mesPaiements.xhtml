@@ -12,26 +12,26 @@
 		<ui:define name="content">
 	<h3 class="reservationTitre">Mes paiements</h3>
 	
-	<h:dataTable styleClass="table" value="" var="">
+	<h:dataTable styleClass="table" value="#{reservationBean.mesPaiements}" var="paye">
 	
 		<h:column class="column">
 				<f:facet name="header">Date</f:facet>
 					<h:graphicImage value="" height="50px"/>
 				</h:column>
-		
+			#{paye.datePaiement}
 		<h:column class="column">
 			<f:facet name="header">Motif</f:facet>
-			#
+			
 		</h:column>
 		
 		<h:column class="column">
 			<f:facet name="header">Benéficiaire</f:facet>
-			#
+			#{paye.beneficiaire.infosPerso.nom}
 		</h:column>
 		
 		<h:column class="column">
 			<f:facet name="header">Montant</f:facet>
-			#
+			#{paye.montant}
 		</h:column>
 		
 		
