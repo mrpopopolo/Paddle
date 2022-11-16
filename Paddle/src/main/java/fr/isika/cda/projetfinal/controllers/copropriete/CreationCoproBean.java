@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
@@ -30,6 +31,20 @@ public class CreationCoproBean {
 	@Inject
 	private CoproService coproService;
 
+	@PostConstruct
+	public void init() {
+		this.formCopro.setPrenomAdmin("Roger");
+		this.formCopro.setNomAdmin("Dubois");
+		this.formCopro.setEmailAdmin("roger@gmail.com");
+		this.formCopro.setMotDePasseAdmin("RRRRR");
+		this.formCopro.setConfirmerMotDePasse("RRRRR");
+		this.formCopro.setNom("Les Amaryllis");
+		this.formCopro.setRue("30 rue de la République");
+		this.formCopro.setCodePostal(12345);
+		this.formCopro.setVille("Paddle-sur-Mer");
+		this.formCopro.setNombreLogements(50);
+	}
+	
 	public String create() throws IOException {
 		//UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("createAccountForm");
 		String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
@@ -37,8 +52,7 @@ public class CreationCoproBean {
 		formCopro.setPathToBlason(cheminImage);
 		coproService.create(formCopro);
 
-		return "index";
-
+		return "connexion";
 	}
 
 	public FormCopro getFormCopro() {
