@@ -8,7 +8,8 @@ public class SessionUtils {
 	private static final String CONNECTED_USER_EMAIL = "connectedUserEmail",
 								CONNECTED_USER_NAME = "connectedUserName",
 								CONNECTED_USER_COPRO = "connectedUserCopro",
-								CONNECTED_USER_ROLE = "connectedUserRole";
+								CONNECTED_USER_ROLE = "connectedUserRole",
+								CONNECTED_USER_BLASON = "connectedUserBlason";
 
 	/*
 	 * 
@@ -56,6 +57,16 @@ public class SessionUtils {
 	public static String getConnectedUserRole() {
 		HttpSession session = getSession();
 		return (String) session.getAttribute(CONNECTED_USER_ROLE);
+	}
+	
+	public static void setConnectedUserBlason(String connectedUserBlason) {
+		HttpSession session = getSession();
+		session.setAttribute(CONNECTED_USER_BLASON, connectedUserBlason);
+	}
+	
+	public static String getConnectedUserBlason() {
+		HttpSession session = getSession();
+		return (String) session.getAttribute(CONNECTED_USER_BLASON);
 	}
 
 	public static void viderSession() {

@@ -92,6 +92,7 @@ public class LoginBean {
 				SessionUtils.setConnectedUserCopro(utilisateur.getCopropriete().getResidence().getNom());
 				SessionUtils.setConnectedUserName(utilisateur.getInfosPerso().getPrenom());
 				SessionUtils.setConnectedUserRole(utilisateur.getCompte().getRole().toString());
+				SessionUtils.setConnectedUserBlason(utilisateur.getCopropriete().getPathToBlason());
 				
 				return "index";
 			} else {

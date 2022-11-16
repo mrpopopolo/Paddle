@@ -31,4 +31,8 @@ public class UserInfoBean implements Serializable {
 	public String getUserRole() {
 		return SessionUtils.getConnectedUserRole();
 	}
+	
+	public String getBlason() {
+		return SessionUtils.getConnectedUserBlason();
+	}
 }
