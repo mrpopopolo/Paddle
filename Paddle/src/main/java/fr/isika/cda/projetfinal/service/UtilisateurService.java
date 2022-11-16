@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import fr.isika.cda.projetfinal.entity.copropriete.Copropriete;
+import fr.isika.cda.projetfinal.entity.service.Service;
 import fr.isika.cda.projetfinal.entity.user.Compte;
 import fr.isika.cda.projetfinal.entity.user.Contact;
 import fr.isika.cda.projetfinal.entity.user.InfosLogement;
@@ -78,5 +79,18 @@ public class UtilisateurService {
 		
 	}
 
+	public List<Utilisateur> utilisateursDeMaCopro() {
+		if(SessionUtils.isUserConnected()) {
+			String userMail = SessionUtils.getConnectedUserEmail();
+			Optional<Utilisateur> optional = this.utilisateurRepository.findByEmail(userMail);
+			if(optional.isPresent()) {
+				Utilisateur demandeurService = optional.get();
+				if(demandeurService.getCopropriete() != null) {
+					return utilisateurRepository.findUsersCopro(demandeurService.getCopropriete().getId());
+				}
+			}
+		}
+		return null;
+	}
 	
 }

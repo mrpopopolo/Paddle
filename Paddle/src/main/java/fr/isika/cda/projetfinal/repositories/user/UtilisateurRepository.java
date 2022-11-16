@@ -109,6 +109,11 @@ public class UtilisateurRepository {
 		entityManager.merge(utilisateur);
 	}
 
-
+	public List<Utilisateur> findUsersCopro(Long coproId) {
+		return this.entityManager
+				.createQuery("SELECT usr FROM Utilisateur usr where usr.copropriete.id  = :copro_id_param", Utilisateur.class)
+				.setParameter("copro_id_param", coproId)
+				.getResultList();
+	}
 
 }

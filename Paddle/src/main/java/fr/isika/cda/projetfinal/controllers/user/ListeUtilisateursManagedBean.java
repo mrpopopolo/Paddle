@@ -23,7 +23,7 @@ public class ListeUtilisateursManagedBean {
 	}
 
 	private List<Utilisateur> getAllUtilisateurs() {
-		return this.utilisateurService.findAll();
+		return this.utilisateurService.utilisateursDeMaCopro();
 	}
 
 	public List<Utilisateur> getListeUtilisateurs() {
