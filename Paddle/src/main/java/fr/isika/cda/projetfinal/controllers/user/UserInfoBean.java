@@ -33,6 +33,10 @@ public class UserInfoBean implements Serializable {
 	}
 	
 	public String getBlason() {
-		return SessionUtils.getConnectedUserBlason();
+		String blason = SessionUtils.getConnectedUserBlason();
+		if(blason == null) {
+			blason = "resources/images/copro2.jpeg";
+		}
+		return blason;
 	}
 }
