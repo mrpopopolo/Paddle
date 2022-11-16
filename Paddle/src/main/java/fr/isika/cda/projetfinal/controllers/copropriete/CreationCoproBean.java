@@ -36,8 +36,6 @@ public class CreationCoproBean {
 		this.formCopro.setPrenomAdmin("Roger");
 		this.formCopro.setNomAdmin("Dubois");
 		this.formCopro.setEmailAdmin("roger@gmail.com");
-		this.formCopro.setMotDePasseAdmin("RRRRR");
-		this.formCopro.setConfirmerMotDePasse("RRRRR");
 		this.formCopro.setNom("Les Amaryllis");
 		this.formCopro.setRue("30 rue de la République");
 		this.formCopro.setCodePostal(12345);
@@ -47,9 +45,12 @@ public class CreationCoproBean {
 	
 	public String create() throws IOException {
 		//UIComponent formulaire = FacesContext.getCurrentInstance().getViewRoot().findComponent("createAccountForm");
-		String cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
+		String cheminImage;
+		if(uploadedFile != null) {
+			cheminImage = OutilsImage.sauvegarderImage(uploadedFile);
+			formCopro.setPathToBlason(cheminImage);
+		}
 		
-		formCopro.setPathToBlason(cheminImage);
 		coproService.create(formCopro);
 
 		return "connexion";

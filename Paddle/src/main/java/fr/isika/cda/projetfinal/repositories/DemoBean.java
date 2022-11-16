@@ -91,6 +91,8 @@ public class DemoBean {
 		reservation.setDateExecution(LocalDate.of(2022, 12, 02));
 		reservation.setReserveur(utilisateur);
 		reservation.setServiceReserve(service);
+		
+		entityManager.persist(reservation);
 
 		
 		Paiement paiement = new Paiement();

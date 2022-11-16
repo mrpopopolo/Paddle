@@ -49,7 +49,7 @@ form .champCopro{
   margin-top: 8px;
   max-width: 400px;
   max-height:200px;
-  
+  min-width: 200px;
 }
 
 form .creerCopro{
