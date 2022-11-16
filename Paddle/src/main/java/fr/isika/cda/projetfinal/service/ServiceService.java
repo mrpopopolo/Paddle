@@ -71,6 +71,13 @@ public class ServiceService {
 	}
 	
 	public void delete(Long id) {
+		List<Reservation> reservations = reservationRepository.findAll();
+		for(Reservation reservation: reservations) {
+			if(reservation.getServiceReserve().getId() == id) {
+				reservation.setServiceReserve(null);
+				reservationRepository.modifier(reservation);
+			}
+		}
 		serviceRepository.delete(id);
 	}
 	

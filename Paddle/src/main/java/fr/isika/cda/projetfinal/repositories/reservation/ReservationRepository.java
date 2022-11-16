@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import fr.isika.cda.projetfinal.entity.service.Reservation;
+import fr.isika.cda.projetfinal.entity.service.Service;
 
 
 @Stateless
@@ -27,4 +28,15 @@ public class ReservationRepository {
 				  .getResultList();
 
 	}
+	
+	public List<Reservation> findAll() {
+		return this.entityManager
+				  .createQuery("SELECT res FROM Reservation res", Reservation.class)
+				  .getResultList();
+	}
+	
+	public Reservation modifier(Reservation reservation) {
+		return entityManager.merge(reservation);
+		}
+	
 }
