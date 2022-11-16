@@ -45,7 +45,7 @@ public class LoginBean {
 	
 	public String doLogout() {
 		SessionUtils.viderSession();
-		return "index";
+		return "landing";
 	}
 	
 	public String getEmail() {

@@ -91,9 +91,9 @@ public class ServiceRepository {
 	
 	public List<Service> findMesServices(Long userId) {
 		return this.entityManager
-				  .createQuery("SELECT ser FROM Service ser where ser.createurService.id = "+userId, Service.class)
+				  .createQuery("SELECT ser FROM Service ser where ser.createurService.id = :user_id_param", Service.class)
+				  .setParameter("user_id_param", userId)
 				  .getResultList();
-
 	}
 	
 }
