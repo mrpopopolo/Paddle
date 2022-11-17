@@ -83,6 +83,7 @@ public class DemoBean {
 		service.setDescription("Je propose des cours de soutien en Maths");
 		service.setPrix(BigDecimal.valueOf(25.00));
 		service.setDateEvenement(LocalDate.of(2022, 12, 02));
+		service.setImageService("resources/images/coursMath.jpeg");
 		service.setCreateurService(utilisateur);
 
 		entityManager.persist(service);
